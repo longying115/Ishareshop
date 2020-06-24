@@ -201,7 +201,8 @@ namespace Ishareshop.Api.Controllers
             //数据库操作
             var responseModel = await _newsservice.DeleteOne(id);
 
-            return new JsonResult(responseModel);
+            //return new JsonResult(responseModel);
+            return Ok(responseModel);
         }
 
         
