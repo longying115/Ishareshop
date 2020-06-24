@@ -1,0 +1,109 @@
+����ʱ��: 18:16:23.068 �¼��ȼ�:Information ��ϸ��Ϣ:info
+����ʱ��: 18:16:23.345 �¼��ȼ�:Error ��ϸ��Ϣ:err
+����ʱ��: 18:16:32.105 �¼��ȼ�:Information ��ϸ��Ϣ:User profile is available. Using '"C:\Users\田永胜\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+����ʱ��: 18:16:33.459 �¼��ȼ�:Information ��ϸ��Ϣ:Application started. Press Ctrl+C to shut down.
+����ʱ��: 18:16:33.459 �¼��ȼ�:Information ��ϸ��Ϣ:Hosting environment: "Development"
+����ʱ��: 18:16:33.463 �¼��ȼ�:Information ��ϸ��Ϣ:Content root path: "C:\netcoreweb\Ishareshop\Ishareshop.Api"
+����ʱ��: 18:16:33.769 �¼��ȼ�:Information ��ϸ��Ϣ:Request starting HTTP/2.0 GET https://localhost:44359/weatherforecast  
+����ʱ��: 18:16:34.581 �¼��ȼ�:Information ��ϸ��Ϣ:Executing endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+����ʱ��: 18:16:34.685 �¼��ȼ�:Information ��ϸ��Ϣ:Route matched with "{action = \"Get\", controller = \"WeatherForecast\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[Ishareshop.Api.WeatherForecast] Get()" on controller "Ishareshop.Api.Controllers.WeatherForecastController" ("Ishareshop.Api").
+����ʱ��: 18:16:34.982 �¼��ȼ�:Information ��ϸ��Ϣ:Executing action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" - Validation state: Valid
+����ʱ��: 18:16:34.993 �¼��ȼ�:Information ��ϸ��Ϣ:Executed action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.1512ms.
+����ʱ��: 18:16:35.006 �¼��ȼ�:Information ��ϸ��Ϣ:Executing ObjectResult, writing value of type '"Ishareshop.Api.WeatherForecast[]"'.
+����ʱ��: 18:16:35.531 �¼��ȼ�:Information ��ϸ��Ϣ:Executed action "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" in 783.1125ms
+����ʱ��: 18:16:35.533 �¼��ȼ�:Information ��ϸ��Ϣ:Executed endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+����ʱ��: 18:16:35.540 �¼��ȼ�:Information ��ϸ��Ϣ:Request finished in 1772.9424ms 200 application/json; charset=utf-8
+����ʱ��: 18:16:52.368 �¼��ȼ�:Information ��ϸ��Ϣ:Request starting HTTP/2.0 GET https://localhost:44359/api/auth/gettoken?name=zhangsan&password=123456a  
+����ʱ��: 18:16:52.375 �¼��ȼ�:Information ��ϸ��Ϣ:Executing endpoint '"405 HTTP Method Not Supported"'
+����ʱ��: 18:16:52.389 �¼��ȼ�:Information ��ϸ��Ϣ:Executed endpoint '"405 HTTP Method Not Supported"'
+����ʱ��: 18:16:52.393 �¼��ȼ�:Information ��ϸ��Ϣ:Request finished in 24.8578ms 405 
+����ʱ��: 18:16:57.556 �¼��ȼ�:Information ��ϸ��Ϣ:Request starting HTTP/2.0 GET https://localhost:44359/api/auth/gettoken?name=zhangsan&password=123456  
+����ʱ��: 18:16:57.571 �¼��ȼ�:Information ��ϸ��Ϣ:Executing endpoint '"405 HTTP Method Not Supported"'
+����ʱ��: 18:16:57.571 �¼��ȼ�:Information ��ϸ��Ϣ:Executed endpoint '"405 HTTP Method Not Supported"'
+����ʱ��: 18:16:57.574 �¼��ȼ�:Information ��ϸ��Ϣ:Request finished in 18.9259ms 405 
+����ʱ��: 18:17:12.043 �¼��ȼ�:Information ��ϸ��Ϣ:Request starting HTTP/2.0 GET https://localhost:44359/api/newstype/getlist?head=true&topcount=3  
+����ʱ��: 18:17:12.078 �¼��ȼ�:Information ��ϸ��Ϣ:Authorization failed.
+����ʱ��: 18:17:12.098 �¼��ȼ�:Information ��ϸ��Ϣ:AuthenticationScheme: "Bearer" was challenged.
+����ʱ��: 18:17:12.102 �¼��ȼ�:Information ��ϸ��Ϣ:Request finished in 59.1775ms 401 
+����ʱ��: 18:30:45.658 �¼��ȼ�:Information ��ϸ��Ϣ:info
+����ʱ��: 18:30:45.802 �¼��ȼ�:Error ��ϸ��Ϣ:err
+����ʱ��: 18:30:49.446 �¼��ȼ�:Information ��ϸ��Ϣ:User profile is available. Using '"C:\Users\田永胜\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+����ʱ��: 18:30:50.693 �¼��ȼ�:Information ��ϸ��Ϣ:Application started. Press Ctrl+C to shut down.
+����ʱ��: 18:30:50.693 �¼��ȼ�:Information ��ϸ��Ϣ:Hosting environment: "Development"
+����ʱ��: 18:30:50.694 �¼��ȼ�:Information ��ϸ��Ϣ:Content root path: "C:\netcoreweb\Ishareshop\Ishareshop.Api"
+����ʱ��: 18:30:50.862 �¼��ȼ�:Information ��ϸ��Ϣ:Request starting HTTP/2.0 GET https://localhost:44359/weatherforecast  
+����ʱ��: 18:30:51.522 �¼��ȼ�:Information ��ϸ��Ϣ:Executing endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+����ʱ��: 18:30:51.595 �¼��ȼ�:Information ��ϸ��Ϣ:Route matched with "{action = \"Get\", controller = \"WeatherForecast\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[Ishareshop.Api.WeatherForecast] Get()" on controller "Ishareshop.Api.Controllers.WeatherForecastController" ("Ishareshop.Api").
+����ʱ��: 18:30:51.761 �¼��ȼ�:Information ��ϸ��Ϣ:Executing action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" - Validation state: Valid
+����ʱ��: 18:30:51.773 �¼��ȼ�:Information ��ϸ��Ϣ:Executed action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 2.8471ms.
+����ʱ��: 18:30:51.780 �¼��ȼ�:Information ��ϸ��Ϣ:Executing ObjectResult, writing value of type '"Ishareshop.Api.WeatherForecast[]"'.
+����ʱ��: 18:30:52.100 �¼��ȼ�:Information ��ϸ��Ϣ:Executed action "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" in 495.715ms
+����ʱ��: 18:30:52.102 �¼��ȼ�:Information ��ϸ��Ϣ:Executed endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+����ʱ��: 18:30:52.108 �¼��ȼ�:Information ��ϸ��Ϣ:Request finished in 1249.0113ms 200 application/json; charset=utf-8
+����ʱ��: 18:31:13.939 �¼��ȼ�:Information ��ϸ��Ϣ:Request starting HTTP/2.0 GET https://localhost:44359/api/auth/gettoken?name=zhangsan&password=123456  
+����ʱ��: 18:31:14.005 �¼��ȼ�:Information ��ϸ��Ϣ:Executing endpoint '"405 HTTP Method Not Supported"'
+����ʱ��: 18:31:14.006 �¼��ȼ�:Information ��ϸ��Ϣ:Executed endpoint '"405 HTTP Method Not Supported"'
+����ʱ��: 18:31:14.011 �¼��ȼ�:Information ��ϸ��Ϣ:Request finished in 71.3726ms 405 
+����ʱ��: 18:34:08.813 �¼��ȼ�:Information ��ϸ��Ϣ:Request starting HTTP/2.0 GET https://localhost:44359/api/productclass/get/1  
+����ʱ��: 18:34:08.832 �¼��ȼ�:Information ��ϸ��Ϣ:Executing endpoint '"Ishareshop.Api.Controllers.ProductClassController.Get (Ishareshop.Api)"'
+����ʱ��: 18:34:08.923 �¼��ȼ�:Information ��ϸ��Ϣ:Route matched with "{action = \"Get\", controller = \"ProductClass\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Winner.Models.ProductClass] Get(Int32)" on controller "Ishareshop.Api.Controllers.ProductClassController" ("Ishareshop.Api").
+����ʱ��: 18:34:09.660 �¼��ȼ�:Information ��ϸ��Ϣ:Executing action method "Ishareshop.Api.Controllers.ProductClassController.Get (Ishareshop.Api)" - Validation state: Valid
+����ʱ��: 18:34:11.705 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"money"' on entity type '"CashValueLog"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.706 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"productprice"' on entity type '"Favorites"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.707 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"allmoney"' on entity type '"GetMoneyLog"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.707 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"getmoney"' on entity type '"GetMoneyLog"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.708 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"allmoney"' on entity type '"GetPointLog"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.709 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"price"' on entity type '"Gifts"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.709 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"account"' on entity type '"Member"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.710 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"allbrokerage"' on entity type '"Member"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.710 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"allmoney"' on entity type '"Order"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.712 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"couponmoney"' on entity type '"Order"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.712 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"paymoney"' on entity type '"Order"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.713 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"sendmoney"' on entity type '"Order"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.714 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"productprice"' on entity type '"OrderItem"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.714 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"productprice"' on entity type '"ProductDiscuss"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.714 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"maxprice"' on entity type '"ProductPrice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.714 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"minprice"' on entity type '"ProductPrice"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.714 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"price"' on entity type '"Products"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.714 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"productprice"' on entity type '"ReturnGoods"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.715 �¼��ȼ�:Warning ��ϸ��Ϣ:No type was specified for the decimal column '"productprice"' on entity type '"ShopCart"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+����ʱ��: 18:34:11.814 �¼��ȼ�:Information ��ϸ��Ϣ:Entity Framework Core "3.1.3" initialized '"AccountContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+����ʱ��: 18:34:13.429 �¼��ȼ�:Information ��ϸ��Ϣ:Executed DbCommand ("179"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [t].[id], [t].[classlevel], [t].[classname], [t].[classremark], [t].[description], [t].[isshow], [t].[keytitle], [t].[keywords], [t].[pid], [t].[smallpicture], [t].[sort]
+FROM [T_ProductClass] AS [t]
+WHERE [t].[id] = @__id_0"
+����ʱ��: 18:34:13.678 �¼��ȼ�:Information ��ϸ��Ϣ:Executed action method "Ishareshop.Api.Controllers.ProductClassController.Get (Ishareshop.Api)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4017.3363ms.
+����ʱ��: 18:34:13.683 �¼��ȼ�:Information ��ϸ��Ϣ:Executing ObjectResult, writing value of type '"Winner.Models.ProductClass"'.
+����ʱ��: 18:34:13.707 �¼��ȼ�:Information ��ϸ��Ϣ:Executed action "Ishareshop.Api.Controllers.ProductClassController.Get (Ishareshop.Api)" in 4782.9466ms
+����ʱ��: 18:34:13.710 �¼��ȼ�:Information ��ϸ��Ϣ:Executed endpoint '"Ishareshop.Api.Controllers.ProductClassController.Get (Ishareshop.Api)"'
+����ʱ��: 18:34:13.728 �¼��ȼ�:Information ��ϸ��Ϣ:Request finished in 4915.6765ms 200 application/json; charset=utf-8
+����ʱ��: 18:35:34.186 �¼��ȼ�:Information ��ϸ��Ϣ:Request starting HTTP/2.0 GET https://localhost:44359/api/newstype/getlist?head=true&topcount=3  
+����ʱ��: 18:35:34.254 �¼��ȼ�:Information ��ϸ��Ϣ:Authorization failed.
+����ʱ��: 18:35:34.279 �¼��ȼ�:Information ��ϸ��Ϣ:AuthenticationScheme: "Bearer" was challenged.
+����ʱ��: 18:35:34.280 �¼��ȼ�:Information ��ϸ��Ϣ:Request finished in 111.2791ms 401 
+����ʱ��: 18:39:10.508 �¼��ȼ�:Information ��ϸ��Ϣ:User profile is available. Using '"C:\Users\田永胜\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+����ʱ��: 18:39:12.797 �¼��ȼ�:Information ��ϸ��Ϣ:Application started. Press Ctrl+C to shut down.
+����ʱ��: 18:39:12.820 �¼��ȼ�:Information ��ϸ��Ϣ:Hosting environment: "Development"
+����ʱ��: 18:39:12.820 �¼��ȼ�:Information ��ϸ��Ϣ:Content root path: "C:\netcoreweb\Ishareshop\Ishareshop.Api"
+����ʱ��: 18:39:12.958 �¼��ȼ�:Information ��ϸ��Ϣ:Request starting HTTP/2.0 GET https://localhost:44359/weatherforecast  
+����ʱ��: 18:39:13.192 �¼��ȼ�:Information ��ϸ��Ϣ:Executing endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+����ʱ��: 18:39:13.303 �¼��ȼ�:Information ��ϸ��Ϣ:Route matched with "{action = \"Get\", controller = \"WeatherForecast\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[Ishareshop.Api.WeatherForecast] Get()" on controller "Ishareshop.Api.Controllers.WeatherForecastController" ("Ishareshop.Api").
+����ʱ��: 18:39:13.513 �¼��ȼ�:Information ��ϸ��Ϣ:Executing action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" - Validation state: Valid
+����ʱ��: 18:39:13.530 �¼��ȼ�:Information ��ϸ��Ϣ:Executed action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 4.9512ms.
+����ʱ��: 18:39:13.541 �¼��ȼ�:Information ��ϸ��Ϣ:Executing ObjectResult, writing value of type '"Ishareshop.Api.WeatherForecast[]"'.
+����ʱ��: 18:39:13.903 �¼��ȼ�:Information ��ϸ��Ϣ:Executed action "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" in 584.1572ms
+����ʱ��: 18:39:13.904 �¼��ȼ�:Information ��ϸ��Ϣ:Executed endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+����ʱ��: 18:39:13.907 �¼��ȼ�:Information ��ϸ��Ϣ:Request finished in 954.435ms 200 application/json; charset=utf-8
+发生时间: 18:46:28.808 事件等级:Information 详细信息:User profile is available. Using '"C:\Users\田永胜\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+发生时间: 18:46:29.381 事件等级:Information 详细信息:Application started. Press Ctrl+C to shut down.
+发生时间: 18:46:29.381 事件等级:Information 详细信息:Hosting environment: "Development"
+发生时间: 18:46:29.382 事件等级:Information 详细信息:Content root path: "C:\netcoreweb\Ishareshop\Ishareshop.Api"
+发生时间: 18:46:29.473 事件等级:Information 详细信息:Request starting HTTP/2.0 GET https://localhost:44359/weatherforecast  
+发生时间: 18:46:29.667 事件等级:Information 详细信息:Executing endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+发生时间: 18:46:29.705 事件等级:Information 详细信息:Route matched with "{action = \"Get\", controller = \"WeatherForecast\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[Ishareshop.Api.WeatherForecast] Get()" on controller "Ishareshop.Api.Controllers.WeatherForecastController" ("Ishareshop.Api").
+发生时间: 18:46:29.843 事件等级:Information 详细信息:Executing action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" - Validation state: Valid
+发生时间: 18:46:29.849 事件等级:Information 详细信息:Executed action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 1.8672ms.
+发生时间: 18:46:29.859 事件等级:Information 详细信息:Executing ObjectResult, writing value of type '"Ishareshop.Api.WeatherForecast[]"'.
+发生时间: 18:46:30.049 事件等级:Information 详细信息:Executed action "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" in 333.8374ms
+发生时间: 18:46:30.051 事件等级:Information 详细信息:Executed endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+发生时间: 18:46:30.055 事件等级:Information 详细信息:Request finished in 586.9536ms 200 application/json; charset=utf-8
