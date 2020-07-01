@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ishareshop", "Ishareshop.csproj", "{EF1F5B65-5D7B-41F2-B4EC-0F460CEBA82B}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Winner.Models", "..\Winner.Models\Winner.Models.csproj", "{D4E72DAF-79C5-46E9-8F0E-2D0C477DDB31}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ishareshop.Mobile", "..\Ishareshop.Mobile\Ishareshop.Mobile.csproj", "{3C27BC40-D2B9-4EB6-ACC5-384AA0AE0CB7}"
@@ -17,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ishareshop.Api", "..\Ishare
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Winner.Repository", "..\Winner.Repository\Winner.Repository.csproj", "{0410696C-B5CA-47B9-BCA7-5BB732CC6F08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Winner.IRepository", "..\Winner.IRepository\Winner.IRepository.csproj", "{5044654B-A738-4BE1-96F3-2D989287D95A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Winner.IRepository", "..\Winner.IRepository\Winner.IRepository.csproj", "{5044654B-A738-4BE1-96F3-2D989287D95A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{E0C82D98-BAB2-4F37-93A5-59F2A7450221}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EF1F5B65-5D7B-41F2-B4EC-0F460CEBA82B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF1F5B65-5D7B-41F2-B4EC-0F460CEBA82B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF1F5B65-5D7B-41F2-B4EC-0F460CEBA82B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF1F5B65-5D7B-41F2-B4EC-0F460CEBA82B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D4E72DAF-79C5-46E9-8F0E-2D0C477DDB31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D4E72DAF-79C5-46E9-8F0E-2D0C477DDB31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4E72DAF-79C5-46E9-8F0E-2D0C477DDB31}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -60,6 +56,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C27BC40-D2B9-4EB6-ACC5-384AA0AE0CB7} = {E0C82D98-BAB2-4F37-93A5-59F2A7450221}
+		{EC276CAF-BA5C-4ECA-AF81-7F8E463155C7} = {E0C82D98-BAB2-4F37-93A5-59F2A7450221}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E50BD4A4-1710-450A-880C-D7131892DFCF}

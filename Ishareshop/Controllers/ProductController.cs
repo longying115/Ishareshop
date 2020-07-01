@@ -148,7 +148,6 @@ namespace Ishareshop.Controllers
                     try
                     {
                         IList<Products> productlist = await _context.Products.Include(s => s.ProductClass).Where(s => s.classid == cid && s.isshow == true).Take(9).OrderBy(s => s.sort).AsNoTracking().ToListAsync();
-
                         transaction.Commit();
                         return productlist;
                         
@@ -247,7 +246,7 @@ namespace Ishareshop.Controllers
                     productentiters = productentiters.OrderBy(s => s.id);
                     break;
             }
-            //分页做饭
+            //分页做
             if (page != null)
             {
                 productentiters = productentiters.Skip(Convert.ToInt32((page - 1) * pagesize)).Take(Convert.ToInt32(pagesize));

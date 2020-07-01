@@ -33,6 +33,8 @@ namespace Ishareshop.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            string msg = "";
+            _logger.LogError($"日志{msg}记录");
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

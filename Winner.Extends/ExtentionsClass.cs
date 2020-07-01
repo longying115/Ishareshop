@@ -602,7 +602,7 @@ namespace Winner.Extends
             string accessKeySecret = alikeysecret;
             //以下为发送短信验证码
             IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", accessKeyId, accessKeySecret);
-            DefaultProfile.AddEndpoint("cn-hangzhou", "cn-hangzhou", product, domain);
+            //DefaultProfile.AddEndpoint("cn-hangzhou", "cn-hangzhou", product, domain);//暂时屏蔽，用新得包后，有异常，有空了查
             IAcsClient acsClient = new DefaultAcsClient(profile);
             SendSmsRequest request = new SendSmsRequest();
             SendSmsResponse response = null;

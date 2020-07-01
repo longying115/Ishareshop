@@ -99,7 +99,7 @@ namespace Ishareshop.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}", Name = "GetProductClass")]
-        public async Task<ProductClass> GetProductClass(int id)
+        public async Task<ProductClass> GetProductClass([FromQuery]int id)
         {
             if (id > 0)
             {
