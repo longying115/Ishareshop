@@ -15,7 +15,7 @@ namespace Winner.Models
         public int sort { get; set; }
         public int colorid { get; set; }
         public int productid { get; set; }
-        public string smallpicture { get; set; }
+        public string picture { get; set; }
         public virtual Products Products { get; set; }
         public virtual ProductColor ProductColor { get; set; }
     }

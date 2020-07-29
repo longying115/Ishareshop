@@ -306,7 +306,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.ProductClass)
                 .WithMany(p => p.Products)
-                .HasForeignKey(d => d.classid)
+                .HasForeignKey(d => d.fistclassid)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_Products_To_ProductClass");
             });

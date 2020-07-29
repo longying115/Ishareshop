@@ -22,6 +22,7 @@ namespace Winner.Models
         public string colorname { get; set; }
         public string colorpicture { get; set; }
         public int counts { get; set; }
+        public float price { get; set; }
 
         public virtual Products Products { get; set; }
         public virtual ICollection<ProductPicture> ProductPicture { get; set; }

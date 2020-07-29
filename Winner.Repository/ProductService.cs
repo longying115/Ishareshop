@@ -21,11 +21,12 @@ namespace Winner.Repository
     {
         private readonly AccountContext _context;
         private readonly ILogger _logger;
-        private IHostingEnvironment _hostingenvironment;
+        private IWebHostEnvironment _webHostEnvironment;
 
-        public ProductService(AccountContext accountcontext)
+        public ProductService(AccountContext accountcontext,IWebHostEnvironment webHostEnvironment)
         {
             _context = accountcontext;
+            _webHostEnvironment = webHostEnvironment;
         }
         public async Task<IEnumerable<Products>> GetList(int? page, int? pagesize)
         {
@@ -125,7 +126,7 @@ namespace Winner.Repository
                     var savePath = newsentity.smallpicture;
                     if (!string.IsNullOrEmpty(savePath))
                     {
-                        var realyPath = Path.Combine(_hostingenvironment.WebRootPath + savePath);
+                        var realyPath = Path.Combine(_webHostEnvironment.WebRootPath + savePath);
 
                         File.Delete(realyPath);
                     }
