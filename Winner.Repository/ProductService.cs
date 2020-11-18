@@ -14,133 +14,139 @@ using Microsoft.AspNetCore.Hosting;
 using System.IO;
 
 using Winner.IRepository;
+using System.Linq.Expressions;
 
 namespace Winner.Repository
 {
-    public class ProductService:IProductService
+    public class ProductService : IProductService
     {
         private readonly AccountContext _context;
         private readonly ILogger _logger;
-        private IWebHostEnvironment _webHostEnvironment;
 
-        public ProductService(AccountContext accountcontext,IWebHostEnvironment webHostEnvironment)
+        public ProductService(AccountContext accountContext, ILogger<ProductService> logger)
         {
-            _context = accountcontext;
-            _webHostEnvironment = webHostEnvironment;
+            _context = accountContext;
+            _logger = logger;
         }
-        public async Task<IEnumerable<Products>> GetList(int? page, int? pagesize)
+        public async Task<int> AddAsync(Products products)
         {
-            var productentiters = from s in _context.Products.Where(s => s.isshow == true)
-                               select s;
+            _context.Products.Add(products);
 
-            //排序
-            productentiters = productentiters.OrderByDescending(s => s.addtime);
-
-            //分页
-            if (page != null && page > 0)
-            {
-                if (pagesize == null || pagesize <= 0)
-                {
-                    pagesize = 8;
-                }
-
-                productentiters = productentiters.Skip(Convert.ToInt32((page - 1) * pagesize)).Take(Convert.ToInt32(pagesize));
-            }
-            IEnumerable<Products> productlist = await productentiters.ToListAsync();
-
-            return productlist;
+            return await _context.SaveChangesAsync();
         }
-        public async Task<News> Get(int id)
+        public async Task<int> DeleteOneAsync(Products products)
         {
-            News news = await _context.News.SingleOrDefaultAsync(s => s.id == id);
+            _context.Products.Remove(products);
 
-            return news;
+            return await _context.SaveChangesAsync();
         }
-        public async Task<int> Post(News news)
+        public async Task<int> DeleteListAsync(List<Products> list)
         {
-            try
-            {
-                _context.News.Add(news);
+            _context.Products.RemoveRange(list);
 
-                return await _context.SaveChangesAsync();
-            }
-            catch
-            {
-                return 204;
-            }
+            int result = await _context.SaveChangesAsync();
+            return result;
         }
-        public async Task<int> Put(int id, News news)
+        public async Task<int> EditOneAsync(Products products)
         {
-            try
-            {
-                News newsentity = await _context.News.SingleOrDefaultAsync(s => s.id == id);
-                if (newsentity != null)
-                {
-                    newsentity.tid = news.tid;
-                    newsentity.title = news.title;
-                    newsentity.keytitle = news.keytitle;
-                    newsentity.keywords = news.keywords;
-                    newsentity.description = news.description;
-                    newsentity.author = news.author;
-                    newsentity.source = news.source;
-                    newsentity.smallpicture = news.smallpicture;
-                    newsentity.picturetag = news.picturetag;
-                    newsentity.addtime = news.addtime;
-                    newsentity.hits = news.hits;
-                    newsentity.lasthittime = news.lasthittime;
-                    newsentity.praise = news.praise;
-                    newsentity.textcontent = news.textcontent;
-                    newsentity.ispicture = news.ispicture;
-                    newsentity.isshow = news.isshow;
-                    newsentity.ishead = news.ishead;
+            _context.Products.Update(products);
+            return await _context.SaveChangesAsync();
+            //try
+            //{
+            //    Products productsEntity = await _context.Products.SingleOrDefaultAsync(s => s.Id == id);
+            //    if (productsEntity != null)
+            //    {
+            //        productsEntity.FistClassId = products.FistClassId;
+            //        productsEntity.SecondClassId = products.SecondClassId;
+            //        productsEntity.Sort = products.Sort;
 
-                    _context.News.Update(newsentity);
-                    return await _context.SaveChangesAsync();
-                }
-                else
-                {
-                    return 404;
-                }
+            //        productsEntity.Title = products.Title;
+            //        productsEntity.SmallTitle = products.SmallTitle;
+            //        productsEntity.Remark = products.Remark;
 
-            }
-            catch
-            {
-                return 204;
-            }
+            //        productsEntity.KeyTitle = products.KeyTitle;
+            //        productsEntity.Keywords = products.Keywords;
+            //        productsEntity.Description = products.Description;
+            //        productsEntity.SmallPicture = products.SmallPicture;
+            //        productsEntity.PictureTag = products.PictureTag;
+
+            //        productsEntity.Sales = products.Sales;
+            //        productsEntity.Score = products.Score;
+            //        productsEntity.TextContent = products.TextContent;
+            //        productsEntity.Parameter = products.Parameter;
+
+            //        productsEntity.AddTime = products.AddTime;
+            //        productsEntity.Hits = products.Hits;
+            //        productsEntity.LastHitTime = products.LastHitTime;
+            //        productsEntity.Praise = products.Praise;
+
+            //        productsEntity.IsShow = products.IsShow;
+            //        productsEntity.IsHome = products.IsHome;
+            //        productsEntity.IsNew = products.IsNew;
+            //        productsEntity.IsBest = products.IsBest;
+            //        productsEntity.IsHot = products.IsHot;
+            //        productsEntity.IsSale = products.IsSale;
+            //        productsEntity.IsFocus = products.IsFocus;
+
+
+            //        _context.Products.Update(productsEntity);
+            //        return await _context.SaveChangesAsync();
+            //    }
+            //    else
+            //    {
+            //        return 404;
+            //    }
+
+            //}
+            //catch
+            //{
+            //    return 204;
+            //}
         }
-
-        public async Task<int> Delete(int id)
+        public async Task<Products> GetOneAsync(int id)
         {
-            //这里只用try-catch就可以了。
-            //如果是同时有几个操作数据库的步骤。为了保持数据的完整性，用一个事务括起来。
-            try
-            {
-                var newsentity = await _context.News.SingleOrDefaultAsync(s => s.id == id);
+            Products products = await _context.Products.SingleOrDefaultAsync(s => s.Id == id);
 
-                if (newsentity == null)
-                {
-                    return 404;
-                }
-                else
-                {
-                    var savePath = newsentity.smallpicture;
-                    if (!string.IsNullOrEmpty(savePath))
-                    {
-                        var realyPath = Path.Combine(_webHostEnvironment.WebRootPath + savePath);
-
-                        File.Delete(realyPath);
-                    }
-                    //先删除图片，后删除信息
-                    _context.News.Remove(newsentity);
-
-                    return await _context.SaveChangesAsync();
-                }
-
-            }
-            catch (Exception e)
-            {
-                return 204;
-            }
+            return products;
         }
+        public async Task<List<Products>> GetListAsync(List<Expression<Func<Products, bool>>> wheres)
+        {
+            var list = _context.Products.Where(s => true);
+            foreach (var item in wheres)
+            {
+                list = list.Where(item);
+            }
+            var data = await list.ToListAsync();
+            return data;
+        }
+        public async Task<List<Products>> GetListAsync(Expression<Func<Products, bool>> where, int topCount)
+        {
+            var list = _context.Products.Where(where);
+            var newslist = await list.OrderByDescending(s => s.AddTime).Take(topCount).ToListAsync();
+
+            return newslist;
+        }
+        public async Task<int> GetCountAsync(List<Expression<Func<Products, bool>>> wheres)
+        {
+            var list = _context.Products.Where(s => true);
+            foreach (var item in wheres)
+            {
+                list = list.Where(item);
+            }
+            int total = await list.CountAsync();
+            return total;
+        }
+        public async Task<List<Products>> GetListAsync(int pageSize, int pageIndex, List<Expression<Func<Products, bool>>> wheres)
+        {
+            var list = _context.Products.Where(s => true);
+            foreach (var item in wheres)
+            {
+                list = list.Where(item);
+            }
+            var pageData = await list.OrderByDescending(s => s.AddTime).Skip(pageSize * (pageIndex - 1)).Take(pageSize).ToListAsync();
+
+            return pageData;
+        }
+
     }
 }

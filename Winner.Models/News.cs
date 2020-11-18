@@ -15,46 +15,106 @@ namespace Winner.Models
         }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int tid { get; set; }
-        public string title { get; set; }
-        public string keytitle { get; set; }
-        public string keywords { get; set; }
-        public string description { get; set; }
-        public string author { get; set; }
-        public string source { get; set; }
-        public string smallpicture { get; set; }
-        public string picturetag { get; set; }
-        private DateTime _addtime = DateTime.Now;
-        public DateTime addtime
+        public int Id { get; set; }
+        /// <summary>
+        /// 新闻所属分类
+        /// </summary>
+        [Required(ErrorMessage ="新闻分类不能为空")]
+        [RegularExpression(@"[0-9]*$", ErrorMessage = "请选择新闻分类")]
+        public int ClassId { get; set; }
+        /// <summary>
+        /// 新闻标题
+        /// </summary>
+        [Required(ErrorMessage ="新闻标题不能为空")]
+        public string Title { get; set; }
+        /// <summary>
+        /// 详情页tag显示标题
+        /// </summary>
+        public string KeyTitle { get; set; }
+        /// <summary>
+        /// 详情页关键词
+        /// </summary>
+        public string Keywords { get; set; }
+        /// <summary>
+        /// 详情页简要描述
+        /// </summary>
+        public string Description { get; set; }
+        /// <summary>
+        /// 作者
+        /// </summary>
+        public string Author { get; set; }
+        /// <summary>
+        /// 来源
+        /// </summary>
+        public string Source { get; set; }
+        /// <summary>
+        /// 新闻展示小图
+        /// </summary>
+        public string SmallPicture { get; set; }
+        /// <summary>
+        /// 图片标签
+        /// </summary>
+        public string PictureTag { get; set; }
+        private DateTime _addTime = DateTime.Now;
+        /// <summary>
+        /// 添加时间
+        /// </summary>
+        public DateTime AddTime
         {
-            get { return _addtime; }
-            set { _addtime = value; }
+            get { return _addTime; }
+            set { _addTime = value; }
         }
         private int _hits = 0;
-        public int hits
+        /// <summary>
+        /// 点击率
+        /// </summary>
+        public int Hits
         {
             get { return _hits; }
             set { _hits = value; }
         }
-        private DateTime _lasthittime = DateTime.Now;
-        public DateTime lasthittime
+        private DateTime _lastHitTime = DateTime.Now;
+        /// <summary>
+        /// 最后点击时间
+        /// </summary>
+        public DateTime LastHitTime
         {
-            get { return _lasthittime; }
-            set { _lasthittime = value; }
+            get { return _lastHitTime; }
+            set { _lastHitTime = value; }
         }
         private int _praise = 0;
-        public int praise
+        /// <summary>
+        /// 点赞次数
+        /// </summary>
+        public int Praise
         {
             get { return _praise; }
             set { _praise = value; }
         }
-        public string textcontent { get; set; }
-        public bool ispicture { get; set; }
-        public bool isshow { get; set; }
-        public bool ishead { get; set; }
-
+        /// <summary>
+        /// 新闻内容--富文本
+        /// </summary>
+        [Required(ErrorMessage ="新闻内容不能为空")]
+        public string TextContent { get; set; }
+        /// <summary>
+        /// 是否前端展示
+        /// </summary>
+        public bool IsShow { get; set; }
+        /// <summary>
+        /// 是否首页展示
+        /// </summary>
+        public bool IsHome { get; set; }
+        /// <summary>
+        /// 是否推荐展示
+        /// </summary>
+        public bool IsHead { get; set; }
+        /// <summary>
+        /// 新闻分类
+        /// </summary>
         public virtual NewsType NewsType { get; set; }
+        /// <summary>
+        /// 新闻评论
+        /// </summary>
         public virtual ICollection<NewsComment> NewsComment { get; set; }
     }
 }

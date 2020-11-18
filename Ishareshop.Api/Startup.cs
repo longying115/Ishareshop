@@ -1,15 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 using Winner.Models;
 using Microsoft.EntityFrameworkCore;
@@ -27,6 +21,8 @@ using Winner.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using AutoMapper;
+using System.Reflection;
 
 namespace Ishareshop.Api
 {
@@ -91,7 +87,9 @@ namespace Ishareshop.Api
             {
                 options.TextEncoderSettings = new TextEncoderSettings(UnicodeRanges.All);
             });
-
+            //添加对AutoMapper的支持
+            //services.AddAutoMapper(Assembly.Load("目标类型所在的命名空间"), Assembly.Load("源类型所在的命名空间"));
+            services.AddAutoMapper(Assembly.Load("Winner.Models"));//同在一个命名空间下
             //添加Swagger支持
             #region swagger
             services.AddControllers().AddNewtonsoftJson();

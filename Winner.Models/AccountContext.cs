@@ -80,7 +80,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.Member)
                 .WithMany(p => p.CashValueLog)
-                .HasForeignKey(d => d.uid)
+                .HasForeignKey(d => d.Uid)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_CashValueLog_To_Member");
             });
@@ -192,7 +192,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.NewsType)
                 .WithMany(p => p.News)
-                .HasForeignKey(d => d.tid)
+                .HasForeignKey(d => d.ClassId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_News_To_NewsType");
             });
@@ -306,7 +306,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.ProductClass)
                 .WithMany(p => p.Products)
-                .HasForeignKey(d => d.fistclassid)
+                .HasForeignKey(d => d.FistClassId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_Products_To_ProductClass");
             });

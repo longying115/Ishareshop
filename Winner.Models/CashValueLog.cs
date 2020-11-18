@@ -10,10 +10,10 @@ namespace Winner.Models
     public class CashValueLog
     {
         [Key]
-        public int uid { get; set; }
-        public Decimal money { get; set; }
-        public string remark { get; set; }
-        public DateTime addtime { get; set; }
+        public int Uid { get; set; }
+        public Decimal Money { get; set; }
+        public string Remark { get; set; }
+        public DateTime Addtime { get; set; }
 
         public virtual Member Member { get; set; }
     }

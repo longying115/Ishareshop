@@ -7,7 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 
 using Winner.Models;
 using Winner.IRepository;
-
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
+using Winner.Models.Response;
+using System.Linq.Expressions;
+using System.IO;
 
 namespace Ishareshop.Api.Controllers
 {
@@ -15,227 +19,239 @@ namespace Ishareshop.Api.Controllers
     [ApiController]
     public class ProductClassController : ControllerBase
     {
-        private readonly IProductClassService _productclassservice;
-
-        public ProductClassController(IProductClassService productclassservice)
+        private readonly IProductClassService _productClassService;
+        private IWebHostEnvironment _webHost;
+        public ProductClassController(IProductClassService productClassService, IWebHostEnvironment webHostEnvironment)
         {
-            _productclassservice = productclassservice;
+            _productClassService = productClassService;
+            _webHost = webHostEnvironment;
+        }
+        /// <summary>
+        /// 获取产品分类
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Authorize]
+        public async Task<ResponseModel> GetOne(int id)
+        {
+            if (id > 0)
+            {
+                var productClass = await _productClassService.GetOneAsync(id);
+
+                if (productClass == null)
+                    return new ResponseModel { code = 0, result = "产品分类不存在" };
+                return new ResponseModel { code = 200, result = "产品分类获取成功", data = productClass };
+            }
+            else
+            {
+                return new ResponseModel { code = 0, result = "参数错误" };
+            }
+        }
+        /// <summary>
+        /// 根据条件获取前几条产品分类
+        /// </summary>
+        /// <param name="isHead"></param>
+        /// <param name="topCount"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Authorize]
+        public async Task<ResponseModel> GetList(bool isHead, int topCount)
+        {
+            var productClassList = await _productClassService.GetListAsync(c => c.IsHead == isHead, topCount);
+
+            return new ResponseModel { code = 200, result = "产品分类获取成功", data = productClassList };
         }
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="pid"></param>
-        /// <param name="level"></param>
-        /// <param name="page"></param>
-        /// <param name="pagesize"></param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IEnumerable<ProductClass>> GetList(int? pid, int? level, int? page, int? pagesize)
+        [Authorize]
+        public async Task<ResponsePageModel> GetPageList(int pageSize, int pageIndex, string keyword)
         {
-            IEnumerable<ProductClass> productClasses = await _productclassservice.GetList(pid, level, page, pagesize);
+            if (pageSize <= 0 || pageIndex < 1)
+            {
+                return new ResponsePageModel
+                {
+                    code = 0,
+                    result = "参数错误",
+                    total = 0
+                };
+            }
+            List<Expression<Func<ProductClass, bool>>> wheres = new List<Expression<Func<ProductClass, bool>>>();
+            if (!string.IsNullOrEmpty(keyword))
+                wheres.Add(s => s.ClassName.Contains(keyword));
 
-            return productClasses;
+            int total = await _productClassService.GetCountAsync(wheres);
+
+            var pageData = await _productClassService.GetListAsync(pageSize, pageIndex, wheres);
+
+            return new ResponsePageModel { code = 200, result = "分页产品分类获取成功", total = total, data = pageData };
+            //return new JsonResult(responsePageModel);
         }
         /// <summary>
-        /// 根据分类ID获取产品分类
+        /// 
         /// </summary>
-        /// <param name="id">分类ID</param>
-        /// <returns></returns>
-        [HttpGet("{id}", Name = "Get")]
-        public async Task<ProductClass> Get(int id)
-        {
-            if (id > 0)
-            {
-                ProductClass productClass = await _productclassservice.Get(id);
-
-                return productClass;
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// 添加产品分类
-        /// </summary>
-        /// <param name="productclass">分类内容属性</param>
+        /// <param name="productClass"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] ProductClass productclass)
+        [Authorize]
+        public async Task<ResponseModel> Add([FromBody] ProductClass productClass)
         {
             if (ModelState.IsValid)
             {
-                    int resval = await _productclassservice.Post(productclass);
-
-                //判断、处理返回值
-                if (resval == 1)
-                {
-                    return new JsonResult(new
-                    {
-                        code = 200,
-                        status = "OK",
-                        message = "添加成功"
-                    });
-                }
-                else if (resval == 204)
-                {
-                    return new JsonResult(new
-                    {
-                        code = 204,
-                        status = "NoContent",
-                        message = "数据操作异常"
-                    });
-                }
-                else
-                {
-                    return new JsonResult(new
-                    {
-                        code = resval,
-                        status = "Unknown",
-                        message = "添加失败"
-                    });
-                }
+                var result = await _productClassService.AddAsync(productClass);
+                if (result > 0)
+                    return new ResponseModel { code = 200, result = "产品添加成功" };
+                return new ResponseModel { code = 0, result = "产品添加失败" };
             }
             else
             {
-                return new JsonResult(new
+                string errorMsg = "参数验证失败";
+                if (ModelState.ErrorCount > 0)
+                {
+                    foreach (var key in ModelState.Keys)
+                    {
+                        errorMsg += ModelState.GetValidationState(key) + "|";
+                    }
+                    errorMsg.TrimEnd('|');
+                }
+                return new ResponseModel
                 {
 
                     code = 400,
-                    status = "BadRequest",
-                    message = "ProdcutClass参数错误"
-                });
-            }
-        }
-
-       /// <summary>
-       /// 修改产品分类
-       /// </summary>
-       /// <param name="id">分类ID</param>
-       /// <param name="productclass">分类内容属性</param>
-       /// <returns></returns>
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] ProductClass productclass)
-        {
-            if (id < 1)
-            {
-                return new JsonResult(new
-                {
-                    code = 400,
-                    status = "BadRequest",
-                    message = "id参数错误"
-                });
-            }
-            if (ModelState.IsValid)
-            {
-                //数据库操作
-                int resval = await _productclassservice.Put(id, productclass);
-                //判断、处理返回值
-                if (resval == 1)
-                {
-                    return new JsonResult(new
-                    {
-                        code = 200,
-                        status = "OK",
-                        message = "修改成功"
-                    });
-                }
-                else if (resval == 204)
-                {
-                    return new JsonResult(new
-                    {
-                        code = 204,
-                        status = "NoContent",
-                        message = "数据操作异常"
-                    });
-                }
-                else if (resval == 404)
-                {
-                    return new JsonResult(new
-                    {
-                        code = 404,
-                        status = "NotFound",
-                        message = "修改失败,记录不存在"
-                    });
-                }
-                else
-                {
-                    return new JsonResult(new
-                    {
-                        code = resval,
-                        status = "Unknown",
-                        message = "修改失败"
-                    });
-                }
-            }
-            else
-            {
-                return new JsonResult(new
-                {
-
-                    code = 400,
-                    status = "BadRequest",
-                    message = "ProdcutClass参数错误"
-                });
+                    result = errorMsg
+                };
             }
         }
 
         /// <summary>
-        /// 删除产品分类
+        /// 
         /// </summary>
-        /// <param name="id">分类ID</param>
+        /// <param name="productClass"></param>
         /// <returns></returns>
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        [HttpPut]
+        [Authorize]
+        public async Task<ResponseModel> Edit([FromBody] ProductClass productClass)
         {
-            if (id < 1)
+            if (ModelState.IsValid)
             {
-                return new JsonResult(new
-                {
-                    code = 400,
-                    status = "BadRequest",
-                    message = "id参数错误"
-                });
-            }
-            //数据库操作
-            int resval =await _productclassservice.Delete(id);
-            //判断、处理返回值
-            if (resval == 1)
-            {
-                return new JsonResult(new
-                {
-                    code = 200,
-                    status="OK",
-                    message = "删除成功"
-                });
-            }
-            else if (resval == 204)
-            {
-                return new JsonResult(new
-                {
-                    code = 204,
-                    status = "NoContent",
-                    message = "数据操作异常"
-                });
-            }
-            else if (resval == 404)
-            {
-                return new JsonResult(new
-                {
-                    code = 404,
-                    status = "NotFound",
-                    message = "删除失败,记录不存在"
-                });
+                var productClassEntity = await _productClassService.GetOneAsync(productClass.Id);
+                if (productClassEntity == null)
+                    return new ResponseModel { code = 0, result = "产品分类不存在" };
+
+                productClassEntity.ParentId = productClass.ParentId;
+                productClassEntity.ClassLevel = productClass.ClassLevel;
+                productClassEntity.Sort = productClass.Sort;
+                productClassEntity.ClassName = productClass.ClassName;
+                productClassEntity.ClassRemark = productClass.ClassRemark;
+                productClassEntity.KeyTitle = productClass.KeyTitle;
+                productClassEntity.Keywords = productClass.Keywords;
+                productClassEntity.Description = productClass.Description;
+                productClassEntity.SmallPicture = productClass.SmallPicture;
+                productClassEntity.PictureTag = productClass.PictureTag;
+                productClassEntity.AddTime = productClass.AddTime;
+                productClassEntity.LastHitTime = productClass.LastHitTime;
+                productClassEntity.IsShow = productClass.IsShow;
+                productClassEntity.IsHead = productClass.IsHead;
+
+                //数据库操作
+                var result = await _productClassService.EditOneAsync(productClassEntity);
+
+                if (result > 0)
+                    return new ResponseModel { code = 200, result = "产品分类修改成功" };
+                return new ResponseModel { code = 0, result = "产品分类修改失败" };
             }
             else
             {
-                return new JsonResult(new
+                string errorMsg = "参数验证失败";
+                if (ModelState.ErrorCount > 0)
                 {
-                    code = resval,
-                    status = "Unknown",
-                    message = "删除失败"
-                });
+                    foreach (var key in ModelState.Keys)
+                    {
+                        errorMsg += ModelState.GetValidationState(key) + "|";
+                    }
+                    errorMsg.TrimEnd('|');
+                }
+                return new ResponseModel
+                {
+
+                    code = 400,
+                    result = errorMsg
+                };
+            }
+        }
+
+        /// <summary>
+        /// 删除单条产品分类
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete]
+        [Authorize]
+        public async Task<ResponseModel> Delete(int id)
+        {
+            if (id < 1)
+            {
+                return new ResponseModel
+                {
+                    code = 400,
+                    result = "参数错误"
+                };
+            }
+            var productClass = await _productClassService.GetOneAsync(id);
+            if (productClass == null)
+            {
+                return new ResponseModel
+                {
+                    code = 404,
+                    result = "产品分类不存在"
+                };
+            }
+            //先删除图片，后删除信息,文件的操作放到控制器上，方便第三方存储
+            var savePath = productClass.SmallPicture;
+            if (!string.IsNullOrWhiteSpace(savePath))
+            {
+                var realyPath = Path.Combine(_webHost.WebRootPath + savePath);
+
+                System.IO.File.Delete(realyPath);
+            }
+
+            //数据库操作
+            var result = await _productClassService.DeleteOneAsync(productClass);
+
+            if (result > 0)
+                return new ResponseModel { code = 200, result = "产品分类删除成功" };
+            return new ResponseModel { code = 0, result = "产品分类删除失败" };
+        }
+        /// <summary>
+        /// 批量删除新闻
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        public async Task<ResponseModel> DeleteMany(int[] ids)
+        {
+            try
+            {
+                List<Expression<Func<ProductClass, bool>>> wheres = new List<Expression<Func<ProductClass, bool>>>();
+
+                wheres.Add(s => ids.Contains(s.Id));
+
+                var list = await _productClassService.GetListAsync(wheres);
+                if (list.Count > 0 && list.Any())
+                {
+                    int i = await _productClassService.DeleteListAsync(list);
+
+                    if (i > 0)
+                        return new ResponseModel { code = 200, result = "批量产品分类删除成功" };
+                    return new ResponseModel { code = 0, result = "批量产品分类删除失败" };
+                }
+                return new ResponseModel { code = 0, result = "删除的产品分类不存在" };
+            }
+            catch (Exception e)
+            {
+                return new ResponseModel { code = 400, result = e.Message };
             }
         }
     }

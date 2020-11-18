@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using Winner.Models.Response;
 using System.Linq.Expressions;
 using Microsoft.AspNetCore.Hosting;
+using System.IO;
 
 namespace Ishareshop.Api.Controllers
 {
@@ -16,97 +17,148 @@ namespace Ishareshop.Api.Controllers
     [ApiController]
     public class NewsController : ControllerBase
     {
-        private readonly INewsService _newsservice;
-        private IWebHostEnvironment _webhost;
+        private readonly INewsService _newsService;
+        private IWebHostEnvironment _webHost;
         public NewsController(INewsService newsService, IWebHostEnvironment webHostEnvironment)
         {
-            _newsservice = newsService;
-            _webhost = webHostEnvironment;
+            _newsService = newsService;
+            _webHost = webHostEnvironment;
         }
         /// <summary>
-        /// 
+        /// 获取单条新闻详情
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
         [Authorize]
-        public async Task<JsonResult> GetOne(int id)
+        public async Task<ResponseModel> GetOne(int id)
         {
             if (id > 0)
             {
-                var responseModel = await _newsservice.GetOne(id);
+                var news = await _newsService.GetOneAsync(id);
 
-                return new JsonResult(responseModel);
+                if (news == null)
+                    return new ResponseModel { code = 0, result = "新闻不存在" };
+                return new ResponseModel { code = 200, result = "新闻获取成功", data = news };
             }
             else
             {
-                return new JsonResult(new ResponseModel { code = 0, result = "参数错误" });
+                return new ResponseModel { code = 0, result = "参数错误" };
             }
         }
         /// <summary>
-        /// 
+        /// 根据条件获取新闻
         /// </summary>
-        /// <param name="head"></param>
+        /// <param name="isHead"></param>
+        /// <param name="isShow"></param>
+        /// <param name="classId"></param>
+        /// <returns></returns>
+        public async Task<ResponseModel> GetList(bool isHead, bool isShow, int classId)
+        {
+            List<Expression<Func<News, bool>>> wheres = new List<Expression<Func<News, bool>>>();
+            if (classId > 0)
+            {
+                wheres.Add(s => s.ClassId == classId);
+            }
+            wheres.Add(s => s.IsShow == isShow);
+            wheres.Add(s => s.IsHead == isHead);
+
+            var List = await _newsService.GetListAsync(wheres);
+            return new ResponseModel { code = 200, result = "新闻列表获取成功", data = List };
+        }
+        /// <summary>
+        /// 获取推荐新闻前几条
+        /// </summary>
+        /// <param name="isHead"></param>
         /// <param name="topCount"></param>
         /// <returns></returns>
         [HttpGet]
         [Authorize]
-        public async Task<JsonResult> GetList(bool head, int topCount)
+        public async Task<ResponseModel> GetList(bool isHead, int topCount)
         {
-            var responseModel = await _newsservice.GetList(c => c.ishead == head, topCount);
+            var newsList = await _newsService.GetListAsync(c => c.IsHead == isHead, topCount);
+            //if (newslist.Count()>0 && newslist.Any())
+            //{
+                
+            //}
+            return new ResponseModel { code = 200, result = "新闻获取成功", data = newsList };
+            //var response = new ResponseModel
+            //{
+            //    code = 200,
+            //    result = "新闻获取成功"
+            //};
+            //foreach (var news in topdata)
+            //{
+            //    response.data.Add(new News
+            //    {
+            //        id = news.id,
+            //        tid = news.tid,
+            //        title = news.title,
+            //        keytitle = news.keytitle,
+            //        keywords = news.keywords,
+            //        description = news.description,
+            //        author=news.author,
+            //        source=news.source,
+            //        smallpicture=news.smallpicture,
+            //        picturetag=news.picturetag,
+            //        addtime=news.addtime,
+            //        hits=news.hits,
+            //        lasthittime=news.lasthittime,
 
-            return new JsonResult(responseModel);
+            //        isshow = news.isshow,
+            //        ishead = news.ishead
+            //    });
+            //}
+            //return response;//也可以尝试一下下面这种方式是否可以
+            //return new ResponseModel { code = 200, result = "新闻获取成功", data = topdata };
         }
         /// <summary>
-        /// 
+        /// 分页获取新闻列表
         /// </summary>
-        /// <param name="pagesize"></param>
-        /// <param name="pageindex"></param>
-        /// <param name="typeid"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="pageIndex"></param>
+        /// <param name="classId"></param>
         /// <param name="keyword"></param>
         /// <returns></returns>
         [HttpGet]
         [Authorize]
-        public async Task<JsonResult> GetPageList(int pagesize, int pageindex,int typeid, string keyword)
+        public async Task<ResponsePageModel> GetPageList(int pageSize, int pageIndex,int classId, string keyword)
         {
-            if (pagesize <= 0 || pageindex < 1)
+            if (pageSize <= 0 || pageIndex < 1)
             {
-                return new JsonResult(new ResponsePageModel
+                return new ResponsePageModel
                 {
                     code = 0,
                     result = "参数错误",
                     total = 0
-                });
+                };
             }
             List<Expression<Func<News, bool>>> wheres = new List<Expression<Func<News, bool>>>();
 
-            if (typeid > 0)
-                wheres.Add(s => s.tid == typeid);
+            if (classId > 0)
+                wheres.Add(s => s.ClassId == classId);
 
             if (!string.IsNullOrEmpty(keyword))
-                wheres.Add(s => s.title.Contains(keyword));
-            
+                wheres.Add(s => s.Title.Contains(keyword));
 
-            var responsePageModel = await _newsservice.GetList(pagesize, pageindex, wheres);
+            int total = await _newsService.GetCountAsync(wheres);
 
-            return new JsonResult(responsePageModel);
+            var pageData = await _newsService.GetListAsync(pageSize, pageIndex, wheres);
+
+            return new ResponsePageModel { code = 200, result = "分页新闻获取成功", total = total, data = pageData };
         }
 
         /// <summary>
-        /// 
+        /// 添加新闻
         /// </summary>
         /// <param name="news"></param>
         /// <returns></returns>
         [HttpPost]
         [Authorize]
-        public async Task<JsonResult> Add([FromBody] News news)
+        public async Task<ResponseModel> Add([FromBody] News news)
         {
             if (ModelState.IsValid)
             {
-                if (news.tid<=0 || string.IsNullOrEmpty(news.title) || string.IsNullOrEmpty(news.textcontent))
-                {
-                    return new JsonResult(new ResponseModel { code=0,result="参数有误" });
-                }
                 //var files = collection.Files;
                 //if (files.Count>0)
                 //{
@@ -129,82 +181,163 @@ namespace Ishareshop.Api.Controllers
                 //    return new JsonResult(new ResponseModel { code = 0, result = "图片格式有误" });
                 //}
                 //return new JsonResult(new ResponseModel { code = 0, result = "请上传新闻图片" });
-                var responseModel = await _newsservice.Add(news);
-                return new JsonResult(responseModel);
+                var result = await _newsService.AddAsync(news);
+                if (result > 0)
+                    return new ResponseModel { code = 200, result = "新闻添加成功" };
+                return new ResponseModel { code = 0, result = "新闻添加失败" };
             }
             else
             {
-                return new JsonResult(new ResponseModel
+                string errorMsg = "参数验证失败";
+                if (ModelState.ErrorCount > 0)
+                {
+                    foreach (var key in ModelState.Keys)
+                    {
+                        errorMsg += ModelState.GetValidationState(key) + "|";
+                    }
+                    errorMsg.TrimEnd('|');
+                }
+                return new ResponseModel
                 {
 
                     code = 400,
-                    result = "参数验证失败"
-                });
+                    result = errorMsg
+                };
             }
         }
         /// <summary>
-        /// 
+        /// 编辑新闻
         /// </summary>
         /// <param name="news"></param>
         /// <returns></returns>
         [HttpPut]
         [Authorize]
-        public async Task<JsonResult> Edit([FromBody] News news)
+        public async Task<ResponseModel> Edit([FromBody] News news)
         {
             if (ModelState.IsValid)
             {
-                //数据库操作
-                var responseModel = await _newsservice.EditOne(news);
+                //这里只用try-catch就可以了。
+                //如果是同时有几个操作数据库的步骤。为了保持数据的完整性，用一个事务括起来。
 
-                return new JsonResult(responseModel);
+                var newsEntity = await _newsService.GetOneAsync(news.Id);
+                if (newsEntity == null)
+                    return new ResponseModel { code = 0, result = "新闻不存在" };
+
+                newsEntity.ClassId = news.ClassId;
+                newsEntity.Title = news.Title;
+                newsEntity.KeyTitle = news.KeyTitle;
+                newsEntity.Keywords = news.Keywords;
+                newsEntity.Description = news.Description;
+                newsEntity.Author = news.Author;
+                newsEntity.Source = news.Source;
+                newsEntity.SmallPicture = news.SmallPicture;
+                newsEntity.PictureTag = news.PictureTag;
+                newsEntity.AddTime = news.AddTime;
+                newsEntity.Hits = news.Hits;
+                newsEntity.LastHitTime = news.LastHitTime;
+                newsEntity.Praise = news.Praise;
+                newsEntity.TextContent = news.TextContent;
+                newsEntity.IsShow = news.IsShow;
+                newsEntity.IsHome = news.IsHome;
+                newsEntity.IsHead = news.IsHead;
+
+                //数据库操作
+                var result = await _newsService.EditOneAsync(newsEntity);
+
+                if (result > 0)
+                    return new ResponseModel { code = 200, result = "新闻修改成功" };
+                return new ResponseModel { code = 0, result = "新闻修改失败" };
             }
             else
             {
-                return new JsonResult(new ResponseModel
+                string errorMsg = "参数验证失败";
+                if (ModelState.ErrorCount > 0)
+                {
+                    foreach (var key in ModelState.Keys)
+                    {
+                        errorMsg += ModelState.GetValidationState(key) + "|";
+                    }
+                    errorMsg.TrimEnd('|');
+                }
+                return new ResponseModel
                 {
 
                     code = 400,
-                    result = "参数验证失败"
-                });
+                    result = errorMsg
+                };
             }
         }
         /// <summary>
-        /// 
+        /// 删除单条新闻
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete]
         [Authorize]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<ResponseModel> Delete(int id)
         {
             if (id < 1)
             {
-                return new JsonResult(new ResponseModel
+                return new ResponseModel
                 {
                     code = 400,
                     result = "参数错误"
-                });
+                };
             }
-            ////先删除图片
-            //var newsModel = await _newsservice.GetOne(id);
-            //if (newsModel.code == 200)
-            //{
-            //    var savePath = newsModel.data.smallpicture;
-            //    if (!string.IsNullOrEmpty(savePath))
-            //    {
-            //        var realyPath = Path.Combine(_webhost.WebRootPath + savePath);
+            var news = await _newsService.GetOneAsync(id);
+            if (news==null)
+            {
+                return new ResponseModel
+                {
+                    code = 404,
+                    result = "新闻不存在"
+                };
+            }
+            //先删除图片，后删除信息,文件的操作放到控制器上，方便第三方存储
+            var savePath = news.SmallPicture;
+            if (!string.IsNullOrWhiteSpace(savePath))
+            {
+                var realyPath = Path.Combine(_webHost.WebRootPath + savePath);
 
-            //        System.IO.File.Delete(realyPath);
-            //    }
-            //}
+                System.IO.File.Delete(realyPath);
+            }
 
             //数据库操作
-            var responseModel = await _newsservice.DeleteOne(id);
+            var result = await _newsService.DeleteOneAsync(news);
 
-            //return new JsonResult(responseModel);
-            return Ok(responseModel);
+            if (result > 0)
+                return new ResponseModel { code = 200, result = "新闻删除成功" };
+            return new ResponseModel { code = 0, result = "新闻删除失败" };
         }
+        /// <summary>
+        /// 批量删除新闻
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        public async Task<ResponseModel> DeleteMany(int[] ids)
+        {
+            try
+            {
+                List<Expression<Func<News, bool>>> wheres = new List<Expression<Func<News, bool>>>();
 
+                wheres.Add(s => ids.Contains(s.Id));
+
+                var list = await _newsService.GetListAsync(wheres);
+                if (list.Count > 0 && list.Any())
+                {
+                    int i = await  _newsService.DeleteListAsync(list);
+
+                    if (i > 0)
+                        return new ResponseModel { code = 200, result = "批量新闻删除成功" };
+                    return new ResponseModel { code = 0, result = "批量新闻删除失败" };
+                }
+                return new ResponseModel { code = 0, result = "删除的新闻不存在" };
+            }
+            catch (Exception e)
+            {
+                return new ResponseModel { code = 400, result = e.Message };
+            }
+        }
         
     }
 }

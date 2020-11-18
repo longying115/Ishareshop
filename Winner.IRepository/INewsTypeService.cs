@@ -11,12 +11,15 @@ namespace Winner.IRepository
 {
     public interface INewsTypeService
     {
-        Task<ResponseModel> Add(NewsType newsType);
-        Task<ResponseModel> GetOne(int id);
-        Task<ResponseModel> GetList(Expression<Func<NewsType, bool>> where, int topCount);
-        Task<ResponsePageModel> GetList(int pagesize, int pageindex, List<Expression<Func<NewsType, bool>>> wheres);
-        Task<ResponseModel> EditOne(NewsType newsType);
-        Task<ResponseModel> DeleteOne(int id);
+        Task<int> AddAsync(NewsType newsType);
+        Task<int> DeleteOneAsync(NewsType newsType);
+        Task<int> DeleteListAsync(List<NewsType> list);
+        Task<int> EditOneAsync(NewsType newsType);
+        Task<NewsType> GetOneAsync(int id);
+        Task<List<NewsType>> GetListAsync(List<Expression<Func<NewsType, bool>>> wheres);
+        Task<List<NewsType>> GetListAsync(Expression<Func<NewsType, bool>> where, int topCount);
+        Task<int> GetCountAsync(List<Expression<Func<NewsType, bool>>> wheres);
+        Task<List<NewsType>> GetListAsync(int pageSize, int pageIndex, List<Expression<Func<NewsType, bool>>> wheres);
 
     }
 }

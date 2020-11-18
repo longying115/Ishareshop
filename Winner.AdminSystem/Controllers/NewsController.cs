@@ -15,13 +15,13 @@ namespace Winner.AdminSystem.Controllers
 {
     public class NewsController : Controller
     {
-        private INewsService _newsservice;
-        private IWebHostEnvironment _webhost;
+        private INewsService _newsService;
+        private IWebHostEnvironment _webHost;
 
         public NewsController(INewsService newsService, IWebHostEnvironment webHostEnvironment)
         {
-            _newsservice = newsService;
-            _webhost = webHostEnvironment;
+            _newsService = newsService;
+            _webHost = webHostEnvironment;
         }
         public IActionResult Index()
         {
@@ -37,14 +37,14 @@ namespace Winner.AdminSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (news.tid <= 0 || string.IsNullOrEmpty(news.title) || string.IsNullOrEmpty(news.textcontent))
+                if (news.ClassId <= 0 || string.IsNullOrEmpty(news.Title) || string.IsNullOrEmpty(news.TextContent))
                 {
                     return new JsonResult(new ResponseModel { code = 0, result = "参数有误" });
                 }
                 var files = collection.Files;
                 if (files.Count > 0)
                 {
-                    string webRootPath = _webhost.WebRootPath;
+                    string webRootPath = _webHost.WebRootPath;
                     string relativeDirPath = "\\NewsPicture";
                     string absolutePath = webRootPath + relativeDirPath;
                     string[] fileType = new string[] { ".gif", ".jpg", ".jpeg", ".png", ".bmp" };
@@ -58,12 +58,12 @@ namespace Winner.AdminSystem.Controllers
                         {
                             await files[0].CopyToAsync(stream);
                         }
-                        news.smallpicture = "/NewsPicture/" + fileName;
+                        news.SmallPicture = "/NewsPicture/" + fileName;
                     }
                     return new JsonResult(new ResponseModel { code = 0, result = "图片格式有误" });
                 }
                 //return new JsonResult(new ResponseModel { code = 0, result = "请上传新闻图片" });
-                var responseModel = await _newsservice.Add(news);
+                var responseModel = await _newsService.AddAsync(news);
                 return new JsonResult(responseModel);
             }
             else
@@ -88,20 +88,20 @@ namespace Winner.AdminSystem.Controllers
                 });
             }
             //先删除图片
-            var newsModel =await  _newsservice.GetOne(id);
-            if (newsModel.code == 200)
+            var newsModel = await _newsService.GetOneAsync(id);
+            if (newsModel != null)
             {
-                var savePath = newsModel.data.smallpicture;
+                var savePath = newsModel.SmallPicture;
                 if (!string.IsNullOrEmpty(savePath))
                 {
-                    var realyPath = Path.Combine(_webhost.WebRootPath + savePath);
+                    var realyPath = Path.Combine(_webHost.WebRootPath + savePath);
 
-                   System.IO.File.Delete(realyPath);
+                    System.IO.File.Delete(realyPath);
                 }
             }
 
             //数据库操作
-            var responseModel = await _newsservice.DeleteOne(id);
+            var responseModel = await _newsService.DeleteOneAsync(newsModel);
 
             return new JsonResult(responseModel);
         }

@@ -20,108 +20,81 @@ namespace Winner.Repository
     public class NewsTypeService : INewsTypeService
     {
         private readonly AccountContext _context;
+        private readonly ILogger _logger;
 
-        public NewsTypeService(AccountContext accountContext)
+        public NewsTypeService(AccountContext accountContext,ILogger<NewsTypeService> logger)
         {
             _context = accountContext;
+            _logger = logger;
         }
-        public async Task<ResponseModel> Add(NewsType newsType)
+        public async Task<int> AddAsync(NewsType newsType)
         {
             _context.NewsType.Add(newsType);
-            int i = await _context.SaveChangesAsync();
-            if (i > 0)
-                return new ResponseModel { code = 200, result = "新闻分类添加成功" };
-            return new ResponseModel { code = 0, result = "新闻分类添加失败" };
+            int result = await _context.SaveChangesAsync();
+            return result;
         }
-        public async Task<ResponseModel> GetOne(int id)
+        public async Task<int> DeleteOneAsync(NewsType newsType)
         {
-            NewsType newstype = await _context.NewsType.FindAsync(id);
-            if (newstype == null)
-                return new ResponseModel { code = 0, result = "新闻类别不存在" };
-            return new ResponseModel { code = 200, result = "新闻类别获取成功", data = newstype };
+            _context.NewsType.Remove(newsType);
+            int result = await _context.SaveChangesAsync();
+            return result;
         }
-        public async Task<ResponseModel> GetList(Expression<Func<NewsType, bool>> where, int topCount)
+        public async Task<int> DeleteListAsync(List<NewsType> list)
         {
-            var list = _context.NewsType.Where(where);
-            var topdata = await list.OrderBy(s => s.sort).Take(topCount).ToListAsync();
+            _context.NewsType.RemoveRange(list);
 
-            var response = new ResponseModel
-            {
-                code = 200,
-                result = "新闻类别获取成功"
-            };
-            //foreach (var newstype in list)
-            //{
-            //    response.data.Add(new NewsType
-            //    {
-            //        id = newstype.id,
-            //        sort = newstype.sort,
-            //        typename = newstype.typename,
-            //        keytitle = newstype.keytitle,
-            //        keywords = newstype.keywords,
-            //        description = newstype.description,
-            //        isshow = newstype.isshow,
-            //        ishead = newstype.ishead
-            //    });
-            //}
-            //return response;//也可以尝试一下下面这种方式是否可以
-            return new ResponseModel { code = 200, result = "新闻类别获取成功", data = topdata };
+            int result = await _context.SaveChangesAsync();
+            return result;
         }
-        public async Task<ResponsePageModel> GetList(int pagesize, int pageindex, List<Expression<Func<NewsType, bool>>> wheres)
+        public async Task<int> EditOneAsync(NewsType newsType)
+        {
+            _context.NewsType.Update(newsType);
+            int result = await _context.SaveChangesAsync();
+            return result;
+        }
+        public async Task<NewsType> GetOneAsync(int id)
+        {
+            NewsType newsType = await _context.NewsType.FindAsync(id);
+            return newsType;
+        }
+        public async Task<List<NewsType>> GetListAsync(List<Expression<Func<NewsType, bool>>> wheres)
         {
             var list = _context.NewsType.Where(s => true);
             foreach (var item in wheres)
             {
                 list = list.Where(item);
             }
-            int total = list.Count();
-
-            var pagedata = await list.OrderBy(s => s.sort).Skip(pagesize * (pageindex - 1)).Take(pagesize).ToListAsync();
-
-            return new ResponsePageModel { code = 200, result = "分页新闻类别获取成功", total = total, data = pagedata };
+            var data = await list.ToListAsync();
+            return data;
         }
-
-        public async Task<ResponseModel> EditOne(NewsType newsType)
+        public async Task<List<NewsType>> GetListAsync(Expression<Func<NewsType, bool>> where, int topCount)
         {
-            NewsType newsTypeEntity = await _context.NewsType.FirstOrDefaultAsync(s => s.id == newsType.id);
-            if (newsTypeEntity == null)
-                return new ResponseModel { code = 0, result = "新闻类别不存在" };
-            newsTypeEntity.sort = newsType.sort;
-            newsTypeEntity.typename = newsType.typename;
-            newsTypeEntity.keytitle = newsType.keytitle;
-            newsTypeEntity.keywords = newsType.keywords;
-            newsTypeEntity.description = newsType.description;
-            newsTypeEntity.isshow = newsType.isshow;
-            newsTypeEntity.ishead = newsType.ishead;
-
-            _context.NewsType.Update(newsTypeEntity);
-            int i = await _context.SaveChangesAsync();
-            if (i > 0)
-                return new ResponseModel { code = 200, result = "新闻类别修改成功" };
-            return new ResponseModel { code = 0, result = "新闻类别修改失败" };
+            var list = _context.NewsType.Where(where);
+            var newsTypeList = await list.OrderBy(s => s.Sort).Take(topCount).ToListAsync();
+            return newsTypeList;
         }
-
-        public async Task<ResponseModel> DeleteOne(int id)
+        public async Task<int> GetCountAsync(List<Expression<Func<NewsType, bool>>> wheres)
         {
-            //这里只用try-catch就可以了。
-            //如果是同时有几个操作数据库的步骤。为了保持数据的完整性，用一个事务括起来。
-
-            try
+            var list = _context.NewsType.Where(s => true);
+            foreach (var item in wheres)
             {
-                NewsType newsType = await _context.NewsType.FindAsync(id);
-                if (newsType == null)
-                    return new ResponseModel { code = 0, result = "新闻类别不存在" };
-                _context.NewsType.Remove(newsType);
-                int i = await _context.SaveChangesAsync();
-                if (i > 0)
-                    return new ResponseModel { code = 200, result = "新闻类别删除成功" };
-                return new ResponseModel { code = 0, result = "新闻类别删除失败" };
-
+                list = list.Where(item);
             }
-            catch (Exception e)
+            int total = await list.CountAsync();
+            return total;
+        }
+        public async Task<List<NewsType>> GetListAsync(int pageSize, int pageIndex, List<Expression<Func<NewsType, bool>>> wheres)
+        {
+            var list = _context.NewsType.Where(s => true);
+            foreach (var item in wheres)
             {
-                return new ResponseModel { code = 400, result = e.Message };
+                list = list.Where(item);
             }
+            //int total = list.Count();
+
+            var pagedata = await list.OrderBy(s => s.Sort).Skip(pageSize * (pageIndex - 1)).Take(pageSize).ToListAsync();
+
+            return pagedata;
         }
     }
 }
