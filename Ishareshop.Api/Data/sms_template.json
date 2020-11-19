@@ -1,0 +1,50 @@
+[
+  {
+    "TencentTemplateId": "618044",
+    "BusinessType": "PUBLISHER_SMS_LIVE_MEET",
+    "BusinessTypeName": "参展商直播通知",
+    "Content": "尊敬的{{EXHIBITOR_NAME}}，您好：您预约的 {{EXHIBITOR_ORG_NAME}}的 {{TOPIC}} 直播即将开始，直播发起方：{{EXHIBITOR_ORG_NAME}}，直播主题：{{TOPIC}}，直播时间：{{LIVE_TIME_SLOTS}}"
+  },
+  {
+    "TencentTemplateId": "618046",
+    "BusinessType": "PURCHASER_SMS_LIVE_MEET",
+    "BusinessTypeName": "采购商直播通知",
+    "Content": "尊敬的{{PURCHASER_NAME}}，您好： 您预约的{{EXHIBITOR_ORG_NAME}}的 {{TOPIC}} 直播即将开始，直播发起方：{{EXHIBITOR_ORG_NAME}}，直播主题：{{TOPIC}}，直播时间：{{LIVE_TIME_SLOTS}}"
+  },
+  {
+    "TencentTemplateId": "618047",
+    "BusinessType": "PUBLISHER_SMS_ACCEPT",
+    "BusinessTypeName": "参展商-洽谈分配成功",
+    "Content": "尊敬的{{EXHIBITOR_NAME}}，您好：{{PURCHASER_ORG_NAME}} 邀请您参加洽谈，洽谈主题：{{TOPIC}}，会议时间：{{CHAT_TIME_SLOTS}}；腾讯会议客户端下载链接：https://meeting.tencent.com/download-center.html?from=1001 ，请密切关注您的日程，准时参加洽谈！"
+  },
+  {
+    "TencentTemplateId": "618048",
+    "BusinessType": "PURCHASER_SMS_ACCEPT",
+    "BusinessTypeName": "采购商-洽谈分配成功",
+    "Content": "尊敬的{{PURCHASER_NAME}}，您好：{{EXHIBITOR_ORG_NAME}} 接受了您发起的预约洽谈，洽谈主题：{{TOPIC}}，会议时间：{{CHAT_TIME_SLOTS}}；腾讯会议客户端下载链接：https://meeting.tencent.com/download-center.html?from=1001 请密切关注您的日程，准时参加洽谈！"
+  },
+  {
+    "TencentTemplateId": "618548",
+    "BusinessType": "PUBLISHER_SMS_WAITACCEPT",
+    "BusinessTypeName": "参展商-有新的预约通知",
+    "Content": "尊敬的{{EXHIBITOR_NAME}}，您好：{{PURCHASER_ORG_NAME}} 向您发起了预约洽谈，请前往云展厅管理-预约洽谈管理查看并处理。"
+  },
+  {
+    "TencentTemplateId": "618550",
+    "BusinessType": "PUBLISHER_SMS_CANCEL",
+    "BusinessTypeName": "参展商-洽谈被取消通知",
+    "Content": "尊敬的{{EXHIBITOR_NAME}}，您好：{{PURCHASER_ORG_NAME}} 取消与您的预约洽谈，请前往云展厅管理-预约洽谈管理查看。"
+  },
+  {
+    "TencentTemplateId": "618552",
+    "BusinessType": "PURCHASER_SMS_CANCEL",
+    "BusinessTypeName": "采购商-洽谈被取消",
+    "Content": "尊敬的{{PURCHASER_NAME}}，您好：您发起的预约洽谈现被取消，请前往采购商工作台-商务洽谈管理查看。"
+  },
+  {
+    "TencentTemplateId": "618555",
+    "BusinessType": "PURCHASER_SMS_REJECT",
+    "BusinessTypeName": "采购商-洽谈被拒绝",
+    "Content": "尊敬的{{PURCHASER_NAME}}，您好：您发起的预约洽谈现被拒绝，请前往采购商工作台-商务洽谈管理查看。"
+  }
+]
