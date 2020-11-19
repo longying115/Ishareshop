@@ -15,7 +15,7 @@ namespace Winner.IRepository
         Task<int> DeleteOneAsync(News news);
         Task<int> DeleteListAsync(List<News> list);
         Task<int> EditOneAsync(News news);
-        Task<News> GetOneAsync(int id);
+        Task<News> GetOneAsync(string id);
         Task<List<News>> GetListAsync(List<Expression<Func<News, bool>>> wheres);
         Task<List<News>> GetListAsync(Expression<Func<News, bool>> where, int topCount);
         Task<int> GetCountAsync(List<Expression<Func<News, bool>>> wheres);

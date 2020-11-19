@@ -24,7 +24,7 @@ namespace Winner.Repository
         public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<AdminLoginLog> AdminLoginLog { get; set; }
         public virtual DbSet<Banner> Banner { get; set; }
-        public virtual DbSet<CashValueLog> CashValueLog { get; set; }
+        public virtual DbSet<CashFlowLog> CashFlowLog { get; set; }
         public virtual DbSet<ColumnType> ColumnType { get; set; }
         public virtual DbSet<Contact> Contact { get; set; }
         public virtual DbSet<Down> Down { get; set; }

@@ -7,14 +7,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Winner.Models
 {
+    /// <summary>
+    /// 这个是测试用得吧
+    /// </summary>
     public class User
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
-        public string role { get; set; }
-        public string url { get; set; }
+        public int Id { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public string Role { get; set; }
+        public string Url { get; set; }
     }
 }

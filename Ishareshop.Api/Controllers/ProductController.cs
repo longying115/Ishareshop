@@ -232,9 +232,10 @@ namespace Ishareshop.Api.Controllers
                 productEntity.Score = product.Score;
                 productEntity.TextContent = product.TextContent;
                 productEntity.Parameter = product.Parameter;
-                productEntity.AddTime = product.AddTime;
+                productEntity.GMTCreate = product.GMTCreate;
+                productEntity.GMTModified = product.GMTModified;
                 productEntity.Hits = product.Hits;
-                productEntity.LastHitTime = product.LastHitTime;
+                productEntity.GMTLastHit = product.GMTLastHit;
                 productEntity.Praise = product.Praise;
 
                 productEntity.IsShow = product.IsShow;

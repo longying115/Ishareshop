@@ -35,6 +35,9 @@ namespace Winner.AdminSystem.Controllers
         [HttpPost]
         public async Task<JsonResult> Add([FromBody] News news, IFormCollection collection)
         {
+            //生成随机得Id号
+            news.Id = Guid.NewGuid().ToString();
+
             if (ModelState.IsValid)
             {
                 if (news.ClassId <= 0 || string.IsNullOrEmpty(news.Title) || string.IsNullOrEmpty(news.TextContent))
@@ -77,9 +80,9 @@ namespace Winner.AdminSystem.Controllers
             }
         }
         [HttpDelete("{id}", Name = "Delete")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(string id)
         {
-            if (id < 1)
+            if (string.IsNullOrWhiteSpace(id))
             {
                 return new JsonResult(new ResponseModel
                 {

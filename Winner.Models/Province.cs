@@ -11,8 +11,18 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int pid { get; set; }
-        public string name { get; set; }
+        public int Id { get; set; }
+        /// <summary>
+        /// 父ID
+        /// </summary>
+        public int ParentId { get; set; }
+        /// <summary>
+        /// 区域名称
+        /// </summary>
+        public string Name { get; set; }
+        /// <summary>
+        /// 区域名称（英文）
+        /// </summary>
+        public string NameEn { get; set; }
     }
 }

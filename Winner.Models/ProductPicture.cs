@@ -11,11 +11,12 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int sort { get; set; }
-        public int colorid { get; set; }
-        public int productid { get; set; }
-        public string picture { get; set; }
+        public int Id { get; set; }
+        public int Sort { get; set; }
+        public int ColorId { get; set; }
+        public int ProductId { get; set; }
+        public string Picture { get; set; }
+
         public virtual Products Products { get; set; }
         public virtual ProductColor ProductColor { get; set; }
     }

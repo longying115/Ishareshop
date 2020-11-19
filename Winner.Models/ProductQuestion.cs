@@ -11,18 +11,36 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int productid { get; set; }
-        public string question { get; set; }
-        private DateTime _questiontime = DateTime.Now;
-        public DateTime questiontime {
-            get { return _questiontime; }
-            set { _questiontime = value; }
+        public int Id { get; set; }
+        /// <summary>
+        /// 产品ID
+        /// </summary>
+        public int ProductId { get; set; }
+        /// <summary>
+        /// 产品问
+        /// </summary>
+        public string Question { get; set; }
+        private DateTime _questionTime = DateTime.Now;
+        public DateTime GMTQuestion {
+            get { return _questionTime; }
+            set { _questionTime = value; }
         }
-        public string answer { get; set; }
-        public string answertime { get; set; }
-        public int praise { get; set; }
-        public bool isshow { get; set; }
+        /// <summary>
+        /// 产品答
+        /// </summary>
+        public string Answer { get; set; }
+        private DateTime _answerTime = DateTime.Now;
+        /// <summary>
+        /// 回答时间
+        /// </summary>
+        public DateTime Answertime 
+        { 
+            get { return _answerTime; }
+            set { _answerTime = value; }
+        }
+        public int Praise { get; set; }
+        public bool Isshow { get; set; }
+
         public virtual Products Products { get; set; }
     }
 }

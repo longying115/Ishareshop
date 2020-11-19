@@ -30,7 +30,7 @@ namespace Winner.Repository
         {
             var Md5Pwd = Winner.Extends.ExtentionsClass.GetMd5Hash(password.Trim());
             //var user = await _context.User.SingleOrDefaultAsync(s=>s.username.Equals(name.Trim(),StringComparison.CurrentCultureIgnoreCase) && s.password.Equals(Md5Pwd));
-            var user = await _context.User.FirstOrDefaultAsync(s => s.username.Equals(name) && s.password.Equals(Md5Pwd));
+            var user = await _context.User.FirstOrDefaultAsync(s => s.UserName.Equals(name) && s.Password.Equals(Md5Pwd));
 
             if (user!=null)
             {

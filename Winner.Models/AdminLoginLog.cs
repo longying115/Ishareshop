@@ -10,10 +10,17 @@ namespace Winner.Models
     public class AdminLoginLog
     {
         [Key]
-        public int adminid { get; set; }
-        public string ips { get; set; }
-        public DateTime addtime { get; set; }
-        public string remark { get; set; }
+        public string Id { get; set; }
+        public string AdminId { get; set; }
+        public string Ips { get; set; }
+        public string Remark { get; set; }
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
+        {
+            get { return _createTime; }
+            set { _createTime = value; }
+        }
+
 
         public virtual Admin Admin { get; set; }
     }

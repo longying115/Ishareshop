@@ -149,8 +149,8 @@ namespace Ishareshop.Api.Controllers
                 newsTypeEntity.Description = newsType.Description;
                 newsTypeEntity.SmallPicture = newsType.SmallPicture;
                 newsTypeEntity.PictureTag = newsType.PictureTag;
-                newsTypeEntity.AddTime = newsType.AddTime;
-                newsTypeEntity.LastHitTime = newsType.LastHitTime;
+                newsTypeEntity.GMTCreate = newsType.GMTCreate;
+                newsTypeEntity.GMTLastHit = newsType.GMTLastHit;
                 newsTypeEntity.IsShow = newsType.IsShow;
                 newsTypeEntity.IsHead = newsType.IsHead;
 

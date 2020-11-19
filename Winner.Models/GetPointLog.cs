@@ -10,12 +10,33 @@ namespace Winner.Models
     public class GetPointLog
     {
         [Key]
-        public int uid { get; set; }
-        public int getxinpoint { get; set; }
-        public string remark { get; set; }
-        public DateTime addtime { get; set; }
-        public string ordernum { get; set; }
-        public Decimal allmoney { get; set; }
+        public string Id { get; set; }
+        /// <summary>
+        /// 用户ID
+        /// </summary>
+        public int MemberId { get; set; }
+        /// <summary>
+        /// 积分
+        /// </summary>
+        public int Score { get; set; }
+        /// <summary>
+        /// 备注说明
+        /// </summary>
+        public string Remark { get; set; }
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
+        {
+            get { return _createTime; }
+            set { _createTime = value; }
+        }
+        /// <summary>
+        /// 订单号
+        /// </summary>
+        public string OrderNum { get; set; }
+        /// <summary>
+        /// 所有金额
+        /// </summary>
+        public Decimal AllMoney { get; set; }
 
         public virtual Member Member { get; set; }
     }

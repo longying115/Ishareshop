@@ -11,15 +11,20 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int buyuid { get; set; }
-        public int productid { get; set; }
-        public string productname { get; set; }
-        public string productcolor { get; set; }
-        public decimal productprice { get; set; }
-        public int productcount { get; set; }
-        public DateTime addtime { get; set; }
-        public string area { get; set; }
+        public int Id { get; set; }
+        public int BuyerId { get; set; }
+        public int ProductId { get; set; }
+        public string ProductName { get; set; }
+        public string ProductColor { get; set; }
+        public decimal ProductPrice { get; set; }
+        public int ProductCount { get; set; }
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
+        {
+            get { return _createTime; }
+            set { _createTime = value; }
+        }
+        public string Area { get; set; }
 
         public virtual Member Member { get; set; }
     }

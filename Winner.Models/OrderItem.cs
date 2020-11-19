@@ -10,44 +10,44 @@ namespace Winner.Models
     public class OrderItem
     {
         [Key]
-        public int orderid { get; set; }
-        public string ordernum { get; set; }
+        public string Id { get; set; }
+        public string OrderCode { get; set; }
         /// <summary>
         /// 产品ID
         /// </summary>
-        public int productid { get; set; }
+        public int ProductId { get; set; }
         /// <summary>
         /// 产品名称
         /// </summary>
-        public string productname { get; set; }
+        public string ProductName { get; set; }
         /// <summary>
         /// 产品分类
         /// </summary>
-        public string producttype { get; set; }
+        public string ProductType { get; set; }
         /// <summary>
         /// 选择的产品颜色id
         /// </summary>
-        public int colorid { get; set; }
+        public int ColorId { get; set; }
         /// <summary>
         /// 选择的产品颜色
         /// </summary>
-        public string productcolor { get; set; }
+        public string ProductColor { get; set; }
         /// <summary>
         /// 选择的产品的单价
         /// </summary>
-        public Decimal productprice { get; set; }
+        public Decimal ProductPrice { get; set; }
         /// <summary>
         /// 选择的产品的购买数量
         /// </summary>
-        public int productcount { get; set; }
-        private DateTime _addtime = DateTime.Now;
-        public DateTime addtime
+        public int ProductCount { get; set; }
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
         {
-            get { return _addtime; }
-            set { _addtime = value; }
+            get { return _createTime; }
+            set { _createTime = value; }
         }
-        public bool iscomment { get; set; }
-        public int commentid { get; set; }
+        public bool IsComment { get; set; }
+        public int CommentId { get; set; }
 
         public virtual Order Order { get; set; }
     }

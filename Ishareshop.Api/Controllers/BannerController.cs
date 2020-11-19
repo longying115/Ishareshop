@@ -54,7 +54,7 @@ namespace Ishareshop.Api.Controllers
         [Authorize]
         public async Task<JsonResult> GetList(int area, int topCount)
         {
-            var responseModel = await _bannerservice.GetList(c => c.columnarea == area, topCount);
+            var responseModel = await _bannerservice.GetList(c => c.ColumnArea == area, topCount);
 
             return new JsonResult(responseModel);
         }
@@ -82,10 +82,10 @@ namespace Ishareshop.Api.Controllers
             List<Expression<Func<Banner, bool>>> wheres = new List<Expression<Func<Banner, bool>>>();
 
             if (area > 0)
-                wheres.Add(s => s.columnarea == area);
+                wheres.Add(s => s.ColumnArea == area);
 
             if (!string.IsNullOrEmpty(keyword))
-                wheres.Add(s => s.bannername.Contains(keyword));
+                wheres.Add(s => s.BannerName.Contains(keyword));
 
             
             var responsePageModel = await _bannerservice.GetList(pagesize, pageindex, wheres);

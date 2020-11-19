@@ -122,7 +122,7 @@ namespace Winner.Repository
         public async Task<List<Products>> GetListAsync(Expression<Func<Products, bool>> where, int topCount)
         {
             var list = _context.Products.Where(where);
-            var newslist = await list.OrderByDescending(s => s.AddTime).Take(topCount).ToListAsync();
+            var newslist = await list.OrderByDescending(s => s.GMTCreate).Take(topCount).ToListAsync();
 
             return newslist;
         }
@@ -143,7 +143,7 @@ namespace Winner.Repository
             {
                 list = list.Where(item);
             }
-            var pageData = await list.OrderByDescending(s => s.AddTime).Skip(pageSize * (pageIndex - 1)).Take(pageSize).ToListAsync();
+            var pageData = await list.OrderByDescending(s => s.GMTCreate).Skip(pageSize * (pageIndex - 1)).Take(pageSize).ToListAsync();
 
             return pageData;
         }

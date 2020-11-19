@@ -58,9 +58,9 @@ namespace Ishareshop.Api.Controllers
             var claims = new Claim[]
             {
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim("id", user.id.ToString(), ClaimValueTypes.Integer32),
-                new Claim("name", user.username),
-                new Claim("role", user.role),
+                new Claim("id", user.Id.ToString(), ClaimValueTypes.Integer32),
+                new Claim("name", user.UserName),
+                new Claim("role", user.Role),
                 //new Claim("admin", user.IsAdmin.ToString(),ClaimValueTypes.Boolean)
             };
 

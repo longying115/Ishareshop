@@ -31,9 +31,9 @@ namespace Ishareshop.Api.Controllers
         /// <returns></returns>
         [HttpGet]
         [Authorize]
-        public async Task<ResponseModel> GetOne(int id)
+        public async Task<ResponseModel> GetOne(string id)
         {
-            if (id > 0)
+            if (!string.IsNullOrWhiteSpace(id))
             {
                 var news = await _newsService.GetOneAsync(id);
 
@@ -157,6 +157,8 @@ namespace Ishareshop.Api.Controllers
         [Authorize]
         public async Task<ResponseModel> Add([FromBody] News news)
         {
+            //生成随机得Id号
+            news.Id = Guid.NewGuid().ToString();
             if (ModelState.IsValid)
             {
                 //var files = collection.Files;
@@ -232,9 +234,9 @@ namespace Ishareshop.Api.Controllers
                 newsEntity.Source = news.Source;
                 newsEntity.SmallPicture = news.SmallPicture;
                 newsEntity.PictureTag = news.PictureTag;
-                newsEntity.AddTime = news.AddTime;
+                newsEntity.GMTCreate = news.GMTCreate;
                 newsEntity.Hits = news.Hits;
-                newsEntity.LastHitTime = news.LastHitTime;
+                newsEntity.GMTLastHit = news.GMTLastHit;
                 newsEntity.Praise = news.Praise;
                 newsEntity.TextContent = news.TextContent;
                 newsEntity.IsShow = news.IsShow;
@@ -274,9 +276,9 @@ namespace Ishareshop.Api.Controllers
         /// <returns></returns>
         [HttpDelete]
         [Authorize]
-        public async Task<ResponseModel> Delete(int id)
+        public async Task<ResponseModel> Delete(string id)
         {
-            if (id < 1)
+            if (string.IsNullOrWhiteSpace(id))
             {
                 return new ResponseModel
                 {
@@ -314,7 +316,7 @@ namespace Ishareshop.Api.Controllers
         /// </summary>
         /// <param name="ids"></param>
         /// <returns></returns>
-        public async Task<ResponseModel> DeleteMany(int[] ids)
+        public async Task<ResponseModel> DeleteMany(string[] ids)
         {
             try
             {

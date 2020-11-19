@@ -11,62 +11,68 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
-        public string passstring { get; set; }
-        public string nickname { get; set; }
-        public string qqcode { get; set; }
-        public string weixincode { get; set; }
-        public string weibocode { get; set; }
-        public string userpicture { get; set; }
-        public bool ispass { get; set; }
-        public Decimal account { get; set; }
-        public Decimal allbrokerage { get; set; }
-        public int xinpoint { get; set; }
-        public int memberlevel { get; set; }
-        private DateTime _addtime = DateTime.Now;
-        public DateTime addtime
+        public int Id { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public string PassString { get; set; }
+        public string NickName { get; set; }
+        public string QQCode { get; set; }
+        public string WeChatCode { get; set; }
+        public string WeiboCode { get; set; }
+        public string UserPicture { get; set; }
+        public bool IsPass { get; set; }
+        public Decimal Account { get; set; }
+        public Decimal Allbrokerage { get; set; }
+        public int Score { get; set; }
+        public int MemberLevel { get; set; }
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
         {
-            get { return _addtime; }
-            set { _addtime = value; }
+            get { return _createTime; }
+            set { _createTime = value; }
         }
-        private DateTime _lastlogintime = DateTime.Now;
-        public DateTime lastlogintime
+        private DateTime _modifiedTime = DateTime.Now;
+        public DateTime GMTModified
         {
-            get { return _lastlogintime; }
-            set { _lastlogintime = value; }
+            get { return _modifiedTime; }
+            set { _modifiedTime = value; }
         }
-        public string lastloginip { get; set; }
+        private DateTime _lastLoginTime = DateTime.Now;
+        public DateTime GMTLastLogin
+        {
+            get { return _lastLoginTime; }
+            set { _lastLoginTime = value; }
+        }
+        public string LastLoginIp { get; set; }
         private int _sex = 0;
-        public int sex
+        public int Sex
         {
             get { return _sex; }
             set { _sex = value; }
         }
-        public string birthday { get; set; }
-        public string phone { get; set; }
-        public string telephone { get; set; }
-        public string fax { get; set; }
-        public string email { get; set; }
-        public string post { get; set; }
-        public string area { get; set; }
-        public string address { get; set; }
-        public string industry { get; set; }
-        public int parentid { get; set; }
-        public bool status { get; set; }
-        public string question1 { get; set; }
-        public string question2 { get; set; }
-        public string question3 { get; set; }
-        public string question4 { get; set; }
-        public string answer1 { get; set; }
-        public string answer2 { get; set; }
-        public string answer3 { get; set; }
-        public string answer4 { get; set; }
+        public string Birthday { get; set; }
+        public string Phone { get; set; }
+        public string Telephone { get; set; }
+        public string Fax { get; set; }
+        public string Email { get; set; }
+        public string Post { get; set; }
+        public string Area { get; set; }
+        public string Address { get; set; }
+        public string Industry { get; set; }
+        public int ParentId { get; set; }
+        public bool Status { get; set; }
+        public string Question1 { get; set; }
+        public string Question2 { get; set; }
+        public string Question3 { get; set; }
+        public string Question4 { get; set; }
+        public string Answer1 { get; set; }
+        public string Answer2 { get; set; }
+        public string Answer3 { get; set; }
+        public string Answer4 { get; set; }
 
         public virtual ICollection<GetPointLog> GetPointLog { get; set; }
         public virtual ICollection<GetMoneyLog> GetMoneyLog { get; set; }
-        public virtual ICollection<CashValueLog> CashValueLog { get; set; }
+        public virtual ICollection<CashFlowLog> CashFlowLog { get; set; }
         public virtual ICollection<MemberLog> MemberLog { get; set; }
 
         public virtual ICollection<Favorites> Favorites { get; set; }

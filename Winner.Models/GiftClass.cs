@@ -11,16 +11,16 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int pid { get; set; }
-        public int sort { get; set; }
-        public string classname { get; set; }
-        public string classremark { get; set; }
-        public string keytitle { get; set; }
-        public string keywords { get; set; }
-        public string keydescription { get; set; }
-        public string smallpicture { get; set; }
-        public bool isshow { get; set; }
+        public int Id { get; set; }
+        public int ParentId { get; set; }
+        public int Sort { get; set; }
+        public string ClassName { get; set; }
+        public string Remark { get; set; }
+        public string KeyTitle { get; set; }
+        public string Keywords { get; set; }
+        public string Description { get; set; }
+        public string SmallPicture { get; set; }
+        public bool IsShow { get; set; }
 
         public virtual ICollection<Gifts> Gifts { get; set; }
     }

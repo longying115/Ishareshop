@@ -11,18 +11,21 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public string columnname { get; set; }
-        public string banner { get; set; }
-        public string bannerbg { get; set; }
-        public string keytitle { get; set; }
-        public string keywords { get; set; }
-        public string description { get; set; }
-        public int columnlevel { get; set; }
-        public int columntype { get; set; }
-        public int pernode { get; set; }
-        public int sort { get; set; }
-        public string linkurl { get; set; }
+        public int Id { get; set; }
+        public string ColumnName { get; set; }
+        public string Banner { get; set; }
+        public string Bannerbg { get; set; }
+        public string KeyTitle { get; set; }
+        public string Keywords { get; set; }
+        public string Description { get; set; }
+        public int ColumnLevel { get; set; }
+        /// <summary>
+        /// 栏目类型ID
+        /// </summary>
+        public int ColumnTypeId { get; set; }
+        public int Pernode { get; set; }
+        public int Sort { get; set; }
+        public string Linkurl { get; set; }
 
         public virtual ColumnType ColumnType { get; set; }
         public virtual ICollection<Down> Down { get; set; }

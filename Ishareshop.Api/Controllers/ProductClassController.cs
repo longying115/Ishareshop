@@ -151,8 +151,9 @@ namespace Ishareshop.Api.Controllers
                 productClassEntity.Description = productClass.Description;
                 productClassEntity.SmallPicture = productClass.SmallPicture;
                 productClassEntity.PictureTag = productClass.PictureTag;
-                productClassEntity.AddTime = productClass.AddTime;
-                productClassEntity.LastHitTime = productClass.LastHitTime;
+                productClassEntity.GMTCreate = productClass.GMTCreate;
+                productClassEntity.GMTModified = productClass.GMTModified;
+                productClassEntity.GMTLastHit = productClass.GMTLastHit;
                 productClassEntity.IsShow = productClass.IsShow;
                 productClassEntity.IsHead = productClass.IsHead;
 

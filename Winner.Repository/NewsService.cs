@@ -51,7 +51,7 @@ namespace Winner.Repository
             int result = await _context.SaveChangesAsync();
             return result;
         }
-        public async Task<News> GetOneAsync(int id)
+        public async Task<News> GetOneAsync(string id)
         {
             News news = await _context.News.FindAsync(id);
             return news;
@@ -69,7 +69,7 @@ namespace Winner.Repository
         public async Task<List<News>> GetListAsync(Expression<Func<News, bool>> where, int topCount)
         {
             var list = _context.News.Where(where);
-            var newsList = await list.OrderByDescending(s => s.AddTime).Take(topCount).ToListAsync();
+            var newsList = await list.OrderByDescending(s => s.GMTCreate).Take(topCount).ToListAsync();
 
             return newsList;
         }
@@ -92,7 +92,7 @@ namespace Winner.Repository
             }
             //int total = list.Count();
 
-            var pageData = await list.OrderByDescending(s => s.AddTime).Skip(pageSize * (pageIndex - 1)).Take(pageSize).ToListAsync();
+            var pageData = await list.OrderByDescending(s => s.GMTCreate).Skip(pageSize * (pageIndex - 1)).Take(pageSize).ToListAsync();
 
             return pageData;
         }

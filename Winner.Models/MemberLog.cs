@@ -10,11 +10,29 @@ namespace Winner.Models
     public class MemberLog
     {
         [Key]
-        public int memberid { get; set; }
-        public int usetype { get; set; }
-        public string ips { get; set; }
-        public DateTime addtime { get; set; }
-        public string remark { get; set; }
+        public int Id { get; set; }
+        /// <summary>
+        /// 会员ID
+        /// </summary>
+        public int MemberId { get; set; }
+        /// <summary>
+        /// 使用类型，枚举
+        /// </summary>
+        public int Usetype { get; set; }
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        public string Ips { get; set; }
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
+        {
+            get { return _createTime; }
+            set { _createTime = value; }
+        }
+        /// <summary>
+        /// 备注说明
+        /// </summary>
+        public string Remark { get; set; }
 
         public virtual Member Member { get; set; }
     }

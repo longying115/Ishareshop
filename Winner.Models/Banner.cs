@@ -11,16 +11,29 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int sort { get; set; }
-        public string bannername { get; set; }
-        public string smallpicture { get; set; }
-        public string bigpicture { get; set; }
-        public string linkurl { get; set; }
-        public int columnarea { get; set; }//枚举，1代表首页，2代表列表页，3代表详情页。。。。
-        public bool issmallpicture { get; set; }
-        public bool isbigpicture { get; set; }
-        public bool isshow { get; set; }
-        public bool ismobile { get; set; }
+        public int Id { get; set; }
+        public int Sort { get; set; }
+        public string BannerName { get; set; }
+        public string Picture { get; set; }
+        public string BackgroundImg { get; set; }
+        public string LinkUrl { get; set; }
+        public int ColumnArea { get; set; }//枚举，1代表首页，2代表列表页，3代表详情页。。。。
+        public bool IsShow { get; set; }
+        public bool IsMobile { get; set; }
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
+        {
+            get { return _createTime; }
+            set { _createTime = value; }
+        }
+        public int CreateAdminId { get; set; }
+        private DateTime _modifiedTime = DateTime.Now;
+        public DateTime GMTModified
+        {
+            get { return _modifiedTime; }
+            set { _modifiedTime = value; }
+        }
+        public int ModifiedAdminId { get; set; }
+        public string ModifiedIp { get; set; }
     }
 }

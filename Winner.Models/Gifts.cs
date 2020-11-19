@@ -11,58 +11,57 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int classid { get; set; }
+        public int Id { get; set; }
+        public int ClassId { get; set; }
         private int _sort = 0;
-        public int sort
+        public int Sort
         {
             get { return _sort; }
             set { _sort = value; }
         }
-        public string title { get; set; }
-        public string smalltitle { get; set; }
-        public string remark { get; set; }
-        public Decimal price { get; set; }
-        public string keytitle { get; set; }
-        public string keywords { get; set; }
-        public string keydescription { get; set; }
-        public string smallpicture { get; set; }
-        public string bigpicture { get; set; }
+        public string Title { get; set; }
+        public string SmallTitle { get; set; }
+        public string Remark { get; set; }
+        public Decimal Price { get; set; }
+        public string KeyTitle { get; set; }
+        public string Keywords { get; set; }
+        public string Description { get; set; }
+        public string SmallPicture { get; set; }
+        public string Bigpicture { get; set; }
         private int _sales = 0;
-        public int sales
+        public int Sales
         {
             get { return _sales; }
             set { _sales = value; }
         }
-        private int _xinpoint = 0;
-        public int xinpoint
+        private int _score = 0;
+        public int Score
         {
-            get { return _xinpoint; }
-            set { _xinpoint = value; }
+            get { return _score; }
+            set { _score = value; }
         }
-        public string textcontent { get; set; }
-        public string parameter { get; set; }
-        private DateTime _addtime = DateTime.Now;
-        public DateTime addtime
+        public string TextContent { get; set; }
+        public string Parameter { get; set; }
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
         {
-            get { return _addtime; }
-            set { _addtime = value; }
+            get { return _createTime; }
+            set { _createTime = value; }
         }
         private int _hits = 0;
-        public int hits
+        public int Hits
         {
             get { return _hits; }
             set { _hits = value; }
         }
-        public DateTime _hitstime = DateTime.Now;
-        public DateTime hitstime
+        public DateTime _hitTime = DateTime.Now;
+        public DateTime GMTHit
         {
-            get { return _hitstime; }
-            set { _hitstime = value; }
+            get { return _hitTime; }
+            set { _hitTime = value; }
         }
-        public bool isshow { get; set; }
-        public bool ishome { get; set; }
-        public bool ispicture { get; set; }
+        public bool IsShow { get; set; }
+        public bool IsHome { get; set; }
 
         public virtual GiftClass GiftClass { get; set; }
         public virtual ICollection<GiftPicture> GiftPicture { get; set; }

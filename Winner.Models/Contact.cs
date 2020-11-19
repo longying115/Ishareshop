@@ -11,12 +11,12 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int sort { get; set; }
-        public string contactname { get; set; }
-        public string telephone { get; set; }
-        public string email { get; set; }
-        public string tencent { get; set; }
-        public bool isshow { get; set; }
+        public int Id { get; set; }
+        public int Sort { get; set; }
+        public string ContactName { get; set; }
+        public string Telephone { get; set; }
+        public string Email { get; set; }
+        public string Tencent { get; set; }
+        public bool IsShow { get; set; }
     }
 }

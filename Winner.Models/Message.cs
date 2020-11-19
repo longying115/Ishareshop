@@ -11,27 +11,28 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int tid { get; set; }
-        public string mesname { get; set; }
-        public string mesaddress { get; set; }
-        public string mesphone { get; set; }
-        public string mesmail { get; set; }
-        public string mestitle { get; set; }
-        public string mescontent { get; set; }
-        private DateTime _addtime = DateTime.Now;
-        public DateTime addtime {
-            get { return _addtime; }
-            set { _addtime = value; }
+        public int Id { get; set; }
+        public int ColumnId { get; set; }
+        public string MsgName { get; set; }
+        public string MsgAddress { get; set; }
+        public string MsgPhone { get; set; }
+        public string MsgEmail { get; set; }
+        public string MsgTitle { get; set; }
+        public string MsgContent { get; set; }
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
+        {
+            get { return _createTime; }
+            set { _createTime = value; }
         }
-        public string backcontent { get; set; }
-        private DateTime _backtime = DateTime.Now;
-        public DateTime backtime {
-            get { return _backtime; }
-            set { _backtime = value; }
+        public string BackContent { get; set; }
+        private DateTime _backTime = DateTime.Now;
+        public DateTime GMTBack {
+            get { return _backTime; }
+            set { _backTime = value; }
         }
-        public bool isback { get; set; }
-        public bool isshow { get; set; }
+        public bool IsBack { get; set; }
+        public bool IsShow { get; set; }
 
         public virtual WebColumn WebColumn { get; set; }
     }

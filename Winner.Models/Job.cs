@@ -11,21 +11,37 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int tid { get; set; }
-        public int sort { get; set; }
-        public string title { get; set; }
-        public string keytitle { get; set; }
-        public string keywords { get; set; }
-        public string keydescription { get; set; }
-        public DateTime jobbegindate { get; set; }
-        public DateTime jobenddate { get; set; }
-        public string jobcount { get; set; }
-        public string jobmoney { get; set; }
-        public string jobcondition { get; set; }
-        public string jobduty { get; set; }
-        public bool isshow { get; set; }
-        public bool ishead { get; set; }
+        public int Id { get; set; }
+        public int ColumnId { get; set; }
+        public int Sort { get; set; }
+        public string Title { get; set; }
+        public string KeyTitle { get; set; }
+        public string Keywords { get; set; }
+        public string Description { get; set; }
+        public DateTime BeginDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public string Count { get; set; }
+        public string Money { get; set; }
+        public string Condition { get; set; }
+        public string Duty { get; set; }
+        public bool IsShow { get; set; }
+        public bool IsHead { get; set; }
+
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
+        {
+            get { return _createTime; }
+            set { _createTime = value; }
+        }
+        public int CreateAdminId { get; set; }
+        private DateTime _modifiedTime = DateTime.Now;
+        public DateTime GMTModified
+        {
+            get { return _modifiedTime; }
+            set { _modifiedTime = value; }
+        }
+        public int ModifiedAdminId { get; set; }
+        public string ModifiedIp { get; set; }
 
         public virtual WebColumn WebColumn { get; set; }
     }

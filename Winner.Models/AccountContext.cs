@@ -15,7 +15,7 @@ namespace Winner.Models
         public DbSet<Admin> Admin { get; set; }
         public DbSet<AdminLoginLog> AdminLoginLog { get; set; }
         public DbSet<Banner> Banner { get; set; }
-        public DbSet<CashValueLog> CashValueLog { get; set; }
+        public DbSet<CashFlowLog> CashFlowLog { get; set; }
         public DbSet<ColumnType> ColumnType { get; set; }
         public DbSet<Contact> Contact { get; set; }
         public DbSet<Down> Down { get; set; }
@@ -62,24 +62,122 @@ namespace Winner.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Admin>().ToTable("T_Admin");
+            //modelBuilder.Entity<Admin>().ToTable("T_Admin");
+            modelBuilder.Entity<Admin>(entity=>
+            {
+                entity.ToTable("T_Admin");
+
+                entity.Property(e=>e.Id)
+                .HasColumnName("id")
+                .HasColumnType("int");
+
+                entity.Property(e => e.UserName)
+               .HasColumnName("user_name")
+               .HasColumnType("varchar(50)");
+
+                entity.Property(e => e.PassString)
+               .HasColumnName("pass_string")
+               .HasColumnType("varchar(50)");
+
+                entity.Property(e => e.Password)
+               .HasColumnName("password")
+               .HasColumnType("varchar(500)");
+
+                entity.Property(e => e.NickName)
+               .HasColumnName("nick_name")
+               .HasColumnType("varchar(50)");
+
+                entity.Property(e => e.Telephone)
+               .HasColumnName("telephone")
+               .HasColumnType("varchar(50)");
+
+                entity.Property(e => e.QQNumber)
+               .HasColumnName("qq_number")
+               .HasColumnType("varchar(50)");
+
+                entity.Property(e => e.WeChat)
+               .HasColumnName("wechat")
+               .HasColumnType("varchar(50)");
+
+                entity.Property(e => e.Power)
+               .HasColumnName("power")
+               .HasColumnType("int");
+
+                entity.Property(e => e.Flag)
+               .HasColumnName("flag")
+               .HasColumnType("varchar(50)");
+
+                entity.Property(e => e.IsAdd)
+               .HasColumnName("is_add")
+               .HasColumnType("bit");
+
+                entity.Property(e => e.IsDeleted)
+               .HasColumnName("is_deleted")
+               .HasColumnType("bit");
+
+                entity.Property(e => e.IsEdit)
+               .HasColumnName("is_edit")
+               .HasColumnType("bit");
+
+                entity.Property(e => e.Status)
+               .HasColumnName("is_status")
+               .HasColumnType("bit");
+
+                entity.Property(e => e.GMTCreate)
+               .HasColumnName("gmt_create")
+               .HasColumnType("datetime");
+
+                entity.Property(e => e.GMTModified)
+               .HasColumnName("gmt_modified")
+               .HasColumnType("datetime");
+
+                entity.Property(e => e.GMTLastLogin)
+               .HasColumnName("gmt_last_login")
+               .HasColumnType("datetime");
+
+                entity.Property(e => e.LastLoginIp)
+              .HasColumnName("last_login_ip")
+              .HasColumnType("varchar(50)");
+
+            });
             modelBuilder.Entity<AdminLoginLog>(entity =>
             {
                 entity.ToTable("T_AdminLoginLog");
 
                 entity.HasOne(d => d.Admin)
                 .WithMany(p => p.AdminLoginLog)
-                .HasForeignKey(d => d.adminid)
+                .HasForeignKey(d => d.AdminId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_AdminLoginLog_To_Admin");
+
+                entity.Property(e=>e.Id)
+                .HasColumnName("id")
+                .HasColumnType("varchar(50)");
+
+                entity.Property(e => e.AdminId)
+                .HasColumnName("admin_id")
+                .HasColumnType("varchar(50)");
+
+                entity.Property(e => e.Ips)
+                .HasColumnName("ips")
+                .HasColumnType("varchar(50)");
+
+                entity.Property(e => e.GMTCreate)
+                .HasColumnName("gmt_create")
+                .HasColumnType("datetime");
+
+                entity.Property(e => e.Remark)
+                .HasColumnName("remark")
+                .HasColumnType("varchar(500)");
+
             });
             modelBuilder.Entity<Banner>().ToTable("T_Banner");
-            modelBuilder.Entity<CashValueLog>(entity =>
+            modelBuilder.Entity<CashFlowLog>(entity =>
             {
-                entity.ToTable("T_CashValueLog");
+                entity.ToTable("T_CashFlowLog");
 
                 entity.HasOne(d => d.Member)
-                .WithMany(p => p.CashValueLog)
+                .WithMany(p => p.CashFlowLog)
                 .HasForeignKey(d => d.Uid)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_CashValueLog_To_Member");
@@ -92,7 +190,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.WebColumn)
                 .WithMany(p => p.Down)
-                .HasForeignKey(d => d.tid)
+                .HasForeignKey(d => d.ColumnId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_Down_To_WebColumn");
             });
@@ -103,13 +201,13 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.Member)
                 .WithMany(p => p.Favorites)
-                .HasForeignKey(d => d.uid)
+                .HasForeignKey(d => d.MemberId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_Favorites_To_Member");
 
                 entity.HasOne(d => d.Products)
                 .WithMany(p => p.Favorites)
-                .HasForeignKey(d => d.productid)
+                .HasForeignKey(d => d.ProductId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_Favorites_To_Products");
             });
@@ -119,7 +217,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.Member)
                 .WithMany(p => p.GetMoneyLog)
-                .HasForeignKey(d => d.uid)
+                .HasForeignKey(d => d.MemberId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_GetMoneyLog_To_Member");
             });
@@ -129,7 +227,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.Member)
                 .WithMany(p => p.GetPointLog)
-                .HasForeignKey(d => d.uid)
+                .HasForeignKey(d => d.MemberId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_GetPointLog_To_Member");
             });
@@ -139,7 +237,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.GiftClass)
                 .WithMany(p => p.Gifts)
-                .HasForeignKey(d => d.classid)
+                .HasForeignKey(d => d.ClassId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_Gifts_To_GiftClass");
             });
@@ -150,7 +248,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.Gifts)
                 .WithMany(p => p.GiftPicture)
-                .HasForeignKey(d => d.giftid)
+                .HasForeignKey(d => d.GifClassId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_GiftPicture_To_Gifts");
             });
@@ -160,7 +258,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.WebColumn)
                 .WithMany(p => p.Job)
-                .HasForeignKey(d => d.tid)
+                .HasForeignKey(d => d.ColumnId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_Job_To_WebColumn");
             });
@@ -172,7 +270,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.Member)
                 .WithMany(p => p.MemberLog)
-                .HasForeignKey(d => d.memberid)
+                .HasForeignKey(d => d.MemberId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_MemberLog_To_Member");
             });
@@ -182,7 +280,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.WebColumn)
                 .WithMany(p => p.Message)
-                .HasForeignKey(d => d.tid)
+                .HasForeignKey(d => d.ColumnId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_Message_To_WebColumn");
             });
@@ -204,7 +302,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.WebColumn)
                 .WithMany(p => p.OnlyText)
-                .HasForeignKey(d => d.tid)
+                .HasForeignKey(d => d.ColumnId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_OnlyText_To_WebColumn");
             });
@@ -214,13 +312,13 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.Member)
                 .WithMany(p => p.Order)
-                .HasForeignKey(d => d.buyuid)
+                .HasForeignKey(d => d.BuyerId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_Order_To_Member");
 
                 entity.HasOne(d => d.Express)
                 .WithMany(p => p.Order)
-                .HasForeignKey(d => d.expresstype)
+                .HasForeignKey(d => d.ExpressType)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_Order_To_Express");
             });
@@ -230,7 +328,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.Order)
                 .WithMany(p => p.OrderItem)
-                .HasForeignKey(d => d.ordernum)
+                .HasForeignKey(d => d.OrderCode)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_OrderItem_To_Order");
             });
@@ -242,7 +340,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.WebColumn)
                 .WithMany(p => p.Picture)
-                .HasForeignKey(d => d.tid)
+                .HasForeignKey(d => d.ColumnId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_Picture_To_WebColumn");
             });
@@ -253,7 +351,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.Products)
                 .WithMany(p => p.ProductColor)
-                .HasForeignKey(d => d.productid)
+                .HasForeignKey(d => d.ProductId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_ProductColor_To_Products");
             });
@@ -263,13 +361,13 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.Products)
                 .WithMany(p => p.ProductDiscuss)
-                .HasForeignKey(d => d.productid)
+                .HasForeignKey(d => d.ProductId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_ProductDiscuss_To_Products");
 
                 entity.HasOne(d => d.Member)
                 .WithMany(p => p.ProductDiscuss)
-                .HasForeignKey(d => d.memberid)
+                .HasForeignKey(d => d.MemberId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_ProductDiscuss_To_Member");
             });
@@ -279,13 +377,13 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.ProductColor)
                 .WithMany(p => p.ProductPicture)
-                .HasForeignKey(d => d.colorid)
+                .HasForeignKey(d => d.ColorId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_ProductPicture_To_ProductColor");
 
                 entity.HasOne(d => d.Products)
                 .WithMany(p => p.ProductPicture)
-                .HasForeignKey(d => d.productid)
+                .HasForeignKey(d => d.ProductId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_ProductPicture_To_Products");
             });
@@ -296,7 +394,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.Products)
                 .WithMany(p => p.ProductQuestion)
-                .HasForeignKey(d => d.productid)
+                .HasForeignKey(d => d.ProductId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_ProductQuestion_To_Products");
             });
@@ -318,7 +416,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.Member)
                 .WithMany(p => p.ShippingAddress)
-                .HasForeignKey(d => d.uid)
+                .HasForeignKey(d => d.MemberId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_ShippingAddress_To_Member");
             });
@@ -328,7 +426,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.Member)
                 .WithMany(p => p.ShopCart)
-                .HasForeignKey(d => d.buyuid)
+                .HasForeignKey(d => d.BuyerId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_ShopCart_To_Member");
             });
@@ -339,7 +437,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.WebColumn)
                 .WithMany(p => p.Texts)
-                .HasForeignKey(d => d.tid)
+                .HasForeignKey(d => d.ColumnId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_Texts_To_WebColumn");
             });
@@ -349,7 +447,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.WebColumn)
                 .WithMany(p => p.Video)
-                .HasForeignKey(d => d.tid)
+                .HasForeignKey(d => d.ColumnId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_Video_To_WebColumn");
             });
@@ -359,7 +457,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.ColumnType)
                 .WithMany(p => p.WebColumn)
-                .HasForeignKey(d => d.columntype)
+                .HasForeignKey(d => d.ColumnTypeId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_WebColumn_To_ColumnType");
             });
@@ -372,7 +470,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.ReturnGoods)
                 .WithMany(p => p.ReturnPicture)
-                .HasForeignKey(d => d.returnnum)
+                .HasForeignKey(d => d.ReturnCode)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_ReturnPicture_To_ReturnGoods");
             });
@@ -383,13 +481,13 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.Member)
                 .WithMany(p => p.ReturnGoods)
-                .HasForeignKey(d => d.memberid)
+                .HasForeignKey(d => d.MemberId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_ReturnGoods_To_Member");
 
                 entity.HasOne(d => d.Express)
                 .WithMany(p => p.ReturnGoods)
-                .HasForeignKey(d => d.expresstype)
+                .HasForeignKey(d => d.ExpressType)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_ReturnGoods_To_Express");
             });

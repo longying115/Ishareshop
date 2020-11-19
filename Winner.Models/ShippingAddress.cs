@@ -11,18 +11,31 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int uid { get; set; }
-        public string realyname { get; set; }
-        public string area { get; set; }
-        public string address { get; set; }
-        public string phone { get; set; }
-        public string telephone { get; set; }
-        public string post { get; set; }
-        public string email { get; set; }
-        public string othername { get; set; }
-        public DateTime addtime { get; set; }
-        public bool isdefault { get; set; }
+        public int Id { get; set; }
+        public int MemberId { get; set; }
+        public string RealyName { get; set; }
+        public string Area { get; set; }
+        public string Address { get; set; }
+        public string Phone { get; set; }
+        public string Telephone { get; set; }
+        public string Post { get; set; }
+        public string Email { get; set; }
+        public string Othername { get; set; }
+        public DateTime Addtime { get; set; }
+        public bool IsDefault { get; set; }
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
+        {
+            get { return _createTime; }
+            set { _createTime = value; }
+        }
+        private DateTime _modifiedTime = DateTime.Now;
+        public DateTime GMTModified
+        {
+            get { return _modifiedTime; }
+            set { _modifiedTime = value; }
+        }
+        public string ModifiedIp { get; set; }
 
         public virtual Member Member { get; set; }
     }

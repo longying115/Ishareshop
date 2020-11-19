@@ -11,15 +11,30 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int tid { get; set; }
-        public int sort { get; set; }
-        public string smallpicture { get; set; }
-        public string picturename { get; set; }
-        public string pictureremark { get; set; }
-        public DateTime addtime { get; set; }
-        public bool isshow { get; set; }
-        public bool ishead { get; set; }
+        public int Id { get; set; }
+        public int ColumnId { get; set; }
+        public int Sort { get; set; }
+        public string SmallPicture { get; set; }
+        public string PictureName { get; set; }
+        public string PictureRemark { get; set; }
+        public bool IsShow { get; set; }
+        public bool IsHead { get; set; }
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
+        {
+            get { return _createTime; }
+            set { _createTime = value; }
+        }
+        public int CreateAdminId { get; set; }
+        private DateTime _modifiedTime = DateTime.Now;
+        public DateTime GMTModified
+        {
+            get { return _modifiedTime; }
+            set { _modifiedTime = value; }
+        }
+        public int ModifiedAdminId { get; set; }
+        public string ModifiedIp { get; set; }
+
 
         public virtual WebColumn WebColumn { get; set; }
     }

@@ -40,7 +40,7 @@ namespace Winner.Repository
         public async Task<ResponseModel> GetList(Expression<Func<Banner, bool>> where, int topCount)
         {
             var list = _context.Banner.Where(where);
-            var topdata = await list.OrderBy(s => s.sort).Take(topCount).ToListAsync();
+            var topdata = await list.OrderBy(s => s.Sort).Take(topCount).ToListAsync();
 
             var response = new ResponseModel
             {
@@ -58,27 +58,32 @@ namespace Winner.Repository
             }
             int total = list.Count();
 
-            var pagedata = await list.OrderBy(s => s.sort).Skip(pagesize * (pageindex - 1)).Take(pagesize).ToListAsync();
+            var pagedata = await list.OrderBy(s => s.Sort).Skip(pagesize * (pageindex - 1)).Take(pagesize).ToListAsync();
 
             return new ResponsePageModel { code = 200, result = "分页广告图获取成功", total = total, data = pagedata };
         }
         public async Task<ResponseModel> EditOne(Banner banner)
         {
-            Banner bannerEntity = await _context.Banner.FirstOrDefaultAsync(s => s.id == banner.id);
+            Banner bannerEntity = await _context.Banner.FirstOrDefaultAsync(s => s.Id == banner.Id);
             if (bannerEntity == null)
                 return new ResponseModel { code = 0, result = "广告图不存在" };
-            bannerEntity.sort = banner.sort;
-            bannerEntity.bannername = banner.bannername;
-            bannerEntity.smallpicture = banner.smallpicture;
-            bannerEntity.bigpicture = banner.bigpicture;
-            bannerEntity.linkurl = banner.linkurl;
-            bannerEntity.columnarea = banner.columnarea;
-            bannerEntity.issmallpicture = banner.issmallpicture;
-            bannerEntity.smallpicture = banner.smallpicture;
-            bannerEntity.isbigpicture = banner.isbigpicture;
-            bannerEntity.isshow = banner.isshow;
-            bannerEntity.ismobile = banner.ismobile;
-            
+            bannerEntity.Sort = banner.Sort;
+            bannerEntity.BannerName = banner.BannerName;
+            bannerEntity.Picture = banner.Picture;
+            bannerEntity.BackgroundImg = banner.BackgroundImg;
+            bannerEntity.LinkUrl = banner.LinkUrl;
+            bannerEntity.ColumnArea = banner.ColumnArea;
+
+            bannerEntity.IsShow = banner.IsShow;
+            bannerEntity.IsMobile = banner.IsMobile;
+
+            bannerEntity.GMTCreate = banner.GMTCreate;
+            bannerEntity.CreateAdminId = banner.CreateAdminId;
+            bannerEntity.GMTModified = banner.GMTModified;
+
+            bannerEntity.ModifiedAdminId = banner.ModifiedAdminId;
+            bannerEntity.ModifiedIp = banner.ModifiedIp;
+
             _context.Banner.Update(bannerEntity);
             int i = await _context.SaveChangesAsync();
             if (i > 0)

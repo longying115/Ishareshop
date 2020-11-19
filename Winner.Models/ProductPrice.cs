@@ -11,11 +11,11 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int sort { get; set; }
-        public string pricename { get; set; }
-        public decimal minprice { get; set; }
-        public decimal maxprice { get; set; }
-        public bool isshow { get; set; }
+        public int Id { get; set; }
+        public int Sort { get; set; }
+        public string PriceName { get; set; }
+        public decimal MinPrice { get; set; }
+        public decimal MaxPrice { get; set; }
+        public bool IsShow { get; set; }
     }
 }

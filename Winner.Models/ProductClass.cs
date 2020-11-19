@@ -33,18 +33,28 @@ namespace Winner.Models
         public string PictureTag { get; set; }
         private DateTime _addTime = DateTime.Now;
         /// <summary>
-        /// 添加时间
+        /// 创建时间
         /// </summary>
-        public DateTime AddTime
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
         {
-            get { return _addTime; }
-            set { _addTime = value; }
+            get { return _createTime; }
+            set { _createTime = value; }
+        }
+        /// <summary>
+        /// 修改时间
+        /// </summary>
+        private DateTime _modifiedTime = DateTime.Now;
+        public DateTime GMTModified
+        {
+            get { return _modifiedTime; }
+            set { _modifiedTime = value; }
         }
         private DateTime _lastHitTime = DateTime.Now;
         /// <summary>
         /// 最后点击时间
         /// </summary>
-        public DateTime LastHitTime
+        public DateTime GMTLastHit
         {
             get { return _lastHitTime; }
             set { _lastHitTime = value; }

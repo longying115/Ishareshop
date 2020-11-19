@@ -11,8 +11,14 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public string question { get; set; }
-        public int type { get; set; }
+        public int Id { get; set; }
+        /// <summary>
+        /// 问题
+        /// </summary>
+        public string Question { get; set; }
+        /// <summary>
+        /// 类型
+        /// </summary>
+        public int Type { get; set; }
     }
 }

@@ -11,10 +11,10 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int sort { get; set; }
-        public int giftid { get; set; }
-        public string smallpicture { get; set; }
+        public int Id { get; set; }
+        public int Sort { get; set; }
+        public int GifClassId { get; set; }
+        public string SmallPicture { get; set; }
         public virtual Gifts Gifts { get; set; }
     }
 }

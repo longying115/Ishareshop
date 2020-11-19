@@ -10,11 +10,15 @@ namespace Winner.Models
     public class PhoneCode
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public string phone { get; set; }
-        public DateTime addtime { get; set; }
-        public string machineip { get; set; }
-        public string codenum { get; set; }
+        public string Id { get; set; }
+        public string Phone { get; set; }
+        public string MachineCode { get; set; }
+        public string Code { get; set; }
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
+        {
+            get { return _createTime; }
+            set { _createTime = value; }
+        }
     }
 }

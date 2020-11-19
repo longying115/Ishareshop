@@ -9,15 +9,19 @@ namespace Winner.Models
     public class NewsComment
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int newsid { get; set; }
-        public string title { get; set; }
-        public string image { get; set; }
-        public string contents { get; set; }
-        public DateTime addtime { get; set; }
-        public bool isshow { get; set; }
-        public bool ishead { get; set; }
+        public string Id { get; set; }
+        public string NewsId { get; set; }
+        public string Title { get; set; }
+        public string Picture { get; set; }
+        public string Contents { get; set; }
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
+        {
+            get { return _createTime; }
+            set { _createTime = value; }
+        }
+        public bool IsShow { get; set; }
+        public bool IsHead { get; set; }
 
         public virtual News News { get; set; }
     }

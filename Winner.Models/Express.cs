@@ -10,11 +10,11 @@ namespace Winner.Models
     public class Express
     {
         [Key]
-        public string expresscode { get; set; }
-        public string expressname { get; set; }
-        public string expresstelephone { get; set; }
-        public int sort { get; set; }
-        public bool isshow { get; set; }
+        public string ExpressCode { get; set; }
+        public string ExpressName { get; set; }
+        public string ExpressTelephone { get; set; }
+        public int Sort { get; set; }
+        public bool IsShow { get; set; }
 
         public virtual ICollection<Order> Order { get; set; }
         public virtual ICollection<ReturnGoods> ReturnGoods { get; set; }

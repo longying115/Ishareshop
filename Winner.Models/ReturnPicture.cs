@@ -10,8 +10,8 @@ namespace Winner.Models
     public class ReturnPicture
     {
         [Key]
-        public string returnnum { get; set; }
-        public string smallpicture { get; set; }
+        public string ReturnCode { get; set; }
+        public string SmallPicture { get; set; }
 
         public virtual ReturnGoods ReturnGoods { get; set; }
     }

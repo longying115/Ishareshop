@@ -88,15 +88,25 @@ namespace Winner.Models
         /// 参数--富文本
         /// </summary>
         public string Parameter { get; set; }
-        
-        private DateTime _addtime = DateTime.Now;
+
+        private DateTime _addTime = DateTime.Now;
         /// <summary>
-        /// 添加时间
+        /// 创建时间
         /// </summary>
-        public DateTime AddTime
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
         {
-            get { return _addtime; }
-            set { _addtime = value; }
+            get { return _createTime; }
+            set { _createTime = value; }
+        }
+        /// <summary>
+        /// 修改时间
+        /// </summary>
+        private DateTime _modifiedTime = DateTime.Now;
+        public DateTime GMTModified
+        {
+            get { return _modifiedTime; }
+            set { _modifiedTime = value; }
         }
         /// <summary>
         /// 点击率
@@ -105,7 +115,7 @@ namespace Winner.Models
         /// <summary>
         /// 最后点击时间
         /// </summary>
-        public DateTime LastHitTime{get;set;} = DateTime.Now;
+        public DateTime GMTLastHit{get;set;} = DateTime.Now;
         private int _praise = 0;
         /// <summary>
         /// 点赞次数

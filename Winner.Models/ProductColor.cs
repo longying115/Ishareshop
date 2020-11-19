@@ -16,13 +16,28 @@ namespace Winner.Models
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int sort { get; set; }
-        public int productid { get; set; }
-        public string colorname { get; set; }
-        public string colorpicture { get; set; }
-        public int counts { get; set; }
-        public float price { get; set; }
+        public int Id { get; set; }
+        public int Sort { get; set; }
+        public int ProductId { get; set; }
+        public string Name { get; set; }
+        public string Picture { get; set; }
+        public int Counts { get; set; }
+        public decimal Price { get; set; }
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
+        {
+            get { return _createTime; }
+            set { _createTime = value; }
+        }
+        public int CreateAdminId { get; set; }
+        private DateTime _modifiedTime = DateTime.Now;
+        public DateTime GMTModified
+        {
+            get { return _modifiedTime; }
+            set { _modifiedTime = value; }
+        }
+        public int ModifiedAdminId { get; set; }
+        public string ModifiedIp { get; set; }
 
         public virtual Products Products { get; set; }
         public virtual ICollection<ProductPicture> ProductPicture { get; set; }

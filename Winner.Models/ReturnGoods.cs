@@ -10,37 +10,46 @@ namespace Winner.Models
     public class ReturnGoods
     {
         [Key]
-        public string returnnum { get; set; }
-        public int memberid { get; set; }
-        public string ordernum { get; set; }
-        public int productid { get; set; }
-        public string productname { get; set; }
-        public string producttype { get; set; }
-        public int colorid { get; set; }
-        public string productcolor { get; set; }
-        public decimal productprice { get; set; }
-        public int productcount { get; set; }
-        public int returntype { get; set; }
-        public string remark { get; set; }
+        public string ReturnCode { get; set; }
+        public int MemberId { get; set; }
+        public string OrderCode { get; set; }
+        public int ProductId { get; set; }
+        public string ProductName { get; set; }
+        public string ProductType { get; set; }
+        public int ColorId { get; set; }
+        public string ProductColor { get; set; }
+        public decimal ProductPrice { get; set; }
+        public int ProductCount { get; set; }
+        public int ReturnType { get; set; }
+        public string Remark { get; set; }
 
-        private DateTime _addtime = DateTime.Now;
-        public DateTime addtime
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
         {
-            get { return _addtime; }
-            set { _addtime = value; }
+            get { return _createTime; }
+            set { _createTime = value; }
         }
-        public int returnstate { get; set; }
-        public string returntime { get; set; }
-        public string expresstype { get; set; }
-        public string expressnum { get; set; }
-        public string area { get; set; }
-        public string consigneename { get; set; }
-        public string consigneephone { get; set; }
-        public string consigneetelephone { get; set; }
-        public string consigneeaddress { get; set; }
-        public string consigneeemail { get; set; }
-        public string chukutime { get; set; }
-        public string donetime { get; set; }
+        public int ReturnState { get; set; }
+        /// <summary>
+        /// 退货邮寄时间
+        /// </summary>
+        public DateTime GMTReturn { get; set; }
+        /// <summary>
+        /// 快递类型
+        /// </summary>
+        public string ExpressType { get; set; }
+        /// <summary>
+        /// 快递单号
+        /// </summary>
+        public string ExpressCode { get; set; }
+        public string Area { get; set; }
+        public string ConsigneeName { get; set; }
+        public string ConsigneePhone { get; set; }
+        public string ConsigneeTelephone { get; set; }
+        public string ConsigneeAddress { get; set; }
+        public string ConsigneeEmail { get; set; }
+        public DateTime GMTChuKu { get; set; }
+        public DateTime GMTDone { get; set; }
 
         public virtual Member Member { get; set; }
 

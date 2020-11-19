@@ -11,49 +11,57 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int tid { get; set; }
+        public int Id { get; set; }
+        public int ColumnId { get; set; }
         private int _sort = 0;
-        public int sort
+        public int Sort
         {
             get { return _sort; }
             set { _sort = value; }
         }
-        public string title { get; set; }
-        public string keytitle { get; set; }
-        public string keywords { get; set; }
-        public string keydescription { get; set; }
-        public string author { get; set; }
-        public string source { get; set; }
-        private DateTime _addtime = DateTime.Now;
-        public DateTime addtime
+        public string Title { get; set; }
+        public string SmallPicture { get; set; }
+        public string KeyTitle { get; set; }
+        public string Keywords { get; set; }
+        public string Description { get; set; }
+        public string Author { get; set; }
+        public string Source { get; set; }
+        private DateTime _createTime = DateTime.Now;
+        public DateTime GMTCreate
         {
-            get { return _addtime; }
-            set { _addtime = value; }
+            get { return _createTime; }
+            set { _createTime = value; }
         }
+        public int CreateAdminId { get; set; }
+        private DateTime _modifiedTime = DateTime.Now;
+        public DateTime GMTModified
+        {
+            get { return _modifiedTime; }
+            set { _modifiedTime = value; }
+        }
+        public int ModifiedAdminId { get; set; }
+        public string ModifiedIp { get; set; }
         private int _hits = 0;
-        public int hits
+        public int Hits
         {
             get { return _hits; }
             set { _hits = value; }
         }
-        private DateTime _lasthittime = DateTime.Now;
-        public DateTime lasthittime
+        private DateTime _lastHitTime = DateTime.Now;
+        public DateTime GMTLastHit
         {
-            get { return _lasthittime; }
-            set { _lasthittime = value; }
+            get { return _lastHitTime; }
+            set { _lastHitTime = value; }
         }
         private int _praise = 0;
-        public int praise
+        public int Praise
         {
             get { return _praise; }
             set { _praise = value; }
         }
-        public string textcontent { get; set; }
-        public string smallpicture { get; set; }
-        public bool ispicture { get; set; }
-        public bool isshow { get; set; }
-        public bool ishead { get; set; }
+        public string TextContent { get; set; }
+        public bool IsShow { get; set; }
+        public bool IsHead { get; set; }
 
         public virtual WebColumn WebColumn { get; set; }
     }

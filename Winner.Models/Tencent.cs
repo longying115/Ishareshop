@@ -11,10 +11,19 @@ namespace Winner.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int sort { get; set; }
-        public string tencentnum { get; set; }
-        public string tencentname { get; set; }
-        public bool isshow { get; set; }
+        public int Id { get; set; }
+        public int Sort { get; set; }
+        /// <summary>
+        /// QQ号
+        /// </summary>
+        public string QQNumber { get; set; }
+        /// <summary>
+        /// 网站显示称呼
+        /// </summary>
+        public string QQName { get; set; }
+        /// <summary>
+        /// 是否显示
+        /// </summary>
+        public bool IsShow { get; set; }
     }
 }
