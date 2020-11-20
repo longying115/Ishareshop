@@ -61,7 +61,7 @@ namespace Winner.AdminSystem.Controllers
                         {
                             await files[0].CopyToAsync(stream);
                         }
-                        news.SmallPicture = "/NewsPicture/" + fileName;
+                        news.Picture = "/NewsPicture/" + fileName;
                     }
                     return new JsonResult(new ResponseModel { code = 0, result = "图片格式有误" });
                 }
@@ -94,7 +94,7 @@ namespace Winner.AdminSystem.Controllers
             var newsModel = await _newsService.GetOneAsync(id);
             if (newsModel != null)
             {
-                var savePath = newsModel.SmallPicture;
+                var savePath = newsModel.Picture;
                 if (!string.IsNullOrEmpty(savePath))
                 {
                     var realyPath = Path.Combine(_webHost.WebRootPath + savePath);

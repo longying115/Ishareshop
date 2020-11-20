@@ -11,7 +11,7 @@ namespace Winner.Models
     {
         [Key]
         public string Id { get; set; }
-        public string AdminId { get; set; }
+        public int AdminId { get; set; }
         public string Ips { get; set; }
         public string Remark { get; set; }
         private DateTime _createTime = DateTime.Now;

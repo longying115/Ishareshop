@@ -32,7 +32,7 @@ namespace Winner.Models
         /// <summary>
         /// 订单号
         /// </summary>
-        public string OrderNum { get; set; }
+        public string OrderCode { get; set; }
         /// <summary>
         /// 所有金额
         /// </summary>

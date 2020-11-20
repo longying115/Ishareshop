@@ -59,7 +59,7 @@ namespace Winner.Models
         /// <summary>
         /// 产品展示小图
         /// </summary>
-        public string SmallPicture { get; set; }
+        public string Picture { get; set; }
         /// <summary>
         /// 图片标签
         /// </summary>

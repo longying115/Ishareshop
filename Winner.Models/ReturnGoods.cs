@@ -10,7 +10,7 @@ namespace Winner.Models
     public class ReturnGoods
     {
         [Key]
-        public string ReturnCode { get; set; }
+        public string Id { get; set; }
         public int MemberId { get; set; }
         public string OrderCode { get; set; }
         public int ProductId { get; set; }

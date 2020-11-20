@@ -147,7 +147,7 @@ namespace Ishareshop.Api.Controllers
                 newsTypeEntity.KeyTitle = newsType.KeyTitle;
                 newsTypeEntity.Keywords = newsType.Keywords;
                 newsTypeEntity.Description = newsType.Description;
-                newsTypeEntity.SmallPicture = newsType.SmallPicture;
+                newsTypeEntity.Picture = newsType.Picture;
                 newsTypeEntity.PictureTag = newsType.PictureTag;
                 newsTypeEntity.GMTCreate = newsType.GMTCreate;
                 newsTypeEntity.GMTLastHit = newsType.GMTLastHit;
@@ -208,7 +208,7 @@ namespace Ishareshop.Api.Controllers
                 };
             }
             //先删除图片，后删除信息,文件的操作放到控制器上，方便第三方存储
-            var savePath = newsType.SmallPicture;
+            var savePath = newsType.Picture;
             if (!string.IsNullOrWhiteSpace(savePath))
             {
                 var realyPath = Path.Combine(_webHost.WebRootPath + savePath);

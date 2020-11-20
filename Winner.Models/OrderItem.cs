@@ -46,8 +46,6 @@ namespace Winner.Models
             get { return _createTime; }
             set { _createTime = value; }
         }
-        public bool IsComment { get; set; }
-        public int CommentId { get; set; }
 
         public virtual Order Order { get; set; }
     }

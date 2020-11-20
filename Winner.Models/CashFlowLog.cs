@@ -14,7 +14,7 @@ namespace Winner.Models
         /// <summary>
         /// 用户ID
         /// </summary>
-        public int Uid { get; set; }
+        public int MemberId { get; set; }
         /// <summary>
         /// 资金数
         /// </summary>

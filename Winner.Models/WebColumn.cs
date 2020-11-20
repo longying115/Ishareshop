@@ -14,7 +14,7 @@ namespace Winner.Models
         public int Id { get; set; }
         public string ColumnName { get; set; }
         public string Banner { get; set; }
-        public string Bannerbg { get; set; }
+        public string BackgroundImg { get; set; }
         public string KeyTitle { get; set; }
         public string Keywords { get; set; }
         public string Description { get; set; }
@@ -23,7 +23,7 @@ namespace Winner.Models
         /// 栏目类型ID
         /// </summary>
         public int ColumnTypeId { get; set; }
-        public int Pernode { get; set; }
+        public int ParentNode { get; set; }
         public int Sort { get; set; }
         public string Linkurl { get; set; }
 

@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Winner.Models
 {
-    public class AccountContext:DbContext
+    public class AccountContext : DbContext
     {
         public AccountContext(DbContextOptions<AccountContext> option) : base(option)
         {
-            
+
         }
         public DbSet<Admin> Admin { get; set; }
         public DbSet<AdminLoginLog> AdminLoginLog { get; set; }
@@ -63,17 +63,17 @@ namespace Winner.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<Admin>().ToTable("T_Admin");
-            modelBuilder.Entity<Admin>(entity=>
+            modelBuilder.Entity<Admin>(entity =>
             {
                 entity.ToTable("T_Admin");
 
-                entity.Property(e=>e.Id)
+                entity.Property(e => e.Id)
                 .HasColumnName("id")
                 .HasColumnType("int");
 
                 entity.Property(e => e.UserName)
-               .HasColumnName("user_name")
-               .HasColumnType("varchar(50)");
+                .HasColumnName("user_name")
+                .HasColumnType("varchar(50)");
 
                 entity.Property(e => e.PassString)
                .HasColumnName("pass_string")
@@ -136,8 +136,8 @@ namespace Winner.Models
                .HasColumnType("datetime");
 
                 entity.Property(e => e.LastLoginIp)
-              .HasColumnName("last_login_ip")
-              .HasColumnType("varchar(50)");
+                .HasColumnName("last_login_ip")
+                .HasColumnType("varchar(50)");
 
             });
             modelBuilder.Entity<AdminLoginLog>(entity =>
@@ -150,7 +150,7 @@ namespace Winner.Models
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_AdminLoginLog_To_Admin");
 
-                entity.Property(e=>e.Id)
+                entity.Property(e => e.Id)
                 .HasColumnName("id")
                 .HasColumnType("varchar(50)");
 
@@ -171,16 +171,100 @@ namespace Winner.Models
                 .HasColumnType("varchar(500)");
 
             });
-            modelBuilder.Entity<Banner>().ToTable("T_Banner");
+            //modelBuilder.Entity<Banner>().ToTable("T_Banner");
+            modelBuilder.Entity<Banner>(entity =>
+            {
+                entity.ToTable("T_Banner");
+
+                entity.Property(e => e.Id)
+                .HasColumnName("id")
+                .HasColumnType("int");
+
+                entity.Property(e => e.Sort)
+                .HasColumnName("sort")
+                .HasColumnType("int");
+
+                entity.Property(e => e.BannerName)
+                .HasColumnName("banner_name")
+                .HasColumnType("varchar(100)");
+
+                entity.Property(e => e.Picture)
+                .HasColumnName("picture")
+                .HasColumnType("varchar(200)");
+
+                entity.Property(e => e.BackgroundImg)
+                .HasColumnName("background_Img")
+                .HasColumnType("varchar(200)");
+
+                entity.Property(e => e.LinkUrl)
+                .HasColumnName("link_url")
+                .HasColumnType("varchar(300)");
+
+                entity.Property(e => e.ColumnArea)
+                .HasColumnName("column_area")
+                .HasColumnType("int");
+
+                entity.Property(e => e.IsShow)
+                .HasColumnName("is_show")
+                .HasColumnType("bit");
+
+                entity.Property(e => e.IsMobile)
+                .HasColumnName("is_mobile")
+                .HasColumnType("bit");
+
+                entity.Property(e => e.GMTCreate)
+                .HasColumnName("gmt_create")
+                .HasColumnType("datetime");
+
+                entity.Property(e => e.CreateAdminId)
+                .HasColumnName("create_admin_id")
+                .HasColumnType("int");
+
+                entity.Property(e => e.GMTModified)
+                .HasColumnName("gmt_modified")
+                .HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedAdminId)
+                .HasColumnName("modified_admin_id")
+                .HasColumnType("int");
+
+                entity.Property(e => e.ModifiedIp)
+                .HasColumnName("modified_ip")
+                .HasColumnType("varchar(50)");
+            });
             modelBuilder.Entity<CashFlowLog>(entity =>
             {
                 entity.ToTable("T_CashFlowLog");
 
                 entity.HasOne(d => d.Member)
                 .WithMany(p => p.CashFlowLog)
-                .HasForeignKey(d => d.Uid)
+                .HasForeignKey(d => d.MemberId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_CashValueLog_To_Member");
+
+                entity.Property(e => e.Id)
+                .HasColumnName("id")
+                .HasColumnType("varchar(50)");
+
+                entity.Property(e => e.MemberId)
+                .HasColumnName("member_id")
+                .HasColumnType("int");
+
+                entity.Property(e => e.Money)
+                .HasColumnName("money")
+                .HasColumnType("decimal(18,2)");
+
+                entity.Property(e => e.Remark)
+                .HasColumnName("remark")
+                .HasColumnType("varchar(500)");
+
+                entity.Property(e => e.GMTCreate)
+                .HasColumnName("gmt_create")
+                .HasColumnType("datetime");
+
+                entity.Property(e => e.CreateIp)
+                .HasColumnName("create_ip")
+                .HasColumnType("varchar(50)");
             });
             modelBuilder.Entity<ColumnType>().ToTable("T_ColumnType");
             modelBuilder.Entity<Contact>().ToTable("T_Contact");
@@ -248,7 +332,7 @@ namespace Winner.Models
 
                 entity.HasOne(d => d.Gifts)
                 .WithMany(p => p.GiftPicture)
-                .HasForeignKey(d => d.GifClassId)
+                .HasForeignKey(d => d.GiftClassId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_GiftPicture_To_Gifts");
             });
@@ -293,9 +377,140 @@ namespace Winner.Models
                 .HasForeignKey(d => d.ClassId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("FK_News_To_NewsType");
+
+                entity.Property(e => e.Id)
+                .HasColumnName("id")
+                .HasColumnType("varchar(50)");
+
+                entity.Property(e => e.ClassId)
+                .HasColumnName("class_id")
+                .HasColumnType("int");
+
+                entity.Property(e => e.Title)
+                .HasColumnName("title")
+                .HasColumnType("varchar(500)");
+
+                entity.Property(e => e.KeyTitle)
+                .HasColumnName("key_title")
+                .HasColumnType("varchar(300)");
+
+                entity.Property(e => e.Keywords)
+                .HasColumnName("keywords")
+                .HasColumnType("varchar(500)");
+
+                entity.Property(e => e.Description)
+                .HasColumnName("description")
+                .HasColumnType("varchar(500)");
+
+                entity.Property(e => e.Author)
+                .HasColumnName("author")
+                .HasColumnType("varchar(100)");
+
+                entity.Property(e => e.Source)
+                .HasColumnName("source")
+                .HasColumnType("varchar(100)");
+
+                entity.Property(e => e.Picture)
+                .HasColumnName("picture")
+                .HasColumnType("varchar(300)");
+
+                entity.Property(e => e.PictureTag)
+                .HasColumnName("picture_tag")
+                .HasColumnType("varchar(500)");
+
+                entity.Property(e => e.GMTCreate)
+                .HasColumnName("gmt_create")
+                .HasColumnType("datetime");
+
+                entity.Property(e => e.GMTModified)
+                .HasColumnName("gmt_modified")
+                .HasColumnType("datetime");
+
+                entity.Property(e => e.Hits)
+                .HasColumnName("hits")
+                .HasColumnType("int");
+
+                entity.Property(e => e.GMTLastHit)
+                .HasColumnName("gmt_last_hit")
+                .HasColumnType("datetime");
+
+                entity.Property(e => e.Praise)
+                .HasColumnName("praise")
+                .HasColumnType("int");
+
+                entity.Property(e => e.TextContent)
+                .HasColumnName("text_content")
+                .HasColumnType("text");
+
+                entity.Property(e => e.IsShow)
+                .HasColumnName("is_show")
+                .HasColumnType("bit");
+
+                entity.Property(e => e.IsHome)
+                .HasColumnName("is_home")
+                .HasColumnType("bit");
+
+                entity.Property(e => e.IsHead)
+                .HasColumnName("is_head")
+                .HasColumnType("bit");
             });
 
-            modelBuilder.Entity<NewsType>().ToTable("T_NewsType");
+            modelBuilder.Entity<NewsType>(entity=>
+            {
+                entity.ToTable("T_NewsType");
+
+                entity.Property(e=>e.Id)
+                .HasColumnName("id")
+                .HasColumnType("int");
+
+                entity.Property(e => e.Sort)
+                .HasColumnName("sort")
+                .HasColumnType("int");
+
+                entity.Property(e => e.TypeName)
+                .HasColumnName("type_name")
+                .HasColumnType("varchar(300)");
+
+                entity.Property(e => e.Picture)
+                .HasColumnName("picture")
+                .HasColumnType("varchar(300)");
+
+                entity.Property(e => e.PictureTag)
+                .HasColumnName("picture_tag")
+                .HasColumnType("varchar(500)");
+
+                entity.Property(e => e.KeyTitle)
+                .HasColumnName("key_title")
+                .HasColumnType("varchar(300)");
+
+                entity.Property(e => e.Keywords)
+                .HasColumnName("keywords")
+                .HasColumnType("varchar(500)");
+
+                entity.Property(e => e.Description)
+                .HasColumnName("description")
+                .HasColumnType("varchar(500)");
+
+                entity.Property(e => e.IsShow)
+                .HasColumnName("is_show")
+                .HasColumnType("bit");
+
+                entity.Property(e => e.IsHead)
+                .HasColumnName("is_head")
+                .HasColumnType("bit");
+
+                entity.Property(e => e.GMTCreate)
+                .HasColumnName("gmt_create")
+                .HasColumnType("datetime");
+
+                entity.Property(e => e.GMTModified)
+                .HasColumnName("gmt_modified")
+                .HasColumnType("datetime");
+
+                entity.Property(e => e.GMTLastHit)
+                .HasColumnName("gmt_last_hit")
+                .HasColumnType("datetime");
+            });
             modelBuilder.Entity<OnlyText>(entity =>
             {
                 entity.ToTable("T_OnlyText");

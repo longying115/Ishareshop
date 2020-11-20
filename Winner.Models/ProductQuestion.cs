@@ -33,7 +33,7 @@ namespace Winner.Models
         /// <summary>
         /// 回答时间
         /// </summary>
-        public DateTime Answertime 
+        public DateTime GMTAnswer 
         { 
             get { return _answerTime; }
             set { _answerTime = value; }

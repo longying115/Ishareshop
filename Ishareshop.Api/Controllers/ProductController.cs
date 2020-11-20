@@ -226,7 +226,7 @@ namespace Ishareshop.Api.Controllers
                 productEntity.Keywords = product.Keywords;
                 productEntity.Description = product.Description;
 
-                productEntity.SmallPicture = product.SmallPicture;
+                productEntity.Picture = product.Picture;
                 productEntity.PictureTag = product.PictureTag;
                 productEntity.Sales = product.Sales;
                 productEntity.Score = product.Score;
@@ -299,7 +299,7 @@ namespace Ishareshop.Api.Controllers
                 };
             }
             //先删除图片，后删除信息,文件的操作放到控制器上，方便第三方存储
-            var savePath = product.SmallPicture;
+            var savePath = product.Picture;
             if (!string.IsNullOrWhiteSpace(savePath))
             {
                 var realyPath = Path.Combine(_webHost.WebRootPath + savePath);

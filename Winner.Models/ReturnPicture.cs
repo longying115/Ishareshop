@@ -11,7 +11,7 @@ namespace Winner.Models
     {
         [Key]
         public string ReturnCode { get; set; }
-        public string SmallPicture { get; set; }
+        public string Picture { get; set; }
 
         public virtual ReturnGoods ReturnGoods { get; set; }
     }

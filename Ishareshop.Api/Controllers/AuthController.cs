@@ -18,12 +18,12 @@ namespace Ishareshop.Api.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IUserService _userservice;
-        private readonly JwtSetting _jwtsetting;
+        private readonly IUserService _userService;
+        private readonly JwtSetting _jwtSetting;
         public AuthController(IUserService userservice, IOptions<JwtSetting> jwtsetting)
         {
-            _userservice = userservice;
-            _jwtsetting = jwtsetting.Value;
+            _userService = userservice;
+            _jwtSetting = jwtsetting.Value;
         }
         /// <summary>
         /// 
@@ -42,7 +42,7 @@ namespace Ishareshop.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> GetToken([FromBody] Winner.Models.ModelClass.MoAuthUser authuser)
         {
-            var user = await _userservice.Login(authuser.UserName, authuser.PassWord);
+            var user = await _userService.Login(authuser.UserName, authuser.PassWord);
 
             if (user == null)
             {
@@ -64,18 +64,18 @@ namespace Ishareshop.Api.Controllers
                 //new Claim("admin", user.IsAdmin.ToString(),ClaimValueTypes.Boolean)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtsetting.SecurityKey));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSetting.SecurityKey));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
 
             //创建令牌
             var token = new JwtSecurityToken(
-                    issuer: _jwtsetting.Issuer,
-                    audience: _jwtsetting.Audience,
+                    issuer: _jwtSetting.Issuer,
+                    audience: _jwtSetting.Audience,
                     signingCredentials: creds,
                     claims: claims,
                     notBefore: DateTime.Now,
-                    expires: DateTime.Now.AddSeconds(_jwtsetting.ExpireSeconds)
+                    expires: DateTime.Now.AddSeconds(_jwtSetting.ExpireSeconds)
                     );
             string jwtToken = new JwtSecurityTokenHandler().WriteToken(token);
 
@@ -83,7 +83,7 @@ namespace Ishareshop.Api.Controllers
             {
                 Status = true,
                 Token = jwtToken,
-                Expires = DateTime.Now.AddSeconds(_jwtsetting.ExpireSeconds),
+                Expires = DateTime.Now.AddSeconds(_jwtSetting.ExpireSeconds),
                 Type = "Bearer"
             });
         }

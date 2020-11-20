@@ -25,7 +25,7 @@ namespace Winner.Models.AutoMapper
                 .ForMember(_ => _.KeyTitle, _ => _.Ignore())
                 .ForMember(_ => _.Keywords, _ => _.Ignore())
                 .ForMember(_ => _.Description, _ => _.Ignore())
-                .ForMember(_ => _.SmallPicture, _ => _.Ignore())
+                .ForMember(_ => _.Picture, _ => _.Ignore())
                 .ForMember(_ => _.IsShow, _ => _.Ignore());
 
             CreateMap<ProductClass, ProductClassDto>()
@@ -38,7 +38,7 @@ namespace Winner.Models.AutoMapper
                 .ForMember(_ => _.KeyTitle, _ => _.Ignore())
                 .ForMember(_ => _.Keywords, _ => _.Ignore())
                 .ForMember(_ => _.Description, _ => _.Ignore())
-                .ForMember(_ => _.SmallPicture, _ => _.Ignore())
+                .ForMember(_ => _.Picture, _ => _.Ignore())
                 .ForMember(_ => _.IsShow, _ => _.Ignore());
         }
     }

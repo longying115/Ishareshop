@@ -13,8 +13,9 @@ namespace Winner.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public int Sort { get; set; }
-        public int GifClassId { get; set; }
-        public string SmallPicture { get; set; }
+        public int GiftClassId { get; set; }
+        public string Picture { get; set; }
+
         public virtual Gifts Gifts { get; set; }
     }
 }

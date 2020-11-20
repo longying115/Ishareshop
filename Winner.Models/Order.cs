@@ -137,7 +137,7 @@ namespace Winner.Models
         /// <summary>
         /// 收票人邮箱
         /// </summary>
-        public string InvoicEmail { get; set; }
+        public string InvoiceEmail { get; set; }
         /// <summary>
         /// 订单是否关闭
         /// </summary>

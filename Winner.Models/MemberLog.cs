@@ -18,7 +18,7 @@ namespace Winner.Models
         /// <summary>
         /// 使用类型，枚举
         /// </summary>
-        public int Usetype { get; set; }
+        public int UseType { get; set; }
         /// <summary>
         /// IP地址
         /// </summary>

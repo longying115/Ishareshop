@@ -21,7 +21,6 @@ namespace Winner.Models
         public string Post { get; set; }
         public string Email { get; set; }
         public string Othername { get; set; }
-        public DateTime Addtime { get; set; }
         public bool IsDefault { get; set; }
         private DateTime _createTime = DateTime.Now;
         public DateTime GMTCreate

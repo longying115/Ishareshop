@@ -25,7 +25,7 @@ namespace Winner.Models
         /// </summary>
         [Required(ErrorMessage ="分类名称不能为空")]
         public string TypeName { get; set; }
-        public string SmallPicture { get; set; }
+        public string Picture { get; set; }
         public string PictureTag { get; set; }
         private DateTime _createTime = DateTime.Now;
         /// <summary>

@@ -22,9 +22,9 @@ namespace Winner.Repository
         private readonly AccountContext _context;
         private readonly ILogger _logger;
 
-        public UserService(AccountContext accountcontext)
+        public UserService(AccountContext accountContext)
         {
-            _context = accountcontext;
+            _context = accountContext;
         }
         public async Task<User> Login(string name,string password)
         {

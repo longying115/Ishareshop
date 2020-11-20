@@ -38,7 +38,7 @@ namespace Winner.Models
         /// <summary>
         /// 点赞数量
         /// </summary>
-        public int Like { get; set; }
+        public int Likes { get; set; }
         /// <summary>
         /// 回复内容
         /// </summary>

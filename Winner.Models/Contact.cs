@@ -16,7 +16,7 @@ namespace Winner.Models
         public string ContactName { get; set; }
         public string Telephone { get; set; }
         public string Email { get; set; }
-        public string Tencent { get; set; }
+        public string QQNumber { get; set; }
         public bool IsShow { get; set; }
     }
 }

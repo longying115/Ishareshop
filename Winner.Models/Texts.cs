@@ -20,7 +20,7 @@ namespace Winner.Models
             set { _sort = value; }
         }
         public string Title { get; set; }
-        public string SmallPicture { get; set; }
+        public string Picture { get; set; }
         public string KeyTitle { get; set; }
         public string Keywords { get; set; }
         public string Description { get; set; }
