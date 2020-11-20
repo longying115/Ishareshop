@@ -12,7 +12,9 @@ namespace Winner.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        [Required(ErrorMessage ="账号不能为空")]
         public string UserName { get; set; }
+        [Required(ErrorMessage ="密码不能为空")]
         public string Password { get; set; }
         public string PassString { get; set; }
         public string NickName { get; set; }
@@ -21,9 +23,20 @@ namespace Winner.Models
         public string WeiboCode { get; set; }
         public string UserPicture { get; set; }
         public bool IsPass { get; set; }
+        [Required(ErrorMessage ="账户余额不能为空")]
         public Decimal Account { get; set; }
-        public Decimal Allbrokerage { get; set; }
+        /// <summary>
+        /// 佣金、回扣
+        /// </summary>
+        [Required(ErrorMessage ="佣金必须大于等于零")]
+        public Decimal AllBrokerage { get; set; }
+        /// <summary>
+        /// 积分
+        /// </summary>
         public int Score { get; set; }
+        /// <summary>
+        /// 会员等级
+        /// </summary>
         public int MemberLevel { get; set; }
         private DateTime _createTime = DateTime.Now;
         public DateTime GMTCreate
@@ -51,9 +64,12 @@ namespace Winner.Models
             set { _sex = value; }
         }
         public string Birthday { get; set; }
+        [Phone(ErrorMessage ="手机号码格式不正确")]
+        [RegularExpression(@"^1[234689]/d{9}*$", ErrorMessage = "")]
         public string Phone { get; set; }
         public string Telephone { get; set; }
         public string Fax { get; set; }
+        [EmailAddress(ErrorMessage ="邮箱格式不正确")]
         public string Email { get; set; }
         public string Post { get; set; }
         public string Area { get; set; }
