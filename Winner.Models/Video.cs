@@ -24,7 +24,7 @@ namespace Winner.Models
         public string Keywords { get; set; }
         public string Description { get; set; }
         public string TextContent { get; set; }
-        public string SmallPicture { get; set; }
+        public string Picture { get; set; }
         public string VideoUrl { get; set; }
         public string VideoName { get; set; }
         public string Source { get; set; }

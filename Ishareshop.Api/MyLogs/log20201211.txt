@@ -1,0 +1,348 @@
+发生时间: 11:34:42.785 事件等级:Information 详细信息:User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+发生时间: 11:34:43.225 事件等级:Information 详细信息:Application started. Press Ctrl+C to shut down.
+发生时间: 11:34:43.225 事件等级:Information 详细信息:Hosting environment: "Development"
+发生时间: 11:34:43.225 事件等级:Information 详细信息:Content root path: "D:\netcore\Ishareshop\Ishareshop.Api"
+发生时间: 11:34:43.293 事件等级:Information 详细信息:Request starting HTTP/2.0 GET https://localhost:44359/weatherforecast  
+发生时间: 11:34:43.567 事件等级:Information 详细信息:Executing endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+发生时间: 11:34:43.595 事件等级:Information 详细信息:Route matched with "{action = \"Get\", controller = \"WeatherForecast\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[Ishareshop.Api.WeatherForecast] Get()" on controller "Ishareshop.Api.Controllers.WeatherForecastController" ("Ishareshop.Api").
+发生时间: 11:34:43.674 事件等级:Information 详细信息:Executing action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" - Validation state: Valid
+发生时间: 11:34:43.682 事件等级:Information 详细信息:Executed action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 1.9731ms.
+发生时间: 11:34:43.687 事件等级:Information 详细信息:Executing ObjectResult, writing value of type '"Ishareshop.Api.WeatherForecast[]"'.
+发生时间: 11:34:43.806 事件等级:Information 详细信息:Executed action "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" in 206.9411ms
+发生时间: 11:34:43.807 事件等级:Information 详细信息:Executed endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+发生时间: 11:34:43.809 事件等级:Information 详细信息:Request finished in 519.3731ms 200 application/json; charset=utf-8
+发生时间: 11:34:43.894 事件等级:Information 详细信息:Request starting HTTP/2.0 GET https://localhost:44359/favicon.ico  
+发生时间: 11:34:43.950 事件等级:Information 详细信息:Request finished in 55.7479ms 404 
+发生时间: 11:34:51.304 事件等级:Information 详细信息:Request starting HTTP/1.1 GET http://localhost:62779/api/NewsType/getone/?id=1  
+发生时间: 11:34:51.307 事件等级:Information 详细信息:Request finished in 3.081ms 307 
+发生时间: 11:34:51.323 事件等级:Information 详细信息:Request starting HTTP/1.1 GET https://localhost:44359/api/NewsType/getone/?id=1  
+发生时间: 11:34:51.420 事件等级:Information 详细信息:Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden. For more details, see https://aka.ms/IdentityModel/PII.]', Current time: '[PII is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+发生时间: 11:34:51.487 事件等级:Information 详细信息:"Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '[PII is hidden. For more details, see https://aka.ms/IdentityModel/PII.]', Current time: '[PII is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'."
+发生时间: 11:34:51.491 事件等级:Information 详细信息:Authorization failed.
+发生时间: 11:34:51.497 事件等级:Information 详细信息:AuthenticationScheme: "Bearer" was challenged.
+发生时间: 11:34:51.498 事件等级:Information 详细信息:Request finished in 174.8403ms 401 
+发生时间: 11:34:59.345 事件等级:Information 详细信息:Request starting HTTP/1.1 GET http://localhost:62779/api/Auth/get  
+发生时间: 11:34:59.346 事件等级:Information 详细信息:Request finished in 1.163ms 307 
+发生时间: 11:34:59.347 事件等级:Information 详细信息:Request starting HTTP/1.1 GET https://localhost:44359/api/Auth/get  
+发生时间: 11:34:59.349 事件等级:Information 详细信息:Executing endpoint '"Ishareshop.Api.Controllers.AuthController.get (Ishareshop.Api)"'
+发生时间: 11:34:59.411 事件等级:Information 详细信息:Route matched with "{action = \"get\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.String] get()" on controller "Ishareshop.Api.Controllers.AuthController" ("Ishareshop.Api").
+发生时间: 11:34:59.633 事件等级:Information 详细信息:Executing action method "Ishareshop.Api.Controllers.AuthController.get (Ishareshop.Api)" - Validation state: Valid
+发生时间: 11:34:59.634 事件等级:Information 详细信息:Executed action method "Ishareshop.Api.Controllers.AuthController.get (Ishareshop.Api)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 1.2496ms.
+发生时间: 11:34:59.635 事件等级:Information 详细信息:Executing ObjectResult, writing value of type '"System.String"'.
+发生时间: 11:34:59.642 事件等级:Information 详细信息:Executed action "Ishareshop.Api.Controllers.AuthController.get (Ishareshop.Api)" in 230.0187ms
+发生时间: 11:34:59.642 事件等级:Information 详细信息:Executed endpoint '"Ishareshop.Api.Controllers.AuthController.get (Ishareshop.Api)"'
+发生时间: 11:34:59.643 事件等级:Information 详细信息:Request finished in 296.2691ms 200 text/plain; charset=utf-8
+发生时间: 11:43:39.652 事件等级:Information 详细信息:Request starting HTTP/1.1 GET http://localhost:62779/api/Auth/GetToken application/json 41
+发生时间: 11:43:39.654 事件等级:Information 详细信息:Request finished in 5.69ms 307 
+发生时间: 11:43:39.661 事件等级:Information 详细信息:Request starting HTTP/1.1 GET https://localhost:44359/api/Auth/GetToken application/json 41
+发生时间: 11:43:39.662 事件等级:Information 详细信息:Executing endpoint '"405 HTTP Method Not Supported"'
+发生时间: 11:43:39.662 事件等级:Information 详细信息:Executed endpoint '"405 HTTP Method Not Supported"'
+发生时间: 11:43:39.662 事件等级:Information 详细信息:Request finished in 1.4708ms 405 
+发生时间: 11:43:45.946 事件等级:Information 详细信息:Request starting HTTP/1.1 POST http://localhost:62779/api/Auth/GetToken application/json 41
+发生时间: 11:43:45.947 事件等级:Information 详细信息:Request finished in 1.5001ms 307 
+发生时间: 11:43:45.954 事件等级:Information 详细信息:Request starting HTTP/1.1 POST https://localhost:44359/api/Auth/GetToken application/json 41
+发生时间: 11:43:45.965 事件等级:Information 详细信息:Executing endpoint '"Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)"'
+发生时间: 11:43:45.977 事件等级:Information 详细信息:Route matched with "{action = \"GetToken\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetToken(Winner.Models.ModelClass.MoAuthUser)" on controller "Ishareshop.Api.Controllers.AuthController" ("Ishareshop.Api").
+发生时间: 11:43:46.017 事件等级:Information 详细信息:Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'.
+发生时间: 11:43:46.038 事件等级:Information 详细信息:Executed action "Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)" in 60.4434ms
+发生时间: 11:43:46.038 事件等级:Information 详细信息:Executed endpoint '"Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)"'
+发生时间: 11:43:46.039 事件等级:Information 详细信息:Request finished in 90.2884ms 400 application/problem+json; charset=utf-8
+发生时间: 11:43:53.737 事件等级:Information 详细信息:Request starting HTTP/1.1 POST http://localhost:62779/api/Auth/GetToken application/json 44
+发生时间: 11:43:53.738 事件等级:Information 详细信息:Request finished in 1.0176ms 307 
+发生时间: 11:43:53.738 事件等级:Information 详细信息:Request starting HTTP/1.1 POST https://localhost:44359/api/Auth/GetToken application/json 44
+发生时间: 11:43:53.739 事件等级:Information 详细信息:Executing endpoint '"Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)"'
+发生时间: 11:43:53.739 事件等级:Information 详细信息:Route matched with "{action = \"GetToken\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetToken(Winner.Models.ModelClass.MoAuthUser)" on controller "Ishareshop.Api.Controllers.AuthController" ("Ishareshop.Api").
+发生时间: 11:43:53.753 事件等级:Information 详细信息:Executing action method "Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)" - Validation state: Valid
+发生时间: 11:43:54.633 事件等级:Information 详细信息:Executed action "Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)" in 892.9269ms
+发生时间: 11:43:54.634 事件等级:Information 详细信息:Executed endpoint '"Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)"'
+发生时间: 11:43:54.635 事件等级:Error 详细信息:An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The property 'ProductColor.Sort' is of type 'int' which is not supported by current database provider. Either change the property CLR type or ignore the property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidatePropertyMapping(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IConventionModelBuilder modelBuilder, IConventionContext`1 context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.CheckState()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Linq.IQueryable.get_Provider()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, LambdaExpression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken)
+   at Winner.Repository.UserService.Login(String name, String password) in D:\netcore\Ishareshop\Winner.Repository\UserService.cs:line 33
+   at Ishareshop.Api.Controllers.AuthController.GetToken(MoAuthUser authuser) in D:\netcore\Ishareshop\Ishareshop.Api\Controllers\AuthController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+发生时间: 11:43:54.677 事件等级:Information 详细信息:Request finished in 938.2702ms 500 text/plain
+发生时间: 15:19:23.450 事件等级:Information 详细信息:User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+发生时间: 15:19:23.708 事件等级:Information 详细信息:Application started. Press Ctrl+C to shut down.
+发生时间: 15:19:23.708 事件等级:Information 详细信息:Hosting environment: "Development"
+发生时间: 15:19:23.708 事件等级:Information 详细信息:Content root path: "D:\netcore\Ishareshop\Ishareshop.Api"
+发生时间: 15:19:23.749 事件等级:Information 详细信息:Request starting HTTP/2.0 GET https://localhost:44359/weatherforecast  
+发生时间: 15:19:23.823 事件等级:Information 详细信息:Executing endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+发生时间: 15:19:23.840 事件等级:Information 详细信息:Route matched with "{action = \"Get\", controller = \"WeatherForecast\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[Ishareshop.Api.WeatherForecast] Get()" on controller "Ishareshop.Api.Controllers.WeatherForecastController" ("Ishareshop.Api").
+发生时间: 15:19:23.895 事件等级:Information 详细信息:Executing action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" - Validation state: Valid
+发生时间: 15:19:23.899 事件等级:Information 详细信息:Executed action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.8708ms.
+发生时间: 15:19:23.902 事件等级:Information 详细信息:Executing ObjectResult, writing value of type '"Ishareshop.Api.WeatherForecast[]"'.
+发生时间: 15:19:23.989 事件等级:Information 详细信息:Executed action "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" in 146.7638ms
+发生时间: 15:19:23.990 事件等级:Information 详细信息:Executed endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+发生时间: 15:19:23.991 事件等级:Information 详细信息:Request finished in 243.5473ms 200 application/json; charset=utf-8
+发生时间: 15:19:40.297 事件等级:Information 详细信息:Request starting HTTP/1.1 POST http://localhost:62779/api/Auth/GetToken application/json 43
+发生时间: 15:19:40.307 事件等级:Information 详细信息:Request finished in 10.1857ms 307 
+发生时间: 15:19:40.317 事件等级:Information 详细信息:Request starting HTTP/1.1 POST https://localhost:44359/api/Auth/GetToken application/json 43
+发生时间: 15:19:40.324 事件等级:Information 详细信息:Executing endpoint '"Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)"'
+发生时间: 15:19:40.346 事件等级:Information 详细信息:Route matched with "{action = \"GetToken\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetToken(Winner.Models.ModelClass.MoAuthUser)" on controller "Ishareshop.Api.Controllers.AuthController" ("Ishareshop.Api").
+发生时间: 15:19:40.492 事件等级:Information 详细信息:Executing action method "Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)" - Validation state: Valid
+发生时间: 15:19:41.111 事件等级:Information 详细信息:Executed action "Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)" in 765.5626ms
+发生时间: 15:19:41.112 事件等级:Information 详细信息:Executed endpoint '"Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)"'
+发生时间: 15:19:41.114 事件等级:Error 详细信息:An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The property 'ProductColor.Sort' is of type 'int' which is not supported by current database provider. Either change the property CLR type or ignore the property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidatePropertyMapping(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IConventionModelBuilder modelBuilder, IConventionContext`1 context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.CheckState()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Linq.IQueryable.get_Provider()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, LambdaExpression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken)
+   at Winner.Repository.UserService.Login(String name, String password) in D:\netcore\Ishareshop\Winner.Repository\UserService.cs:line 33
+   at Ishareshop.Api.Controllers.AuthController.GetToken(MoAuthUser authuser) in D:\netcore\Ishareshop\Ishareshop.Api\Controllers\AuthController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+发生时间: 15:19:41.155 事件等级:Information 详细信息:Request finished in 838.5195ms 500 text/plain
+发生时间: 15:23:59.655 事件等级:Information 详细信息:User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+发生时间: 15:23:59.915 事件等级:Information 详细信息:Application started. Press Ctrl+C to shut down.
+发生时间: 15:23:59.915 事件等级:Information 详细信息:Hosting environment: "Development"
+发生时间: 15:23:59.915 事件等级:Information 详细信息:Content root path: "D:\netcore\Ishareshop\Ishareshop.Api"
+发生时间: 15:23:59.956 事件等级:Information 详细信息:Request starting HTTP/2.0 GET https://localhost:44359/weatherforecast  
+发生时间: 15:24:00.037 事件等级:Information 详细信息:Executing endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+发生时间: 15:24:00.056 事件等级:Information 详细信息:Route matched with "{action = \"Get\", controller = \"WeatherForecast\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[Ishareshop.Api.WeatherForecast] Get()" on controller "Ishareshop.Api.Controllers.WeatherForecastController" ("Ishareshop.Api").
+发生时间: 15:24:00.113 事件等级:Information 详细信息:Executing action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" - Validation state: Valid
+发生时间: 15:24:00.117 事件等级:Information 详细信息:Executed action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.9185ms.
+发生时间: 15:24:00.120 事件等级:Information 详细信息:Executing ObjectResult, writing value of type '"Ishareshop.Api.WeatherForecast[]"'.
+发生时间: 15:24:00.207 事件等级:Information 详细信息:Executed action "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" in 147.4051ms
+发生时间: 15:24:00.207 事件等级:Information 详细信息:Executed endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+发生时间: 15:24:00.208 事件等级:Information 详细信息:Request finished in 253.5306ms 200 application/json; charset=utf-8
+发生时间: 15:24:04.688 事件等级:Information 详细信息:Request starting HTTP/1.1 POST http://localhost:62779/api/Auth/GetToken application/json 43
+发生时间: 15:24:04.698 事件等级:Information 详细信息:Request finished in 10.5082ms 307 
+发生时间: 15:24:04.706 事件等级:Information 详细信息:Request starting HTTP/1.1 POST https://localhost:44359/api/Auth/GetToken application/json 43
+发生时间: 15:24:04.714 事件等级:Information 详细信息:Executing endpoint '"Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)"'
+发生时间: 15:24:04.727 事件等级:Information 详细信息:Route matched with "{action = \"GetToken\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetToken(Winner.Models.ModelClass.MoAuthUser)" on controller "Ishareshop.Api.Controllers.AuthController" ("Ishareshop.Api").
+发生时间: 15:24:04.868 事件等级:Information 详细信息:Executing action method "Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)" - Validation state: Valid
+发生时间: 15:24:05.555 事件等级:Information 详细信息:Executed action "Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)" in 827.9431ms
+发生时间: 15:24:05.556 事件等级:Information 详细信息:Executed endpoint '"Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)"'
+发生时间: 15:24:05.558 事件等级:Error 详细信息:An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The property 'WebSite.QQNumber' is of type 'string' which is not supported by current database provider. Either change the property CLR type or ignore the property using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidatePropertyMapping(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IConventionModelBuilder modelBuilder, IConventionContext`1 context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.CheckState()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Linq.IQueryable.get_Provider()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, LambdaExpression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken)
+   at Winner.Repository.UserService.Login(String name, String password) in D:\netcore\Ishareshop\Winner.Repository\UserService.cs:line 33
+   at Ishareshop.Api.Controllers.AuthController.GetToken(MoAuthUser authuser) in D:\netcore\Ishareshop\Ishareshop.Api\Controllers\AuthController.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+发生时间: 15:24:05.675 事件等级:Information 详细信息:Request finished in 969.2959ms 500 text/plain
+发生时间: 15:25:47.769 事件等级:Information 详细信息:User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+发生时间: 15:25:48.045 事件等级:Information 详细信息:Application started. Press Ctrl+C to shut down.
+发生时间: 15:25:48.045 事件等级:Information 详细信息:Hosting environment: "Development"
+发生时间: 15:25:48.045 事件等级:Information 详细信息:Content root path: "D:\netcore\Ishareshop\Ishareshop.Api"
+发生时间: 15:25:48.087 事件等级:Information 详细信息:Request starting HTTP/2.0 GET https://localhost:44359/weatherforecast  
+发生时间: 15:25:48.182 事件等级:Information 详细信息:Executing endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+发生时间: 15:25:48.199 事件等级:Information 详细信息:Route matched with "{action = \"Get\", controller = \"WeatherForecast\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[Ishareshop.Api.WeatherForecast] Get()" on controller "Ishareshop.Api.Controllers.WeatherForecastController" ("Ishareshop.Api").
+发生时间: 15:25:48.251 事件等级:Information 详细信息:Executing action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" - Validation state: Valid
+发生时间: 15:25:48.255 事件等级:Information 详细信息:Executed action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.8992ms.
+发生时间: 15:25:48.258 事件等级:Information 详细信息:Executing ObjectResult, writing value of type '"Ishareshop.Api.WeatherForecast[]"'.
+发生时间: 15:25:48.344 事件等级:Information 详细信息:Executed action "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" in 141.8371ms
+发生时间: 15:25:48.344 事件等级:Information 详细信息:Executed endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+发生时间: 15:25:48.345 事件等级:Information 详细信息:Request finished in 260.4512ms 200 application/json; charset=utf-8
+发生时间: 15:25:52.246 事件等级:Information 详细信息:Request starting HTTP/1.1 POST http://localhost:62779/api/Auth/GetToken application/json 43
+发生时间: 15:25:52.255 事件等级:Information 详细信息:Request finished in 9.2708ms 307 
+发生时间: 15:25:52.266 事件等级:Information 详细信息:Request starting HTTP/1.1 POST https://localhost:44359/api/Auth/GetToken application/json 43
+发生时间: 15:25:52.287 事件等级:Information 详细信息:Executing endpoint '"Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)"'
+发生时间: 15:25:52.300 事件等级:Information 详细信息:Route matched with "{action = \"GetToken\", controller = \"Auth\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetToken(Winner.Models.ModelClass.MoAuthUser)" on controller "Ishareshop.Api.Controllers.AuthController" ("Ishareshop.Api").
+发生时间: 15:25:52.432 事件等级:Information 详细信息:Executing action method "Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)" - Validation state: Valid
+发生时间: 15:25:53.064 事件等级:Warning 详细信息:No type was specified for the decimal column '"AllMoney"' on entity type '"Order"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+发生时间: 15:25:53.064 事件等级:Warning 详细信息:No type was specified for the decimal column '"CouponMoney"' on entity type '"Order"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+发生时间: 15:25:53.064 事件等级:Warning 详细信息:No type was specified for the decimal column '"PayMoney"' on entity type '"Order"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+发生时间: 15:25:53.064 事件等级:Warning 详细信息:No type was specified for the decimal column '"SendMoney"' on entity type '"Order"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+发生时间: 15:25:53.064 事件等级:Warning 详细信息:No type was specified for the decimal column '"ProductPrice"' on entity type '"OrderItem"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+发生时间: 15:25:53.064 事件等级:Warning 详细信息:No type was specified for the decimal column '"ProductPrice"' on entity type '"ProductDiscuss"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+发生时间: 15:25:53.064 事件等级:Warning 详细信息:No type was specified for the decimal column '"ProductPrice"' on entity type '"ReturnGoods"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+发生时间: 15:25:53.099 事件等级:Information 详细信息:Entity Framework Core "3.1.3" initialized '"AccountContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+发生时间: 15:25:53.649 事件等级:Information 详细信息:Executed DbCommand ("49"ms) [Parameters=["@__name_0='?' (Size = 4000), @__Md5Pwd_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[Id], [t].[Password], [t].[Role], [t].[Url], [t].[UserName]
+FROM [T_User] AS [t]
+WHERE ([t].[UserName] = @__name_0) AND ([t].[Password] = @__Md5Pwd_1)"
+发生时间: 15:25:53.727 事件等级:Information 详细信息:Executed action method "Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)", returned result "Microsoft.AspNetCore.Mvc.JsonResult" in 1295.3673ms.
+发生时间: 15:25:53.732 事件等级:Information 详细信息:Executing JsonResult, writing value of type '"<>f__AnonymousType1`4[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+发生时间: 15:25:53.739 事件等级:Information 详细信息:Executed action "Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)" in 1439.3823ms
+发生时间: 15:25:53.740 事件等级:Information 详细信息:Executed endpoint '"Ishareshop.Api.Controllers.AuthController.GetToken (Ishareshop.Api)"'
+发生时间: 15:25:53.743 事件等级:Information 详细信息:Request finished in 1476.3958ms 200 application/json; charset=utf-8
+发生时间: 15:26:12.253 事件等级:Information 详细信息:Request starting HTTP/1.1 GET http://localhost:62779/api/NewsType/getone/?id=1  
+发生时间: 15:26:12.254 事件等级:Information 详细信息:Request finished in 1.3624ms 307 
+发生时间: 15:26:12.255 事件等级:Information 详细信息:Request starting HTTP/1.1 GET https://localhost:44359/api/NewsType/getone/?id=1  
+发生时间: 15:26:12.285 事件等级:Information 详细信息:Successfully validated the token.
+发生时间: 15:26:12.298 事件等级:Information 详细信息:Authorization was successful.
+发生时间: 15:26:12.299 事件等级:Information 详细信息:Executing endpoint '"Ishareshop.Api.Controllers.NewsTypeController.GetOne (Ishareshop.Api)"'
+发生时间: 15:26:12.303 事件等级:Information 详细信息:Route matched with "{action = \"GetOne\", controller = \"NewsType\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Winner.Models.Response.ResponseModel] GetOne(Int32)" on controller "Ishareshop.Api.Controllers.NewsTypeController" ("Ishareshop.Api").
+发生时间: 15:26:12.315 事件等级:Information 详细信息:Executing action method "Ishareshop.Api.Controllers.NewsTypeController.GetOne (Ishareshop.Api)" - Validation state: Valid
+发生时间: 15:26:12.335 事件等级:Information 详细信息:Entity Framework Core "3.1.3" initialized '"AccountContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+发生时间: 15:26:12.349 事件等级:Information 详细信息:Executed DbCommand ("3"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [t].[id], [t].[description], [t].[gmt_create], [t].[gmt_last_hit], [t].[gmt_modified], [t].[is_head], [t].[is_show], [t].[key_title], [t].[keywords], [t].[picture], [t].[picture_tag], [t].[sort], [t].[type_name]
+FROM [T_NewsType] AS [t]
+WHERE [t].[id] = @__p_0"
+发生时间: 15:26:12.363 事件等级:Information 详细信息:Executed action method "Ishareshop.Api.Controllers.NewsTypeController.GetOne (Ishareshop.Api)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 47.7874ms.
+发生时间: 15:26:12.363 事件等级:Information 详细信息:Executing ObjectResult, writing value of type '"Winner.Models.Response.ResponseModel"'.
+发生时间: 15:26:12.372 事件等级:Information 详细信息:Executed action "Ishareshop.Api.Controllers.NewsTypeController.GetOne (Ishareshop.Api)" in 68.5171ms
+发生时间: 15:26:12.372 事件等级:Information 详细信息:Executed endpoint '"Ishareshop.Api.Controllers.NewsTypeController.GetOne (Ishareshop.Api)"'
+发生时间: 15:26:12.372 事件等级:Information 详细信息:Request finished in 116.4936ms 200 application/json; charset=utf-8

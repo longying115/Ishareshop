@@ -1,0 +1,15 @@
+发生时间: 16:31:25.040 事件等级:Information 详细信息:User profile is available. Using '"C:\Users\HP\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+发生时间: 16:31:25.775 事件等级:Information 详细信息:Application started. Press Ctrl+C to shut down.
+发生时间: 16:31:25.775 事件等级:Information 详细信息:Hosting environment: "Development"
+发生时间: 16:31:25.775 事件等级:Information 详细信息:Content root path: "D:\netcore\Ishareshop\Ishareshop.Api"
+发生时间: 16:31:25.872 事件等级:Information 详细信息:Request starting HTTP/2.0 GET https://localhost:44359/weatherforecast  
+发生时间: 16:31:26.165 事件等级:Information 详细信息:Executing endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+发生时间: 16:31:26.432 事件等级:Information 详细信息:Route matched with "{action = \"Get\", controller = \"WeatherForecast\"}". Executing controller action with signature "System.Collections.Generic.IEnumerable`1[Ishareshop.Api.WeatherForecast] Get()" on controller "Ishareshop.Api.Controllers.WeatherForecastController" ("Ishareshop.Api").
+发生时间: 16:31:26.653 事件等级:Information 详细信息:Executing action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" - Validation state: Valid
+发生时间: 16:31:26.663 事件等级:Information 详细信息:Executed action method "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 6.0784ms.
+发生时间: 16:31:26.671 事件等级:Information 详细信息:Executing ObjectResult, writing value of type '"Ishareshop.Api.WeatherForecast[]"'.
+发生时间: 16:31:26.865 事件等级:Information 详细信息:Executed action "Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)" in 429.9092ms
+发生时间: 16:31:26.886 事件等级:Information 详细信息:Executed endpoint '"Ishareshop.Api.Controllers.WeatherForecastController.Get (Ishareshop.Api)"'
+发生时间: 16:31:26.887 事件等级:Information 详细信息:Request finished in 1018.6497ms 200 application/json; charset=utf-8
+发生时间: 16:31:26.965 事件等级:Information 详细信息:Request starting HTTP/2.0 GET https://localhost:44359/favicon.ico  
+发生时间: 16:31:27.201 事件等级:Information 详细信息:Request finished in 235.2481ms 404 

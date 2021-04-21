@@ -56,7 +56,7 @@ namespace Ishareshop.Api
             services.Configure<KuaidiUser>(Configuration.GetSection("KuaidiUser"));
 
             services.Configure<JwtSetting>(Configuration.GetSection("JwtSetting"));
-
+            services.Configure<RedisSection>(Configuration.GetSection("Redis"));
             // Add framework services.  
             services.AddMvc();
 
@@ -64,6 +64,7 @@ namespace Ishareshop.Api
             services.AddDistributedMemoryCache();
             //memorycache支持
             services.AddMemoryCache();
+
             //添加session支持
             services.AddSession(options => options.IdleTimeout = TimeSpan.FromMinutes(30));
             //依赖注入的生命周期

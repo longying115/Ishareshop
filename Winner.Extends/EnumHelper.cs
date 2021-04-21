@@ -26,9 +26,45 @@ namespace Winner.Extends
         /// </summary>
         public enum EmProductClass
         {
-            一级分类=1,
-            二级分类=2,
-            三级分类=3
+            [Localization("Fist Class", LanguageType.英语)]
+            一级分类 =1,
+            [Localization("Second Class", LanguageType.英语)]
+            二级分类 =2,
+            [Localization("Three Class", LanguageType.英语)]
+            三级分类 =3
+        }
+        [AttributeUsage(AttributeTargets.Field, AllowMultiple = true)]
+        public class LocalizationAttribute : Attribute
+        {
+            public LocalizationAttribute(string message, LanguageType lang = LanguageType.简体中文)
+            {
+                _message = message;
+                _lang = lang;
+            }
+
+            private LanguageType _lang;
+
+            public LanguageType Lang
+            {
+                get
+                {
+                    return _lang;
+                }
+            }
+
+            private string _message;
+            public string Message
+            {
+                get
+                {
+                    return _message;
+                }
+            }
+        }
+        public enum LanguageType
+        {
+            简体中文,
+            英语
         }
         /// <summary>
         /// 订单支付类型：在线支付，货到付款

@@ -12,6 +12,8 @@ using Winner.Models.Response;
 using System.Linq.Expressions;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using Winner.Extends.Interfaces;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Ishareshop.Api.Controllers
 {
@@ -21,10 +23,16 @@ namespace Ishareshop.Api.Controllers
     {
         private readonly INewsTypeService _newsTypeService;
         private IWebHostEnvironment _webHost;
-        public NewsTypeController(INewsTypeService newsTypeService, IWebHostEnvironment webHostEnvironment)
+        private readonly IRedisHelper _redisHelper;
+
+        private readonly IMemoryCache _memoryCache;
+        public NewsTypeController(INewsTypeService newsTypeService, IWebHostEnvironment webHostEnvironment,IRedisHelper redisHelper
+            ,IMemoryCache memoryCache)
         {
             _newsTypeService = newsTypeService;
             _webHost = webHostEnvironment;
+            _redisHelper = redisHelper;
+            _memoryCache = memoryCache;
         }
 
         /// <summary>
@@ -38,7 +46,49 @@ namespace Ishareshop.Api.Controllers
         {
             if (id > 0)
             {
-                var newsType = await _newsTypeService.GetOneAsync(id);
+                string key = $"news_type:{id}";
+               var newsType= await _redisHelper.GetObjectByKeyAsync<NewsType>(key);
+                if (newsType==null)
+                {
+                    newsType = await _newsTypeService.GetOneAsync(id);
+                    var timeSpan = new TimeSpan(0,5,0);
+                    await _redisHelper.SetObjectByKeyAsync(key, newsType, timeSpan);
+                }
+
+                if (newsType == null)
+                    return new ResponseModel { code = 0, result = "新闻分类不存在" };
+                return new ResponseModel { code = 200, result = "新闻分类获取成功", data = newsType };
+            }
+            else
+            {
+                return new ResponseModel { code = 0, result = "参数错误" };
+            }
+        }
+        /// <summary>
+        /// 获取新闻分类
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Authorize]
+        public async Task<ResponseModel> Get(int id)
+        {
+            if (id > 0)
+            {
+                string key = $"news_type:{id}";
+                var newsType = await _memoryCache.GetOrCreateAsync(key, async x =>
+                {
+                    x.SlidingExpiration = TimeSpan.FromSeconds(300);
+                    return await _newsTypeService.GetOneAsync(id);
+                });//这种是加内存缓存
+                
+                //var newsType = await _redisHelper.GetObjectByKeyAsync<NewsType>(key);
+                //if (newsType == null)
+                //{
+                //    newsType = await _newsTypeService.GetOneAsync(id);
+                //    var timeSpan = new TimeSpan(0, 5, 0);
+                //    await _redisHelper.SetObjectByKeyAsync(key, newsType, timeSpan);//这种是redis 缓存
+                //}
 
                 if (newsType == null)
                     return new ResponseModel { code = 0, result = "新闻分类不存在" };

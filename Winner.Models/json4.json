@@ -1,0 +1,3428 @@
+{
+  "bventId": "6f070000-294c-000c-ee27-08d8b376bcab",
+  "attendeeId": null,
+  "attendeeOrganizationId": "6f070000-294c-000c-dda2-08d8b3774938",
+  "attendeeTypeId": "6f070000-294c-000c-3f5c-08d8b376bd2f",
+  "speakerTypeId": null,
+  "mainAttendeeId": null,
+  "mainAttendeeName": null,
+  "mainAttendeeMobile": null,
+  "mainAttendeeEmail": null,
+  "orderId": "6f070000-294c-000c-ddaf-08d8b3774938",
+  "status": null,
+  "payStatus": null,
+  "auditStatus": "Approved",
+  "auditStatusStr": "审核通过",
+  "isActivite": false,
+  "isEmailVerified": false,
+  "isMobileVerified": false,
+  "isCreated": false,
+  "createdUserAccount": null,
+  "checkinCode": "560194334171",
+  "attendeeFieldValues": [
+    {
+      "displayName": "基本信息",
+      "fieldName": "Separator",
+      "value": null,
+      "isOnlyAdmin": false,
+      "defaultValue": "1",
+      "isShow": true,
+      "fieldType": "Separator",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": null,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 0,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Basic",
+      "isForbidden": false,
+      "showValue": null,
+      "placeHolder": null,
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": null,
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业名称（中文）",
+      "fieldName": "Name",
+      "value": "田测试参展商企业名称",
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "Textbox",
+      "isNeeded": true,
+      "isUnique": false,
+      "maxLength": 50,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 1,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Basic",
+      "isForbidden": false,
+      "showValue": "田测试参展商企业名称",
+      "placeHolder": "请输入企业名称（中文）",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 12288,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0,
+        4096,
+        8192
+      ],
+      "widthSetting": "Half",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业名称（英文）",
+      "fieldName": "EnglishName",
+      "value": "englishname0108",
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "Textbox",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 50,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 2,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Basic",
+      "isForbidden": false,
+      "showValue": "englishname0108",
+      "placeHolder": "请输入企业名称（英文）",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Half",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业简称（中文）",
+      "fieldName": "EnterpriseAbbreviation",
+      "value": "测试展商",
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "Textbox",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 25,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 3,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Basic",
+      "isForbidden": false,
+      "showValue": "测试展商",
+      "placeHolder": "请输入企业简称（中文）",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Half",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业类型",
+      "fieldName": "EnterpriseType",
+      "value": "1",
+      "isOnlyAdmin": false,
+      "defaultValue": "",
+      "isShow": true,
+      "fieldType": "Select",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 50,
+      "options": [],
+      "fieldOptions": [
+        {
+          "id": "f6a90839-29fc-443f-92c4-92891bffe1ec",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "生产企业",
+          "sortId": 0,
+          "code": "0",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "af52023e-f043-4dea-bcca-bbc2a5512e1b",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "科研院所",
+          "sortId": 1,
+          "code": "1",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "4c445d4e-69ea-454f-a208-099d5dd1f593",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "工贸企业",
+          "sortId": 2,
+          "code": "2",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "9768e822-154f-4977-bd09-3c8022058a0d",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "外贸企业",
+          "sortId": 3,
+          "code": "3",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "f5767b71-d15a-4b26-a183-ef4928c82a49",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "其他企业",
+          "sortId": 4,
+          "code": "4",
+          "sourceId": null,
+          "childrens": []
+        }
+      ],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 4,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Basic",
+      "isForbidden": false,
+      "showValue": "1",
+      "placeHolder": "请选择企业类型",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Half",
+      "isRelDataSource": true,
+      "intRelDataSource": 1,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业属性",
+      "fieldName": "EnterpriseAttribute",
+      "value": "3",
+      "isOnlyAdmin": false,
+      "defaultValue": "",
+      "isShow": true,
+      "fieldType": "Select",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 50,
+      "options": [],
+      "fieldOptions": [
+        {
+          "id": "528a673d-52f1-41d3-92a9-e4e28c23eb24",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "中外合资企业",
+          "sortId": 0,
+          "code": "0",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "0b3f34ae-1810-4f17-ad31-c8a1cdb7cd28",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "中外合作企业",
+          "sortId": 1,
+          "code": "1",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "a0ffaeb1-c839-4d46-bee5-0f44d3066c3c",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "私营企业",
+          "sortId": 2,
+          "code": "2",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "5c79f9fb-07e4-4222-8674-9eb684df336e",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "集体企业",
+          "sortId": 3,
+          "code": "3",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "7960c1a7-efd8-4ec9-8f73-8dba3acc9613",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "国有企业",
+          "sortId": 4,
+          "code": "4",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "4dea1194-227d-4a36-9bfa-210d21d70b83",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "外商独资企业",
+          "sortId": 5,
+          "code": "5",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "3e3a2aff-e0bd-4c22-b6d8-21eae0645428",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "其他企业",
+          "sortId": 6,
+          "code": "6",
+          "sourceId": null,
+          "childrens": []
+        }
+      ],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 5,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Basic",
+      "isForbidden": false,
+      "showValue": "3",
+      "placeHolder": "请选择企业属性",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Half",
+      "isRelDataSource": true,
+      "intRelDataSource": 1,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业成立年份",
+      "fieldName": "YearEstablished",
+      "value": "2010",
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "Year",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": null,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 6,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Other",
+      "isForbidden": false,
+      "showValue": "2010",
+      "placeHolder": "请输入企业成立年份",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Half",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "注册资本（万人民币）",
+      "fieldName": "RegisteredCapital",
+      "value": "500",
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "Decimal",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 50,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 7,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Basic",
+      "isForbidden": false,
+      "showValue": "500",
+      "placeHolder": "请输入注册资本（万人民币）",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Half",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "主要目标客户",
+      "fieldName": "MainTargetCustomers",
+      "value": "[\"4\",\"2\"]",
+      "isOnlyAdmin": false,
+      "defaultValue": "",
+      "isShow": true,
+      "fieldType": "MultipleSelect",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 255,
+      "options": [],
+      "fieldOptions": [
+        {
+          "id": "e5449a62-8e22-401e-9fc0-e0c62b16c6bc",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "制造商",
+          "sortId": 0,
+          "code": "0",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "b1b7a549-4d3b-4b4a-8410-7cfba4bd937f",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "贸易商",
+          "sortId": 1,
+          "code": "1",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "3b6bb509-ff43-4f0e-87f6-22f668ed8220",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "分销商",
+          "sortId": 2,
+          "code": "2",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "5b8a790c-2dbb-4118-a3d9-90011180f6d3",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "代理商",
+          "sortId": 3,
+          "code": "3",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "441156dd-c65c-4252-a629-13a471a5adaf",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "批发商",
+          "sortId": 4,
+          "code": "4",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "137cb7be-2615-46c8-a9dd-746b98471e63",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "零售商",
+          "sortId": 5,
+          "code": "5",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "01ddd020-6cb5-4e7d-bebc-ba11acf8a2b2",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "其他",
+          "sortId": 6,
+          "code": "6",
+          "sourceId": null,
+          "childrens": []
+        }
+      ],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 8,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Details",
+      "isForbidden": false,
+      "showValue": "[\"4\",\"2\"]",
+      "placeHolder": "请选择主要目标客户",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": true,
+      "intRelDataSource": 1,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "详细信息",
+      "fieldName": "Separator",
+      "value": null,
+      "isOnlyAdmin": false,
+      "defaultValue": "1",
+      "isShow": true,
+      "fieldType": "Separator",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": null,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 9,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Details",
+      "isForbidden": false,
+      "showValue": null,
+      "placeHolder": null,
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": null,
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业规模",
+      "fieldName": "EnterpriseScale",
+      "value": "3",
+      "isOnlyAdmin": false,
+      "defaultValue": "",
+      "isShow": true,
+      "fieldType": "Select",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 50,
+      "options": [],
+      "fieldOptions": [
+        {
+          "id": "efe8e159-daa3-4577-bb0f-064e41eaacb6",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "无",
+          "sortId": 0,
+          "code": "0",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "0b2fb419-b04c-4982-90ce-ab0c5cf30198",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "1-50人",
+          "sortId": 1,
+          "code": "1",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "0f46740f-e252-417d-afaa-9defae116f96",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "51-100人",
+          "sortId": 2,
+          "code": "2",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "33e08183-c775-41f9-ad46-7e8bef1316e6",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "101-500人",
+          "sortId": 3,
+          "code": "3",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "e34bd3f8-64af-4d6b-810a-4fb523d148a2",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "501-1000人",
+          "sortId": 4,
+          "code": "4",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "6f9110fb-0689-4ff2-a525-1622bd2c4da7",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "1001-2000人",
+          "sortId": 5,
+          "code": "5",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "7fafff35-e6a1-42bd-8f1c-93f10cbc48a1",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "2000人以上",
+          "sortId": 6,
+          "code": "6",
+          "sourceId": null,
+          "childrens": []
+        }
+      ],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 10,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Details",
+      "isForbidden": false,
+      "showValue": "3",
+      "placeHolder": "请选择企业规模",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": true,
+      "intRelDataSource": 1,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业LOGO",
+      "fieldName": "CorporateLogo",
+      "value": [
+        {
+          "id": "4a92fd3f-42d6-403d-8a56-4640fcbc9c79",
+          "absoluteUrl": "https://dev-fs.31huiyi.com/4a92fd3f-42d6-403d-8a56-4640fcbc9c79",
+          "byteLength": 68571,
+          "fileName": "picture3",
+          "isImage": true,
+          "refId": null,
+          "refType": null,
+          "createdDate": "2021-01-08 10:31:04",
+          "mime": "image/jpeg",
+          "remarks": null,
+          "uploadedBy": "",
+          "bventId": null,
+          "relativeUrl": "4a92fd3f-42d6-403d-8a56-4640fcbc9c79",
+          "extension": ".jpg"
+        }
+      ],
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "UploadButton",
+      "isNeeded": true,
+      "isUnique": false,
+      "maxLength": 50,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 11,
+      "isAllowSearch": false,
+      "description": "请上传大小不超过5M的图片，格式支持png、jpg、jpeg、gif ,建议尺寸：800*800",
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Details",
+      "isForbidden": false,
+      "showValue": [
+        {
+          "id": "4a92fd3f-42d6-403d-8a56-4640fcbc9c79",
+          "absoluteUrl": "https://dev-fs.31huiyi.com/4a92fd3f-42d6-403d-8a56-4640fcbc9c79",
+          "byteLength": 68571,
+          "fileName": "picture3",
+          "isImage": true,
+          "refId": null,
+          "refType": null,
+          "createdDate": "2021-01-08 10:31:04",
+          "mime": "image/jpeg",
+          "remarks": null,
+          "uploadedBy": "",
+          "bventId": null,
+          "relativeUrl": "4a92fd3f-42d6-403d-8a56-4640fcbc9c79",
+          "extension": ".jpg"
+        }
+      ],
+      "placeHolder": "请上传企业LOGO",
+      "fileExtensions": [
+        {
+          "extensions": [
+            {
+              "extension": "txt",
+              "isAllow": false
+            },
+            {
+              "extension": "pdf",
+              "isAllow": false
+            },
+            {
+              "extension": "doc",
+              "isAllow": false
+            },
+            {
+              "extension": "docx",
+              "isAllow": false
+            },
+            {
+              "extension": "xls",
+              "isAllow": false
+            },
+            {
+              "extension": "xlsx",
+              "isAllow": false
+            },
+            {
+              "extension": "ppt",
+              "isAllow": false
+            },
+            {
+              "extension": "pptx",
+              "isAllow": false
+            },
+            {
+              "extension": "wps",
+              "isAllow": false
+            },
+            {
+              "extension": "rtf",
+              "isAllow": false
+            },
+            {
+              "extension": "hlp",
+              "isAllow": false
+            }
+          ],
+          "codeName": "文档类",
+          "code": "Document"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "jpg",
+              "isAllow": true
+            },
+            {
+              "extension": "jpeg",
+              "isAllow": true
+            },
+            {
+              "extension": "png",
+              "isAllow": true
+            },
+            {
+              "extension": "gif",
+              "isAllow": false
+            },
+            {
+              "extension": "bmp",
+              "isAllow": false
+            }
+          ],
+          "codeName": "图片类",
+          "code": "Image"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "mkv",
+              "isAllow": false
+            },
+            {
+              "extension": "mp4",
+              "isAllow": false
+            },
+            {
+              "extension": "avi",
+              "isAllow": false
+            },
+            {
+              "extension": "swf",
+              "isAllow": false
+            },
+            {
+              "extension": "wmv",
+              "isAllow": false
+            },
+            {
+              "extension": "rmvb",
+              "isAllow": false
+            },
+            {
+              "extension": "mov",
+              "isAllow": false
+            },
+            {
+              "extension": "mpg",
+              "isAllow": false
+            }
+          ],
+          "codeName": "视频类",
+          "code": "Video"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "mp3",
+              "isAllow": false
+            },
+            {
+              "extension": "flac",
+              "isAllow": false
+            },
+            {
+              "extension": "ape",
+              "isAllow": false
+            },
+            {
+              "extension": "wma",
+              "isAllow": false
+            },
+            {
+              "extension": "wav",
+              "isAllow": false
+            },
+            {
+              "extension": "aac",
+              "isAllow": false
+            },
+            {
+              "extension": "m4a",
+              "isAllow": false
+            },
+            {
+              "extension": "au",
+              "isAllow": false
+            },
+            {
+              "extension": "ram",
+              "isAllow": false
+            },
+            {
+              "extension": "mmf",
+              "isAllow": false
+            },
+            {
+              "extension": "aif",
+              "isAllow": false
+            }
+          ],
+          "codeName": "音频类",
+          "code": "Audio"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "rar",
+              "isAllow": false
+            },
+            {
+              "extension": "zip",
+              "isAllow": false
+            },
+            {
+              "extension": "7z",
+              "isAllow": false
+            },
+            {
+              "extension": "gz",
+              "isAllow": false
+            },
+            {
+              "extension": "arj",
+              "isAllow": false
+            },
+            {
+              "extension": "z",
+              "isAllow": false
+            }
+          ],
+          "codeName": "压缩包",
+          "code": "Zip"
+        }
+      ],
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 12288,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0,
+        4096,
+        8192
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "主营产品",
+      "fieldName": "MainProducts",
+      "value": "606,606001,606001001",
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "CascadingCategory",
+      "isNeeded": true,
+      "isUnique": false,
+      "maxLength": 3000,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 12,
+      "isAllowSearch": false,
+      "description": "支持添加多个主营产品,此字段填写将影响采购商观众等对展商的筛选,请慎重选择",
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Details",
+      "isForbidden": false,
+      "showValue": "606,606001,606001001",
+      "placeHolder": "请选择主营产品",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 12288,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0,
+        4096,
+        8192
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "贸易形式",
+      "fieldName": "TradeMode",
+      "value": "[\"1\",\"2\"]",
+      "isOnlyAdmin": false,
+      "defaultValue": "",
+      "isShow": true,
+      "fieldType": "MultipleSelect",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 255,
+      "options": [],
+      "fieldOptions": [
+        {
+          "id": "b03787af-37e8-405f-8ac7-fe9903fcad67",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "ODM",
+          "sortId": 0,
+          "code": "0",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "6276b55f-973a-4a74-8b73-19719e54a9a3",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "OBM",
+          "sortId": 1,
+          "code": "1",
+          "sourceId": null,
+          "childrens": []
+        },
+        {
+          "id": "6930c8cd-abf5-4c11-89cc-9b82b1968810",
+          "topOrgId": null,
+          "businessId": null,
+          "parentId": null,
+          "treeLevel": 0,
+          "optionDescribe": "OEM",
+          "sortId": 2,
+          "code": "2",
+          "sourceId": null,
+          "childrens": []
+        }
+      ],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 13,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Details",
+      "isForbidden": false,
+      "showValue": "[\"1\",\"2\"]",
+      "placeHolder": "请选择贸易形式",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": true,
+      "intRelDataSource": 1,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业简介（中文）",
+      "fieldName": "ProfileCh",
+      "value": "<p>发大水发射企业简介中文</p>",
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "RichText",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 2000,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 14,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Basic",
+      "isForbidden": false,
+      "showValue": "<p>发大水发射企业简介中文</p>",
+      "placeHolder": "请输入企业简介（中文）",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业简介（英文）",
+      "fieldName": "ProfileEn",
+      "value": "<p>企业简介英文</p>",
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "RichText",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 2000,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 15,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Basic",
+      "isForbidden": false,
+      "showValue": "<p>企业简介英文</p>",
+      "placeHolder": "请输入企业简介（英文）",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业关键词（中文）",
+      "fieldName": "KeyWordsEnterpriseZh",
+      "value": "百兴",
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "InputTag",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 500,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 16,
+      "isAllowSearch": false,
+      "description": "企业关键词将用于采购商进行检索，使用ENTER可输入新词，最多不超过10个关键词",
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Basic",
+      "isForbidden": false,
+      "showValue": "百兴",
+      "placeHolder": "请输入企业关键词（中文）",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业关键词（英文）",
+      "fieldName": "KeyWordsEnterpriseEn",
+      "value": "baixing",
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "InputTag",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 500,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 17,
+      "isAllowSearch": false,
+      "description": "企业关键词将用于采购商进行检索，使用ENTER可输入新词，最多不超过10个关键词",
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Basic",
+      "isForbidden": false,
+      "showValue": "baixing",
+      "placeHolder": "请输入企业关键词（英文）",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "店铺通栏Banner",
+      "fieldName": "EnterpriseColumnBanner",
+      "value": null,
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "UploadButton",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 200,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 18,
+      "isAllowSearch": false,
+      "description": "请上传大小不超过5M的图片，格式支持png、jpg、jpeg建议尺寸：1920*236，最多上传1张",
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Details",
+      "isForbidden": false,
+      "showValue": null,
+      "placeHolder": "请上传店铺通栏Banner",
+      "fileExtensions": [
+        {
+          "extensions": [
+            {
+              "extension": "txt",
+              "isAllow": false
+            },
+            {
+              "extension": "pdf",
+              "isAllow": false
+            },
+            {
+              "extension": "doc",
+              "isAllow": false
+            },
+            {
+              "extension": "docx",
+              "isAllow": false
+            },
+            {
+              "extension": "xls",
+              "isAllow": false
+            },
+            {
+              "extension": "xlsx",
+              "isAllow": false
+            },
+            {
+              "extension": "ppt",
+              "isAllow": false
+            },
+            {
+              "extension": "pptx",
+              "isAllow": false
+            },
+            {
+              "extension": "wps",
+              "isAllow": false
+            },
+            {
+              "extension": "rtf",
+              "isAllow": false
+            },
+            {
+              "extension": "hlp",
+              "isAllow": false
+            }
+          ],
+          "codeName": "文档类",
+          "code": "Document"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "jpg",
+              "isAllow": true
+            },
+            {
+              "extension": "jpeg",
+              "isAllow": true
+            },
+            {
+              "extension": "png",
+              "isAllow": true
+            },
+            {
+              "extension": "gif",
+              "isAllow": false
+            },
+            {
+              "extension": "bmp",
+              "isAllow": false
+            }
+          ],
+          "codeName": "图片类",
+          "code": "Image"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "mkv",
+              "isAllow": false
+            },
+            {
+              "extension": "mp4",
+              "isAllow": false
+            },
+            {
+              "extension": "avi",
+              "isAllow": false
+            },
+            {
+              "extension": "swf",
+              "isAllow": false
+            },
+            {
+              "extension": "wmv",
+              "isAllow": false
+            },
+            {
+              "extension": "rmvb",
+              "isAllow": false
+            },
+            {
+              "extension": "mov",
+              "isAllow": false
+            },
+            {
+              "extension": "mpg",
+              "isAllow": false
+            }
+          ],
+          "codeName": "视频类",
+          "code": "Video"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "mp3",
+              "isAllow": false
+            },
+            {
+              "extension": "flac",
+              "isAllow": false
+            },
+            {
+              "extension": "ape",
+              "isAllow": false
+            },
+            {
+              "extension": "wma",
+              "isAllow": false
+            },
+            {
+              "extension": "wav",
+              "isAllow": false
+            },
+            {
+              "extension": "aac",
+              "isAllow": false
+            },
+            {
+              "extension": "m4a",
+              "isAllow": false
+            },
+            {
+              "extension": "au",
+              "isAllow": false
+            },
+            {
+              "extension": "ram",
+              "isAllow": false
+            },
+            {
+              "extension": "mmf",
+              "isAllow": false
+            },
+            {
+              "extension": "aif",
+              "isAllow": false
+            }
+          ],
+          "codeName": "音频类",
+          "code": "Audio"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "rar",
+              "isAllow": false
+            },
+            {
+              "extension": "zip",
+              "isAllow": false
+            },
+            {
+              "extension": "7z",
+              "isAllow": false
+            },
+            {
+              "extension": "gz",
+              "isAllow": false
+            },
+            {
+              "extension": "arj",
+              "isAllow": false
+            },
+            {
+              "extension": "z",
+              "isAllow": false
+            }
+          ],
+          "codeName": "压缩包",
+          "code": "Zip"
+        }
+      ],
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业Banner",
+      "fieldName": "EnterpriseBanner",
+      "value": null,
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "UploadButton",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 5,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 19,
+      "isAllowSearch": false,
+      "description": "请上传大小不超过5M的图片，格式支持png、jpg、jpeg、gif 推荐比例：5:2，建议尺寸：1920*768，最多上传5张",
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Details",
+      "isForbidden": false,
+      "showValue": null,
+      "placeHolder": "请上传企业Banner",
+      "fileExtensions": [
+        {
+          "extensions": [
+            {
+              "extension": "txt",
+              "isAllow": false
+            },
+            {
+              "extension": "pdf",
+              "isAllow": false
+            },
+            {
+              "extension": "doc",
+              "isAllow": false
+            },
+            {
+              "extension": "docx",
+              "isAllow": false
+            },
+            {
+              "extension": "xls",
+              "isAllow": false
+            },
+            {
+              "extension": "xlsx",
+              "isAllow": false
+            },
+            {
+              "extension": "ppt",
+              "isAllow": false
+            },
+            {
+              "extension": "pptx",
+              "isAllow": false
+            },
+            {
+              "extension": "wps",
+              "isAllow": false
+            },
+            {
+              "extension": "rtf",
+              "isAllow": false
+            },
+            {
+              "extension": "hlp",
+              "isAllow": false
+            }
+          ],
+          "codeName": "文档类",
+          "code": "Document"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "jpg",
+              "isAllow": true
+            },
+            {
+              "extension": "jpeg",
+              "isAllow": true
+            },
+            {
+              "extension": "png",
+              "isAllow": true
+            },
+            {
+              "extension": "gif",
+              "isAllow": false
+            },
+            {
+              "extension": "bmp",
+              "isAllow": false
+            }
+          ],
+          "codeName": "图片类",
+          "code": "Image"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "mkv",
+              "isAllow": false
+            },
+            {
+              "extension": "mp4",
+              "isAllow": false
+            },
+            {
+              "extension": "avi",
+              "isAllow": false
+            },
+            {
+              "extension": "swf",
+              "isAllow": false
+            },
+            {
+              "extension": "wmv",
+              "isAllow": false
+            },
+            {
+              "extension": "rmvb",
+              "isAllow": false
+            },
+            {
+              "extension": "mov",
+              "isAllow": false
+            },
+            {
+              "extension": "mpg",
+              "isAllow": false
+            }
+          ],
+          "codeName": "视频类",
+          "code": "Video"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "mp3",
+              "isAllow": false
+            },
+            {
+              "extension": "flac",
+              "isAllow": false
+            },
+            {
+              "extension": "ape",
+              "isAllow": false
+            },
+            {
+              "extension": "wma",
+              "isAllow": false
+            },
+            {
+              "extension": "wav",
+              "isAllow": false
+            },
+            {
+              "extension": "aac",
+              "isAllow": false
+            },
+            {
+              "extension": "m4a",
+              "isAllow": false
+            },
+            {
+              "extension": "au",
+              "isAllow": false
+            },
+            {
+              "extension": "ram",
+              "isAllow": false
+            },
+            {
+              "extension": "mmf",
+              "isAllow": false
+            },
+            {
+              "extension": "aif",
+              "isAllow": false
+            }
+          ],
+          "codeName": "音频类",
+          "code": "Audio"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "rar",
+              "isAllow": false
+            },
+            {
+              "extension": "zip",
+              "isAllow": false
+            },
+            {
+              "extension": "7z",
+              "isAllow": false
+            },
+            {
+              "extension": "gz",
+              "isAllow": false
+            },
+            {
+              "extension": "arj",
+              "isAllow": false
+            },
+            {
+              "extension": "z",
+              "isAllow": false
+            }
+          ],
+          "codeName": "压缩包",
+          "code": "Zip"
+        }
+      ],
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "UploadBannerGroup",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业Banner链接",
+      "fieldName": "EnterpriseBannerLink",
+      "value": null,
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "Textbox",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 1000,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 19,
+      "isAllowSearch": false,
+      "description": "请输入以“http://”或“https://”开头的链接",
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Details",
+      "isForbidden": false,
+      "showValue": null,
+      "placeHolder": "请输入企业Banner链接",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "UploadBannerGroup",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业图片",
+      "fieldName": "CorporateImage",
+      "value": [
+        {
+          "id": "cd0d7ce5-61cb-465f-b25f-8184ed4f4fb5",
+          "absoluteUrl": "https://dev-fs.31huiyi.com/cd0d7ce5-61cb-465f-b25f-8184ed4f4fb5",
+          "byteLength": 54302,
+          "fileName": "picture4",
+          "isImage": true,
+          "refId": null,
+          "refType": null,
+          "createdDate": "2021-01-08 10:31:41",
+          "mime": "image/jpeg",
+          "remarks": null,
+          "uploadedBy": "",
+          "bventId": null,
+          "relativeUrl": "cd0d7ce5-61cb-465f-b25f-8184ed4f4fb5",
+          "extension": ".jpg"
+        }
+      ],
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "UploadButton",
+      "isNeeded": true,
+      "isUnique": false,
+      "maxLength": 500,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 20,
+      "isAllowSearch": false,
+      "description": "请上传大小不超过5M的图片，格式支持png、jpg、jpeg、gif， 建议尺寸：750*422，最多上传10张",
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Details",
+      "isForbidden": false,
+      "showValue": [
+        {
+          "id": "cd0d7ce5-61cb-465f-b25f-8184ed4f4fb5",
+          "absoluteUrl": "https://dev-fs.31huiyi.com/cd0d7ce5-61cb-465f-b25f-8184ed4f4fb5",
+          "byteLength": 54302,
+          "fileName": "picture4",
+          "isImage": true,
+          "refId": null,
+          "refType": null,
+          "createdDate": "2021-01-08 10:31:41",
+          "mime": "image/jpeg",
+          "remarks": null,
+          "uploadedBy": "",
+          "bventId": null,
+          "relativeUrl": "cd0d7ce5-61cb-465f-b25f-8184ed4f4fb5",
+          "extension": ".jpg"
+        }
+      ],
+      "placeHolder": "请上传企业图片",
+      "fileExtensions": [
+        {
+          "extensions": [
+            {
+              "extension": "txt",
+              "isAllow": false
+            },
+            {
+              "extension": "pdf",
+              "isAllow": false
+            },
+            {
+              "extension": "doc",
+              "isAllow": false
+            },
+            {
+              "extension": "docx",
+              "isAllow": false
+            },
+            {
+              "extension": "xls",
+              "isAllow": false
+            },
+            {
+              "extension": "xlsx",
+              "isAllow": false
+            },
+            {
+              "extension": "ppt",
+              "isAllow": false
+            },
+            {
+              "extension": "pptx",
+              "isAllow": false
+            },
+            {
+              "extension": "wps",
+              "isAllow": false
+            },
+            {
+              "extension": "rtf",
+              "isAllow": false
+            },
+            {
+              "extension": "hlp",
+              "isAllow": false
+            }
+          ],
+          "codeName": "文档类",
+          "code": "Document"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "jpg",
+              "isAllow": true
+            },
+            {
+              "extension": "jpeg",
+              "isAllow": true
+            },
+            {
+              "extension": "png",
+              "isAllow": true
+            },
+            {
+              "extension": "gif",
+              "isAllow": false
+            },
+            {
+              "extension": "bmp",
+              "isAllow": false
+            }
+          ],
+          "codeName": "图片类",
+          "code": "Image"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "mkv",
+              "isAllow": false
+            },
+            {
+              "extension": "mp4",
+              "isAllow": false
+            },
+            {
+              "extension": "avi",
+              "isAllow": false
+            },
+            {
+              "extension": "swf",
+              "isAllow": false
+            },
+            {
+              "extension": "wmv",
+              "isAllow": false
+            },
+            {
+              "extension": "rmvb",
+              "isAllow": false
+            },
+            {
+              "extension": "mov",
+              "isAllow": false
+            },
+            {
+              "extension": "mpg",
+              "isAllow": false
+            }
+          ],
+          "codeName": "视频类",
+          "code": "Video"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "mp3",
+              "isAllow": false
+            },
+            {
+              "extension": "flac",
+              "isAllow": false
+            },
+            {
+              "extension": "ape",
+              "isAllow": false
+            },
+            {
+              "extension": "wma",
+              "isAllow": false
+            },
+            {
+              "extension": "wav",
+              "isAllow": false
+            },
+            {
+              "extension": "aac",
+              "isAllow": false
+            },
+            {
+              "extension": "m4a",
+              "isAllow": false
+            },
+            {
+              "extension": "au",
+              "isAllow": false
+            },
+            {
+              "extension": "ram",
+              "isAllow": false
+            },
+            {
+              "extension": "mmf",
+              "isAllow": false
+            },
+            {
+              "extension": "aif",
+              "isAllow": false
+            }
+          ],
+          "codeName": "音频类",
+          "code": "Audio"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "rar",
+              "isAllow": false
+            },
+            {
+              "extension": "zip",
+              "isAllow": false
+            },
+            {
+              "extension": "7z",
+              "isAllow": false
+            },
+            {
+              "extension": "gz",
+              "isAllow": false
+            },
+            {
+              "extension": "arj",
+              "isAllow": false
+            },
+            {
+              "extension": "z",
+              "isAllow": false
+            }
+          ],
+          "codeName": "压缩包",
+          "code": "Zip"
+        }
+      ],
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 12288,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0,
+        4096,
+        8192
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业视频",
+      "fieldName": "EnterpriseVideo",
+      "value": null,
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "UploadVideo",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 50,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 21,
+      "isAllowSearch": false,
+      "description": "",
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Details",
+      "isForbidden": false,
+      "showValue": null,
+      "placeHolder": "请上传企业视频",
+      "fileExtensions": [
+        {
+          "extensions": [
+            {
+              "extension": "txt",
+              "isAllow": false
+            },
+            {
+              "extension": "pdf",
+              "isAllow": false
+            },
+            {
+              "extension": "doc",
+              "isAllow": false
+            },
+            {
+              "extension": "docx",
+              "isAllow": false
+            },
+            {
+              "extension": "xls",
+              "isAllow": false
+            },
+            {
+              "extension": "xlsx",
+              "isAllow": false
+            },
+            {
+              "extension": "ppt",
+              "isAllow": false
+            },
+            {
+              "extension": "pptx",
+              "isAllow": false
+            },
+            {
+              "extension": "wps",
+              "isAllow": false
+            },
+            {
+              "extension": "rtf",
+              "isAllow": false
+            },
+            {
+              "extension": "hlp",
+              "isAllow": false
+            }
+          ],
+          "codeName": "文档类",
+          "code": "Document"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "jpg",
+              "isAllow": false
+            },
+            {
+              "extension": "jpeg",
+              "isAllow": false
+            },
+            {
+              "extension": "png",
+              "isAllow": false
+            },
+            {
+              "extension": "gif",
+              "isAllow": false
+            },
+            {
+              "extension": "bmp",
+              "isAllow": false
+            }
+          ],
+          "codeName": "图片类",
+          "code": "Image"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "mkv",
+              "isAllow": false
+            },
+            {
+              "extension": "mp4",
+              "isAllow": false
+            },
+            {
+              "extension": "avi",
+              "isAllow": false
+            },
+            {
+              "extension": "swf",
+              "isAllow": false
+            },
+            {
+              "extension": "wmv",
+              "isAllow": false
+            },
+            {
+              "extension": "rmvb",
+              "isAllow": false
+            },
+            {
+              "extension": "mov",
+              "isAllow": false
+            },
+            {
+              "extension": "mpg",
+              "isAllow": false
+            }
+          ],
+          "codeName": "视频类",
+          "code": "Video"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "mp3",
+              "isAllow": false
+            },
+            {
+              "extension": "flac",
+              "isAllow": false
+            },
+            {
+              "extension": "ape",
+              "isAllow": false
+            },
+            {
+              "extension": "wma",
+              "isAllow": false
+            },
+            {
+              "extension": "wav",
+              "isAllow": false
+            },
+            {
+              "extension": "aac",
+              "isAllow": false
+            },
+            {
+              "extension": "m4a",
+              "isAllow": false
+            },
+            {
+              "extension": "au",
+              "isAllow": false
+            },
+            {
+              "extension": "ram",
+              "isAllow": false
+            },
+            {
+              "extension": "mmf",
+              "isAllow": false
+            },
+            {
+              "extension": "aif",
+              "isAllow": false
+            }
+          ],
+          "codeName": "音频类",
+          "code": "Audio"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "rar",
+              "isAllow": false
+            },
+            {
+              "extension": "zip",
+              "isAllow": false
+            },
+            {
+              "extension": "7z",
+              "isAllow": false
+            },
+            {
+              "extension": "gz",
+              "isAllow": false
+            },
+            {
+              "extension": "arj",
+              "isAllow": false
+            },
+            {
+              "extension": "z",
+              "isAllow": false
+            }
+          ],
+          "codeName": "压缩包",
+          "code": "Zip"
+        }
+      ],
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "CoverVideoGroup",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业视频封面",
+      "fieldName": "EnterpriseVideoCover",
+      "value": null,
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "UploadButton",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 50,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 21,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Details",
+      "isForbidden": false,
+      "showValue": null,
+      "placeHolder": "请上传企业视频封面图",
+      "fileExtensions": [
+        {
+          "extensions": [
+            {
+              "extension": "txt",
+              "isAllow": false
+            },
+            {
+              "extension": "pdf",
+              "isAllow": false
+            },
+            {
+              "extension": "doc",
+              "isAllow": false
+            },
+            {
+              "extension": "docx",
+              "isAllow": false
+            },
+            {
+              "extension": "xls",
+              "isAllow": false
+            },
+            {
+              "extension": "xlsx",
+              "isAllow": false
+            },
+            {
+              "extension": "ppt",
+              "isAllow": false
+            },
+            {
+              "extension": "pptx",
+              "isAllow": false
+            },
+            {
+              "extension": "wps",
+              "isAllow": false
+            },
+            {
+              "extension": "rtf",
+              "isAllow": false
+            },
+            {
+              "extension": "hlp",
+              "isAllow": false
+            }
+          ],
+          "codeName": "文档类",
+          "code": "Document"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "jpg",
+              "isAllow": true
+            },
+            {
+              "extension": "jpeg",
+              "isAllow": true
+            },
+            {
+              "extension": "png",
+              "isAllow": true
+            },
+            {
+              "extension": "gif",
+              "isAllow": false
+            },
+            {
+              "extension": "bmp",
+              "isAllow": false
+            }
+          ],
+          "codeName": "图片类",
+          "code": "Image"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "mkv",
+              "isAllow": false
+            },
+            {
+              "extension": "mp4",
+              "isAllow": false
+            },
+            {
+              "extension": "avi",
+              "isAllow": false
+            },
+            {
+              "extension": "swf",
+              "isAllow": false
+            },
+            {
+              "extension": "wmv",
+              "isAllow": false
+            },
+            {
+              "extension": "rmvb",
+              "isAllow": false
+            },
+            {
+              "extension": "mov",
+              "isAllow": false
+            },
+            {
+              "extension": "mpg",
+              "isAllow": false
+            }
+          ],
+          "codeName": "视频类",
+          "code": "Video"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "mp3",
+              "isAllow": false
+            },
+            {
+              "extension": "flac",
+              "isAllow": false
+            },
+            {
+              "extension": "ape",
+              "isAllow": false
+            },
+            {
+              "extension": "wma",
+              "isAllow": false
+            },
+            {
+              "extension": "wav",
+              "isAllow": false
+            },
+            {
+              "extension": "aac",
+              "isAllow": false
+            },
+            {
+              "extension": "m4a",
+              "isAllow": false
+            },
+            {
+              "extension": "au",
+              "isAllow": false
+            },
+            {
+              "extension": "ram",
+              "isAllow": false
+            },
+            {
+              "extension": "mmf",
+              "isAllow": false
+            },
+            {
+              "extension": "aif",
+              "isAllow": false
+            }
+          ],
+          "codeName": "音频类",
+          "code": "Audio"
+        },
+        {
+          "extensions": [
+            {
+              "extension": "rar",
+              "isAllow": false
+            },
+            {
+              "extension": "zip",
+              "isAllow": false
+            },
+            {
+              "extension": "7z",
+              "isAllow": false
+            },
+            {
+              "extension": "gz",
+              "isAllow": false
+            },
+            {
+              "extension": "arj",
+              "isAllow": false
+            },
+            {
+              "extension": "z",
+              "isAllow": false
+            }
+          ],
+          "codeName": "压缩包",
+          "code": "Zip"
+        }
+      ],
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "CoverVideoGroup",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业3D展示链接",
+      "fieldName": "Enterprise3DLink",
+      "value": null,
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "Textbox",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 1000,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 22,
+      "isAllowSearch": false,
+      "description": "此处仅可上传三维展示链接，如上传其他类型链接，一经发现，将禁用相关展示功能",
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Details",
+      "isForbidden": false,
+      "showValue": null,
+      "placeHolder": "请输入企业3D展示链接",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "联系信息",
+      "fieldName": "Separator",
+      "value": null,
+      "isOnlyAdmin": false,
+      "defaultValue": "1",
+      "isShow": true,
+      "fieldType": "Separator",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": null,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 23,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Contact information",
+      "isForbidden": false,
+      "showValue": null,
+      "placeHolder": null,
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": null,
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "所在地区",
+      "fieldName": "CountryArea",
+      "value": "China/33/3303/330305",
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "CascadingAddress",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 50,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 24,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Contact information",
+      "isForbidden": false,
+      "showValue": "China/33/3303/330305",
+      "placeHolder": "请选择所在地区",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Whole",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "中文地址",
+      "fieldName": "CompanyOperatingAddress",
+      "value": null,
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "Textbox",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 500,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 25,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Contact information",
+      "isForbidden": false,
+      "showValue": null,
+      "placeHolder": "请输入中文地址",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Half",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "英文地址",
+      "fieldName": "EnglishStreetAddress",
+      "value": null,
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "Textbox",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 500,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 26,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Contact information",
+      "isForbidden": false,
+      "showValue": null,
+      "placeHolder": "请输入英文地址",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Half",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "邮编",
+      "fieldName": "ZipCode",
+      "value": null,
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "Textbox",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 50,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 27,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Contact information",
+      "isForbidden": false,
+      "showValue": null,
+      "placeHolder": "请输入邮编",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 8192,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0,
+        8192
+      ],
+      "widthSetting": "Half",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "企业网址",
+      "fieldName": "CorporateWebsite",
+      "value": null,
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "Textbox",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 500,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 28,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Contact information",
+      "isForbidden": false,
+      "showValue": null,
+      "placeHolder": "请输入企业网址",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Half",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "业务联系人（中文）",
+      "fieldName": "ContactsFullName",
+      "value": "李四",
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "Textbox",
+      "isNeeded": true,
+      "isUnique": false,
+      "maxLength": 50,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 29,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Contact information",
+      "isForbidden": false,
+      "showValue": "李四",
+      "placeHolder": "请输入业务联系人（中文）",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "ContactNameGroup",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 12288,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0,
+        4096,
+        8192
+      ],
+      "widthSetting": "Half",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "业务联系人（英文）",
+      "fieldName": "ContactsFullNameEn",
+      "value": null,
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "Textbox",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 200,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 30,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Contact information",
+      "isForbidden": false,
+      "showValue": null,
+      "placeHolder": "请输入业务联系人（英文）",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 0,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0
+      ],
+      "widthSetting": "Half",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "手机",
+      "fieldName": "ContactsPhone",
+      "value": "13058188800",
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "Textbox",
+      "isNeeded": true,
+      "isUnique": false,
+      "maxLength": 50,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 31,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Contact information",
+      "isForbidden": false,
+      "showValue": "13058188800",
+      "placeHolder": "请输入手机",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 1,
+      "openFunctionalVerification": 12288,
+      "verifyCombinatorialTags": [
+        0,
+        1
+      ],
+      "openFunctionalVerificationTags": [
+        0,
+        4096,
+        8192
+      ],
+      "widthSetting": "Half",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "Email",
+      "fieldName": "Email",
+      "value": "13058188800@qq.com",
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "Textbox",
+      "isNeeded": true,
+      "isUnique": false,
+      "maxLength": 200,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 32,
+      "isAllowSearch": false,
+      "description": null,
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Contact information",
+      "isForbidden": false,
+      "showValue": "13058188800@qq.com",
+      "placeHolder": "请输入Email",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 12288,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0,
+        4096,
+        8192
+      ],
+      "widthSetting": "Half",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "传真",
+      "fieldName": "Fax",
+      "value": null,
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "Textbox",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 50,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 34,
+      "isAllowSearch": false,
+      "description": "示例：中国传真号 021-66666666\r\n国际传真号需输入国家代码：1-202-662516",
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Contact information",
+      "isForbidden": false,
+      "showValue": null,
+      "placeHolder": "请输入传真",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 8192,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0,
+        8192
+      ],
+      "widthSetting": "Half",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    },
+    {
+      "displayName": "电话",
+      "fieldName": "Telephone",
+      "value": null,
+      "isOnlyAdmin": false,
+      "defaultValue": null,
+      "isShow": true,
+      "fieldType": "Textbox",
+      "isNeeded": false,
+      "isUnique": false,
+      "maxLength": 50,
+      "options": [],
+      "fieldOptions": [],
+      "isVerifyEmail": false,
+      "isJoinAfterAllowModify": false,
+      "isGlobalRoaming": false,
+      "isJoinVerifyChinaMobile": false,
+      "enableOther": false,
+      "sortId": 3331,
+      "isAllowSearch": false,
+      "description": "示例：中国电话 021-66666666\r\n国际电话需输入国家代码：1-202-662516",
+      "specialFieldTag": null,
+      "isNeedCookie": false,
+      "fieldGroup": "Contact information",
+      "isForbidden": false,
+      "showValue": null,
+      "placeHolder": "请输入电话",
+      "fileExtensions": null,
+      "isShowDetailAddress": false,
+      "showEndInputTips": null,
+      "dateFormat": "",
+      "groupName": "",
+      "verifyCombinatorial": 0,
+      "openFunctionalVerification": 8192,
+      "verifyCombinatorialTags": [
+        0
+      ],
+      "openFunctionalVerificationTags": [
+        0,
+        8192
+      ],
+      "widthSetting": "Half",
+      "isRelDataSource": false,
+      "intRelDataSource": 0,
+      "language": null,
+      "dataSourceId": null
+    }
+  ],
+  "groupAttendeeFieldValues": null,
+  "groups": [
+    {
+      "id": "1e7dc1d4-e91f-40af-ad9f-c3057e42a480",
+      "groupName": "AddressGroup",
+      "regPathId": "",
+      "isSplit": false,
+      "displayName": "详细地址",
+      "isUseMiddle": false,
+      "sortId": 5,
+      "bventId": "6f070000-294c-000c-ee27-08d8b376bcab",
+      "processPathType": "AttendeeOrganizationExhibitors",
+      "certificateTypeCombination": 0,
+      "transportTypeCombination": 0,
+      "certificateTypeCombinationTags": [],
+      "transportTypeCombinationTags": [],
+      "description": "",
+      "widthSetting": "Whole",
+      "language": 1
+    },
+    {
+      "id": "8384a807-0dc8-4a0f-9135-c0a29fc33fae",
+      "groupName": "UploadBannerGroup",
+      "regPathId": "",
+      "isSplit": false,
+      "displayName": "企业Banner",
+      "isUseMiddle": false,
+      "sortId": 19,
+      "bventId": "6f070000-294c-000c-ee27-08d8b376bcab",
+      "processPathType": "AttendeeOrganizationExhibitors",
+      "certificateTypeCombination": 0,
+      "transportTypeCombination": 0,
+      "certificateTypeCombinationTags": [],
+      "transportTypeCombinationTags": [],
+      "description": "",
+      "widthSetting": "Whole",
+      "language": 1
+    },
+    {
+      "id": "ec77cf81-07c4-49fb-9213-eb31f57eb1af",
+      "groupName": "CoverVideoGroup",
+      "regPathId": "",
+      "isSplit": false,
+      "displayName": "封面视频",
+      "isUseMiddle": false,
+      "sortId": 21,
+      "bventId": "6f070000-294c-000c-ee27-08d8b376bcab",
+      "processPathType": "AttendeeOrganizationExhibitors",
+      "certificateTypeCombination": 0,
+      "transportTypeCombination": 0,
+      "certificateTypeCombinationTags": [],
+      "transportTypeCombinationTags": [],
+      "description": "",
+      "widthSetting": "Whole",
+      "language": 1
+    },
+    {
+      "id": "3cf5e34f-755c-40e9-a64d-7d43a9b74623",
+      "groupName": "ContactNameGroup",
+      "regPathId": "",
+      "isSplit": false,
+      "displayName": "业务联系人（中文）",
+      "isUseMiddle": false,
+      "sortId": 29,
+      "bventId": "6f070000-294c-000c-ee27-08d8b376bcab",
+      "processPathType": "AttendeeOrganizationExhibitors",
+      "certificateTypeCombination": 0,
+      "transportTypeCombination": 0,
+      "certificateTypeCombinationTags": [],
+      "transportTypeCombinationTags": [],
+      "description": "",
+      "widthSetting": "Half",
+      "language": 1
+    }
+  ],
+  "allowDelete": false,
+  "groupCategories": {
+    "codeName": "个人",
+    "code": "Personal"
+  },
+  "attendeeRoles": null,
+  "attendeeRole": 0,
+  "avatar": null,
+  "remark": null,
+  "invitationCode": null,
+  "showAuditInfo": false,
+  "userBenefitPackage": null,
+  "registerRules": null,
+  "organizationId": "6f070000-294c-000c-a980-08d8a8a93460",
+  "templateCode": "160",
+  "mobileTemplateCode": "160",
+  "belongOrgId": "8a010000-5d88-0015-3e23-08d6e8b0d230",
+  "language": "1"
+}
