@@ -14,6 +14,7 @@ namespace Ishareshop.Api.Controllers
         {
             return View();
         }
+        [HttpGet]
         public async Task<IActionResult> Get()
         {
             using (var fs = new FileStream("test.json", FileMode.Open))
@@ -26,6 +27,7 @@ namespace Ishareshop.Api.Controllers
             }
             return Ok();
         }
+        [HttpGet]
         public async Task<IActionResult> Write()
         {
             return Ok();

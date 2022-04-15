@@ -32,6 +32,7 @@ namespace Ishareshop.Api.Controllers
         [HttpGet]
         public async Task<string> get()
         {
+            await Task.Delay(2);
             return "Welcome";
         }
         /// <summary>
@@ -64,6 +65,16 @@ namespace Ishareshop.Api.Controllers
                 //new Claim("admin", user.IsAdmin.ToString(),ClaimValueTypes.Boolean)
             };
 
+            //////////////////////
+            claims = new Claim[]
+                {
+                    new Claim(ClaimTypes.NameIdentifier,user.Id.ToString(),ClaimValueTypes.Integer32),//唯一标识
+                    new Claim(ClaimTypes.Role,user.Role),
+                    new Claim(ClaimTypes.Name,user.UserName),
+                    new Claim(ClaimTypes.Gender,"男"),
+                };
+
+
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSetting.SecurityKey));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
@@ -87,5 +98,31 @@ namespace Ishareshop.Api.Controllers
                 Type = "Bearer"
             });
         }
+        /// <summary>
+        /// JWT的认证有两种：
+        /// 第一种：结合redis,把生成的token放入redis中设置过期时间（短于token的过期时间），如果redis过期则重新获取access_token
+        /// 第二种：新写一个JWT服务，用RefreshTokenAudience认证，多加一个 RefreshToken过期时间很长,通过这个token获取新的access_token
+        /// </summary>
+        /// <param name="claims"></param>
+        /// <returns></returns>
+        public async Task<JsonResult> CreatedTokenAsync(Claim[] claims)
+        {
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSetting.SecurityKey));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var expiresDatetime = DateTime.Now.AddSeconds(_jwtSetting.ExpireSeconds);
+
+            var token = new JwtSecurityToken(issuer: _jwtSetting.Issuer, audience: _jwtSetting.Audience, claims: claims, notBefore: DateTime.Now, expires: expiresDatetime, signingCredentials
+                : creds);
+            string jwtToken = new JwtSecurityTokenHandler().WriteToken(token);
+
+            return new JsonResult(new
+            {
+                Status = true,
+                Token = jwtToken,
+                Expires = expiresDatetime,
+                Type = "Bearer"
+            });
+        }
+
     }
 }

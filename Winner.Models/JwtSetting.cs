@@ -10,6 +10,12 @@ namespace Winner.Models
         public string Issuer { get; set; }//颁发者
         public string Audience { get; set; }//接收者
         public double ExpireSeconds { get; set; }//过期时间
-        
+
+        //刷新Token接收者
+        public string RefreshTokenAudience { get; set; }
+        //刷新Token 过期时间
+        public double RefreshTokenExpiresMinutes { get; set; }
+
+
     }
 }

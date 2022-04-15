@@ -231,6 +231,8 @@ namespace Ishareshop.Api.Controllers
         /// </summary>
         /// <param name="ids"></param>
         /// <returns></returns>
+        [HttpDelete]
+        [Authorize]
         public async Task<ResponseModel> DeleteMany(int[] ids)
         {
             try

@@ -30,4 +30,8 @@
     <ProjectReference Include="..\Winner.Models\Winner.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Enums\" />
+  </ItemGroup>
+
 </Project>

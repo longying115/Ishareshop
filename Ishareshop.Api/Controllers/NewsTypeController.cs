@@ -14,6 +14,7 @@ using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Winner.Extends.Interfaces;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Logging;
 
 namespace Ishareshop.Api.Controllers
 {
@@ -26,13 +27,16 @@ namespace Ishareshop.Api.Controllers
         private readonly IRedisHelper _redisHelper;
 
         private readonly IMemoryCache _memoryCache;
+        private readonly ILogger _logger;
         public NewsTypeController(INewsTypeService newsTypeService, IWebHostEnvironment webHostEnvironment,IRedisHelper redisHelper
-            ,IMemoryCache memoryCache)
+            ,IMemoryCache memoryCache
+            , ILogger<NewsTypeController> logger)
         {
             _newsTypeService = newsTypeService;
             _webHost = webHostEnvironment;
             _redisHelper = redisHelper;
             _memoryCache = memoryCache;
+            _logger = logger;
         }
 
         /// <summary>
@@ -47,9 +51,11 @@ namespace Ishareshop.Api.Controllers
             if (id > 0)
             {
                 string key = $"news_type:{id}";
+                _logger.LogInformation($"开始从Redis缓存中读取数据Key({key})");
                var newsType= await _redisHelper.GetObjectByKeyAsync<NewsType>(key);
                 if (newsType==null)
                 {
+                    _logger.LogInformation("缓存中未获取到数据，从数据库读取！");
                     newsType = await _newsTypeService.GetOneAsync(id);
                     var timeSpan = new TimeSpan(0,5,0);
                     await _redisHelper.SetObjectByKeyAsync(key, newsType, timeSpan);
@@ -278,6 +284,8 @@ namespace Ishareshop.Api.Controllers
         /// </summary>
         /// <param name="ids"></param>
         /// <returns></returns>
+        [HttpDelete]
+        [Authorize]
         public async Task<ResponseModel> DeleteMany(int[] ids)
         {
             try

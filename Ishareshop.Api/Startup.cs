@@ -23,31 +23,57 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using AutoMapper;
 using System.Reflection;
+using Winner.Extends.Interfaces;
+using Winner.Extends;
+using Quartz;
+using Quartz.Impl;
+using Winner.Service;
+using Microsoft.Extensions.Logging;
+using Winner.Repository.Services.Interfaces;
+using Winner.Repository.Services;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace Ishareshop.Api
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration,IWebHostEnvironment webHostEnvironment)
         {
             Configuration = configuration;
+            Env = webHostEnvironment;
         }
 
         public IConfiguration Configuration { get; }
 
+        public IWebHostEnvironment Env { get; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers()
+                //.AddMvcOptions(option=> {
+                    //option.Filters.Add<GlobalExceptionFilter>();
+                // })
+                .AddNewtonsoftJson(opt=> {
+                    opt.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                    opt.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+                    opt.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;  // 设置时区为 UTC)
+                });
             services.AddDbContext<AccountContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            #region 注册业务服务
             services.AddTransient<IProductClassService, ProductClassService>();
             services.AddTransient<INewsTypeService, NewsTypeService>();
             services.AddTransient<IBannerService, BannerService>();
             services.AddTransient<INewsService, NewsService>();
-            //services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IProductService, ProductService>();
             services.AddScoped<IUserService, UserService>();
 
+            services.AddScoped<ICaiService, CaiService>();
+
+            services.AddScoped<IRedisHelper, RedisHelper>();
+            #endregion
             //string conn = Configuration.GetConnectionString("DefaultConnection");
             //Winner.Models.AccountContext.Con
             //设置自定义配置信息  
@@ -68,7 +94,18 @@ namespace Ishareshop.Api
             //添加session支持
             services.AddSession(options => options.IdleTimeout = TimeSpan.FromMinutes(30));
             //依赖注入的生命周期
-            services.AddCors();
+            services.AddCors(options=> {
+                //一般采用这种方法
+                options.AddPolicy("LimitRequests", policy =>
+                {
+                    // 支持多个域名端口，注意端口号后不要带/斜杆：比如localhost:8000/，是错的
+                    // 注意，http://127.0.0.1:5401 和 http://localhost:5401 是不一样的，尽量写两个
+                    policy
+                    .WithOrigins("http://127.0.0.1:5401", "http://localhost:5401", "http://127.0.0.1:5402", "http://localhost:5402")
+                    .AllowAnyHeader()//允许任何标头
+                    .AllowAnyMethod();//允许任何方法
+                });
+            });
             //添加Cookie 支持
             //services.AddAuthentication("MyShopCart").AddCookie("MyShopCart", options =>
             //{
@@ -92,23 +129,25 @@ namespace Ishareshop.Api
             //services.AddAutoMapper(Assembly.Load("目标类型所在的命名空间"), Assembly.Load("源类型所在的命名空间"));
             services.AddAutoMapper(Assembly.Load("Winner.Models"));//同在一个命名空间下
             //添加Swagger支持
-            #region swagger
-            services.AddControllers().AddNewtonsoftJson();
-            var basePath = AppContext.BaseDirectory;
-            services.AddSwaggerGen(c =>
+            #region swagger查看路径：https://localhost:44359/index.html
+            if (this.Env.IsDevelopment())
             {
-                c.SwaggerDoc("v1", new OpenApiInfo
+                var basePath = AppContext.BaseDirectory;
+                services.AddSwaggerGen(c =>
                 {
-                    Title = "IshareshopApi文档",
-                    Description = "这是一个简单的NetCore Api项目",
-                    Contact = new OpenApiContact
+                    c.SwaggerDoc("v1", new OpenApiInfo
                     {
-                        Name = "Ishareshopcore"
-                    },
-                    Version = "v1.0"
+                        Title = "IshareshopApi文档",
+                        Description = "这是一个简单的NetCore Api项目",
+                        Contact = new OpenApiContact
+                        {
+                            Name = "Ishareshopcore"
+                        },
+                        Version = "v1.0"
+                    });
+                    c.IncludeXmlComments(Path.Combine(basePath, "Ishareshop.NetCore.WebApi.xml"));
                 });
-                c.IncludeXmlComments(Path.Combine(basePath, "Ishareshop.NetCore.WebApi.xml"));
-            });
+            }
             #endregion
             //添加jwt支持
             var jwtSetting = new JwtSetting();
@@ -140,10 +179,23 @@ namespace Ishareshop.Api
                     //ClockSkew = TimeSpan.Zero
                 };
             });
+
+            //添加定时任务启动类
+            services.AddSingleton<Microsoft.Extensions.Hosting.IHostedService, InitScheduleTask>();
+            services.AddHostedService<InitScheduleTask>();//跟上面这个同样的
+            //定时任务Quartz
+            services.AddControllersWithViews();
+            services.AddMvc();
+            services.AddSingleton<ISchedulerFactory, StdSchedulerFactory>();//注册ISchedulerFactory的实例。
+            #region 定时任务Quartz  依赖注入配置
+            services.AddTransient<MyCronJob>();
+            // 这里使用瞬时依赖注入
+            services.AddSingleton<QuartzStartup>();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IHostApplicationLifetime lifetime)
         {
             if (env.IsDevelopment())
             {
@@ -157,6 +209,8 @@ namespace Ishareshop.Api
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseCors("LimitRequests");//将 CORS 中间件添加到 web 应用程序管线中, 以允许跨域请求。
 
             app.UseEndpoints(endpoints =>
             {
@@ -173,15 +227,22 @@ namespace Ishareshop.Api
                 endpoints.MapControllers();
             });
 
-            //swagger支持
-            #region
-            app.UsePathBase("/Ishareshopcore");
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
+            #region //swagger支持
+            if (env.IsDevelopment())
             {
-                c.SwaggerEndpoint("/Ishareshopcore/swagger/v1/swagger.json", "Ishareshop.NetCore.WebApi");
-                c.RoutePrefix = string.Empty;
-            });
+                app.UsePathBase("/Ishareshopcore");
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/Ishareshopcore/swagger/v1/swagger.json", "Ishareshop.NetCore.WebApi");
+                    c.RoutePrefix = string.Empty;
+                });
+            }
+            #endregion
+            #region // 绑定Quartz.Net
+            var quartz = app.ApplicationServices.GetRequiredService<QuartzStartup>();
+            lifetime.ApplicationStarted.Register(quartz.Start);
+            lifetime.ApplicationStopped.Register(quartz.Stop);
             #endregion
         }
     }

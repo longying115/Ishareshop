@@ -53,6 +53,7 @@ namespace Ishareshop.Api.Controllers
         /// <param name="isShow"></param>
         /// <param name="classId"></param>
         /// <returns></returns>
+        [HttpGet("List")]
         public async Task<ResponseModel> GetList(bool isHead, bool isShow, int classId)
         {
             List<Expression<Func<News, bool>>> wheres = new List<Expression<Func<News, bool>>>();
@@ -72,7 +73,7 @@ namespace Ishareshop.Api.Controllers
         /// <param name="isHead"></param>
         /// <param name="topCount"></param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("TopList")]
         [Authorize]
         public async Task<ResponseModel> GetList(bool isHead, int topCount)
         {
@@ -316,6 +317,8 @@ namespace Ishareshop.Api.Controllers
         /// </summary>
         /// <param name="ids"></param>
         /// <returns></returns>
+        [HttpDelete]
+        [Authorize]
         public async Task<ResponseModel> DeleteMany(string[] ids)
         {
             try

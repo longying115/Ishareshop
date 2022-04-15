@@ -15,6 +15,7 @@ namespace Ishareshop.Api.Controllers
         {
             return View();
         }
+        [HttpGet]
         public async Task<IActionResult> InitCountryRegion()
         {
             //创建XML
@@ -72,6 +73,7 @@ namespace Ishareshop.Api.Controllers
 
             return Ok(true);
         }
+        [HttpGet]
         public async Task<IActionResult> WriteXmlFile()
         {
             Random rnd = new Random(100);
@@ -116,6 +118,7 @@ namespace Ishareshop.Api.Controllers
 
             return Ok(true);
         }
+        [HttpGet]
         public async Task<IActionResult> SerializerXmlFile()
         {
             Student student = new Student()
@@ -134,6 +137,7 @@ namespace Ishareshop.Api.Controllers
             }
             return Ok();
         }
+        [HttpGet]
         public async Task<IActionResult> DeserializeXmlFile()
         {
             //xml序列化器

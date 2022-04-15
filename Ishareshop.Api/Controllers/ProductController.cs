@@ -9,24 +9,24 @@ using Winner.Models;
 using Winner.IRepository;
 using Microsoft.AspNetCore.Authorization;
 using Winner.Models.Response;
-using Serilog;
-using Serilog.AspNetCore;
 using System.Diagnostics;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using System.Linq.Expressions;
 using Winner.Models.Request.Commands;
+using Microsoft.Extensions.Logging;
+using Winner.Models.Request.Queries;
 
 namespace Ishareshop.Api.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productservice;
         private IWebHostEnvironment _webHost;
-        private readonly ILogger _logger;
-        public ProductController(IProductService productservice, IWebHostEnvironment webHostEnvironment, ILogger logger)
+        private readonly ILogger<ProductController> _logger;
+        public ProductController(IProductService productservice, IWebHostEnvironment webHostEnvironment, ILogger<ProductController> logger)
         {
             _productservice = productservice;
             _webHost = webHostEnvironment;
@@ -37,11 +37,11 @@ namespace Ishareshop.Api.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("{id}")]
         [Authorize]
         public async Task<ResponseModel> GetOne(int id)
         {
-            _logger.Information("开始记录日志");
+            _logger.LogInformation("开始记录日志");
             Stopwatch sw = new Stopwatch();
             sw.Start();
             await Task.Delay(1000);
@@ -70,6 +70,7 @@ namespace Ishareshop.Api.Controllers
         /// <param name="fistClassId"></param>
         /// <param name="secondClassId"></param>
         /// <returns></returns>
+        [HttpGet("List")]
         public async Task<ResponseModel> GetList(bool isHome, bool isShow, int fistClassId = 0, int secondClassId = 0)
         {
             List<Expression<Func<Products, bool>>> wheres = new List<Expression<Func<Products, bool>>>();
@@ -93,7 +94,7 @@ namespace Ishareshop.Api.Controllers
         /// <param name="isHome"></param>
         /// <param name="topCount"></param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("TopList")]
         [Authorize]
         public async Task<ResponseModel> GetList(bool isHome, int topCount)
         {
@@ -103,17 +104,22 @@ namespace Ishareshop.Api.Controllers
         /// <summary>
         /// 分页获取产品列表
         /// </summary>
-        /// <param name="pageSize"></param>
-        /// <param name="pageIndex"></param>
-        /// <param name="fistClassId"></param>
-        /// <param name="secondClassId"></param>
-        /// <param name="keyword"></param>
+        /// <param name="request"></param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpPost("PageList")]
         [Authorize]
-        public async Task<ResponsePageModel> GetPageList(int pageSize, int pageIndex, string keyword, int fistClassId = 0, int secondClassId = 0)
+        public async Task<ResponsePageModel> GetPageList(ProductListQuery request)
         {
-            if (pageSize <= 0 || pageIndex < 1)
+            if (!ModelState.IsValid)
+            {
+                return new ResponsePageModel
+                {
+                    code = 0,
+                    result = "参数错误0",
+                    total = 0
+                };
+            }
+            if (request.PageSize <= 0 || request.PageIndex < 1)
             {
                 return new ResponsePageModel
                 {
@@ -124,19 +130,19 @@ namespace Ishareshop.Api.Controllers
             }
             List<Expression<Func<Products, bool>>> wheres = new List<Expression<Func<Products, bool>>>();
 
-            if (fistClassId > 0)
-                wheres.Add(s => s.FistClassId == fistClassId);
-            if (secondClassId > 0)
+            if (request.FistClassId > 0)
+                wheres.Add(s => s.FistClassId == request.FistClassId);
+            if (request.SecondClassId > 0)
             {
-                wheres.Add(s => s.SecondClassId == secondClassId);
+                wheres.Add(s => s.SecondClassId == request.SecondClassId);
             }
 
-            if (!string.IsNullOrEmpty(keyword))
-                wheres.Add(s => s.Title.Contains(keyword));
+            if (!string.IsNullOrEmpty(request.Keyword))
+                wheres.Add(s => s.Title.Contains(request.Keyword));
 
             int total = await _productservice.GetCountAsync(wheres);
 
-            var pageData = await _productservice.GetListAsync(pageSize, pageIndex, wheres);
+            var pageData = await _productservice.GetListAsync(request.PageSize, request.PageIndex, wheres);
 
             return new ResponsePageModel { code = 200, result = "分页产品获取成功", total = total, data = pageData };
         }
@@ -146,7 +152,7 @@ namespace Ishareshop.Api.Controllers
         /// </summary>
         /// <param name="news"></param>
         /// <returns></returns>
-        [HttpPost]
+        [HttpPost("Add")]
         [Authorize]
         public async Task<ResponseModel> Add([FromBody] Products product)
         {
@@ -203,7 +209,7 @@ namespace Ishareshop.Api.Controllers
         /// </summary>
         /// <param name="product"></param>
         /// <returns></returns>
-        [HttpPut]
+        [HttpPut("Edit")]
         [Authorize]
         public async Task<ResponseModel> Edit([FromBody] ProductSave product)
         {
@@ -277,7 +283,7 @@ namespace Ishareshop.Api.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpDelete]
+        [HttpDelete("Delete")]
         [Authorize]
         public async Task<ResponseModel> Delete(int id)
         {
@@ -319,6 +325,8 @@ namespace Ishareshop.Api.Controllers
         /// </summary>
         /// <param name="ids"></param>
         /// <returns></returns>
+        [HttpDelete("DeleteMany")]
+        [Authorize]
         public async Task<ResponseModel> DeleteMany(int[] ids)
         {
             try

@@ -21,7 +21,7 @@ namespace Winner.Models
         /// <summary>
         /// 产品所属二级分类
         /// </summary>
-        public int SecondClassId { get; set; } = 0;
+        public int? SecondClassId { get; set; } = 0;
         /// <summary>
         /// 产品排序号
         /// </summary>
@@ -116,11 +116,11 @@ namespace Winner.Models
         /// 最后点击时间
         /// </summary>
         public DateTime GMTLastHit{get;set;} = DateTime.Now;
-        private int _praise = 0;
+        private int? _praise = 0;
         /// <summary>
         /// 点赞次数
         /// </summary>
-        public int Praise
+        public int? Praise
         {
             get { return _praise; }
             set { _praise = value; }

@@ -25,4 +25,8 @@
     <ProjectReference Include="..\Winner.Models\Winner.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Queries\Interfaces\" />
+  </ItemGroup>
+
 </Project>

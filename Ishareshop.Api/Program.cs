@@ -43,8 +43,8 @@ namespace Ishareshop.Api
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseSerilog()//在宿主机启动的时候配置serilog,与微软ILogger进行整合
-                    .UseStartup<Startup>();
-                });
+                    webBuilder.UseStartup<Startup>();
+                })
+            .UseSerilog();//在宿主机启动的时候配置serilog,与微软ILogger进行整合
     }
 }

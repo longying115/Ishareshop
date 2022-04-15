@@ -21,7 +21,7 @@ namespace Winner.Repository
         private readonly AccountContext _context;
         private readonly ILogger _logger;
 
-        public NewsService(AccountContext accountContext,ILogger<NewsService> logger)
+        public NewsService(AccountContext accountContext, ILogger<NewsService> logger)
         {
             _context = accountContext;
             _logger = logger;
@@ -56,14 +56,14 @@ namespace Winner.Repository
             News news = await _context.News.FindAsync(id);
             return news;
         }
-        public async Task<List<News>> GetListAsync(List<Expression<Func<News,bool>>> wheres)
+        public async Task<List<News>> GetListAsync(List<Expression<Func<News, bool>>> wheres)
         {
-            var list = _context.News.Where(s=>true);
+            var list = _context.News.Where(s => true);
             foreach (var item in wheres)
             {
                 list = list.Where(item);
             }
-            var data =await list.ToListAsync();
+            var data = await list.ToListAsync();
             return data;
         }
         public async Task<List<News>> GetListAsync(Expression<Func<News, bool>> where, int topCount)
